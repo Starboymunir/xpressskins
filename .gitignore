@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temp/debug scripts & logs
+dev-err.txt
+dev-log.txt
+dev-out.txt
+download-images.js
+drive-api-test.mjs
+drive-inventory.json
+drive-page.html
+embed-analysis.txt
+explore-drive.mjs
+extract-drive-ids.mjs
+file-mapping.json
+new-ids.json
+test-server.js
+video-ids.json
+video-ids.txt

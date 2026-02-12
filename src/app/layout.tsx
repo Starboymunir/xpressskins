@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   title: "Xpress Skins Inc. | Custom Itasha Anime Car Wraps",
   description:
     "Transform your ride into a rolling masterpiece. Custom anime car wraps (Itasha) designed, printed, and installed by Xpress Skins Inc. in Houston, TX.",
-  keywords: ["itasha", "anime car wrap", "custom vehicle wrap", "anime wrap", "car wrap houston"],
+  keywords: [
+    "itasha",
+    "anime car wrap",
+    "custom vehicle wrap",
+    "anime wrap",
+    "car wrap houston",
+  ],
 };
 
 export default function RootLayout({
@@ -24,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
+      <body
+        className={`${inter.variable} font-sans antialiased bg-background text-foreground noise`}
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />

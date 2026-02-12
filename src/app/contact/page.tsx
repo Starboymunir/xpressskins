@@ -14,28 +14,50 @@ export default function ContactPage() {
     designType: "fullcustom",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to an API
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/quotes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          vehicle_info: formData.vehicle,
+          wrap_type: formData.designType,
+          message: formData.message,
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to submit");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <>
       {/* Header */}
       <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-[#050505]" />
-        <div className="absolute top-0 right-0 w-[600px] h-[400px] bg-neon-pink/5 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute top-0 right-0 w-[600px] h-[400px] bg-accent/[0.05] rounded-full blur-[120px]" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
               Let&apos;s{" "}
-              <span className="bg-gradient-to-r from-neon-pink to-neon-purple bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent">
                 Talk
               </span>
             </h1>
-            <p className="text-dark-300 text-lg max-w-xl mx-auto">
+            <p className="text-muted-light text-lg max-w-xl mx-auto">
               Have a question or want to discuss your project? We&apos;re here to help
               bring your Itasha vision to life.
             </p>
@@ -45,7 +67,7 @@ export default function ContactPage() {
 
       {/* Contact Content */}
       <section className="relative pb-32">
-        <div className="absolute inset-0 bg-[#050505]" />
+        <div className="absolute inset-0 bg-background" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Info */}
@@ -54,39 +76,39 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <a
                     href="tel:+13463177987"
-                    className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-pink/20 transition-all group"
+                    className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/20 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-neon-pink/10 flex items-center justify-center shrink-0 group-hover:bg-neon-pink/20 transition-colors">
-                      <Phone size={20} className="text-neon-pink" />
+                    <div className="w-12 h-12 rounded-xl bg-accent/[0.08] flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <Phone size={20} className="text-accent" />
                     </div>
                     <div>
                       <h3 className="text-white font-bold mb-1">Call Us</h3>
-                      <p className="text-dark-300 text-sm">(346) 317-7987</p>
-                      <p className="text-dark-400 text-xs mt-1">Mon-Sat, 9AM-6PM CT</p>
+                      <p className="text-muted-light text-sm">(346) 317-7987</p>
+                      <p className="text-muted text-xs mt-1">Mon-Sat, 9AM-6PM CT</p>
                     </div>
                   </a>
 
                   <a
                     href="mailto:info@xpressskins.com"
-                    className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-pink/20 transition-all group"
+                    className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/20 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-neon-purple/10 flex items-center justify-center shrink-0 group-hover:bg-neon-purple/20 transition-colors">
-                      <Mail size={20} className="text-neon-purple" />
+                    <div className="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center shrink-0 group-hover:bg-accent2/20 transition-colors">
+                      <Mail size={20} className="text-accent2" />
                     </div>
                     <div>
                       <h3 className="text-white font-bold mb-1">Email</h3>
-                      <p className="text-dark-300 text-sm">info@xpressskins.com</p>
-                      <p className="text-dark-400 text-xs mt-1">We reply within 24 hours</p>
+                      <p className="text-muted-light text-sm">info@xpressskins.com</p>
+                      <p className="text-muted text-xs mt-1">We reply within 24 hours</p>
                     </div>
                   </a>
 
                   <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5">
-                    <div className="w-12 h-12 rounded-xl bg-neon-blue/10 flex items-center justify-center shrink-0">
-                      <MapPin size={20} className="text-neon-blue" />
+                    <div className="w-12 h-12 rounded-xl bg-accent3/[0.08] flex items-center justify-center shrink-0">
+                      <MapPin size={20} className="text-accent3" />
                     </div>
                     <div>
                       <h3 className="text-white font-bold mb-1">Studio</h3>
-                      <p className="text-dark-300 text-sm">
+                      <p className="text-muted-light text-sm">
                         1804 W Sam Houston Pkwy N
                         <br />
                         Houston, TX 77043
@@ -95,12 +117,12 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5">
-                    <div className="w-12 h-12 rounded-xl bg-neon-cyan/10 flex items-center justify-center shrink-0">
-                      <Clock size={20} className="text-neon-cyan" />
+                    <div className="w-12 h-12 rounded-xl bg-accent3/10 flex items-center justify-center shrink-0">
+                      <Clock size={20} className="text-accent3" />
                     </div>
                     <div>
                       <h3 className="text-white font-bold mb-1">Business Hours</h3>
-                      <p className="text-dark-300 text-sm">
+                      <p className="text-muted-light text-sm">
                         Monday - Saturday: 9AM - 6PM CT
                         <br />
                         Sunday: Closed
@@ -114,7 +136,7 @@ export default function ContactPage() {
               <AnimatedSection direction="right" delay={0.2}>
                 <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
                   <h3 className="text-white font-bold mb-3 flex items-center gap-2">
-                    <MessageCircle size={16} className="text-neon-pink" />
+                    <MessageCircle size={16} className="text-accent" />
                     Follow Us
                   </h3>
                   <div className="flex flex-wrap gap-3">
@@ -129,7 +151,7 @@ export default function ContactPage() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-dark-300 hover:bg-neon-pink/10 hover:text-neon-pink border border-white/5 hover:border-neon-pink/20 transition-all"
+                        className="px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-muted-light hover:bg-accent/[0.08] hover:text-accent border border-white/5 hover:border-accent/20 transition-all"
                       >
                         {social.label}
                       </a>
@@ -143,12 +165,12 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <AnimatedSection>
                 {submitted ? (
-                  <div className="p-12 rounded-3xl bg-white/[0.02] border border-neon-cyan/20 text-center">
-                    <div className="w-16 h-16 rounded-full bg-neon-cyan/10 flex items-center justify-center mx-auto mb-6">
-                      <Send size={24} className="text-neon-cyan" />
+                  <div className="p-12 rounded-3xl bg-white/[0.02] border border-accent3/20 text-center">
+                    <div className="w-16 h-16 rounded-full bg-accent3/10 flex items-center justify-center mx-auto mb-6">
+                      <Send size={24} className="text-accent3" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
-                    <p className="text-dark-300">
+                    <p className="text-muted-light">
                       Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
@@ -159,7 +181,7 @@ export default function ContactPage() {
                   >
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-muted-light mb-2">
                           Name *
                         </label>
                         <input
@@ -169,12 +191,12 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, name: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-white placeholder:text-dark-500 focus:border-neon-pink focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white placeholder:text-dark-500 focus:border-accent focus:outline-none transition-colors"
                           placeholder="Your name"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-muted-light mb-2">
                           Email *
                         </label>
                         <input
@@ -184,7 +206,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-white placeholder:text-dark-500 focus:border-neon-pink focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white placeholder:text-dark-500 focus:border-accent focus:outline-none transition-colors"
                           placeholder="you@email.com"
                         />
                       </div>
@@ -192,7 +214,7 @@ export default function ContactPage() {
 
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-muted-light mb-2">
                           Phone
                         </label>
                         <input
@@ -201,12 +223,12 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-white placeholder:text-dark-500 focus:border-neon-pink focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white placeholder:text-dark-500 focus:border-accent focus:outline-none transition-colors"
                           placeholder="(555) 123-4567"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-muted-light mb-2">
                           Vehicle (Year Make Model)
                         </label>
                         <input
@@ -215,14 +237,14 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, vehicle: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-white placeholder:text-dark-500 focus:border-neon-pink focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white placeholder:text-dark-500 focus:border-accent focus:outline-none transition-colors"
                           placeholder="2024 Honda Civic"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-dark-300 mb-2">
+                      <label className="block text-sm font-medium text-muted-light mb-2">
                         Design Type
                       </label>
                       <select
@@ -230,7 +252,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, designType: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-white focus:border-neon-pink focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
                       >
                         <option value="premade">Pre-Made Design</option>
                         <option value="semicustom">Semi-Custom</option>
@@ -240,7 +262,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-dark-300 mb-2">
+                      <label className="block text-sm font-medium text-muted-light mb-2">
                         Tell Us About Your Vision *
                       </label>
                       <textarea
@@ -250,17 +272,24 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, message: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-white placeholder:text-dark-500 focus:border-neon-pink focus:outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white placeholder:text-dark-500 focus:border-accent focus:outline-none transition-colors resize-none"
                         placeholder="Which anime/character? What kind of wrap coverage? Any reference images?"
                       />
                     </div>
 
+                    {error && (
+                      <div className="rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-sm text-red-400">
+                        {error}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-neon-pink to-neon-purple rounded-full hover:shadow-[0_0_40px_#ff2d7b44] hover:scale-[1.02] transition-all"
+                      disabled={submitting}
+                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-accent to-accent2 rounded-full hover:shadow-[0_0_40px_#ff2d7b44] hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <Send size={18} />
+                      {submitting ? "Sending…" : "Send Message"}
+                      {!submitting && <Send size={18} />}
                     </button>
 
                     <p className="text-dark-500 text-xs text-center">
