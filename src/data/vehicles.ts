@@ -1218,6 +1218,30 @@ export function getVehicle(make: string, model: string, year: number, trim: stri
   );
 }
 
+// ─── Body-type fallback for unlisted vehicles ────────────
+// Averages computed from Ed's 1,178-vehicle database
+export interface BodyTypeCategory {
+  id: string;
+  label: string;
+  description: string;
+  avgSqft: number;
+  range: string;
+}
+
+export const bodyTypeCategories: BodyTypeCategory[] = [
+  { id: "sedan", label: "Sedan", description: "4-door passenger cars (Civic, Camry, Accord, etc.)", avgSqft: 256, range: "136–716" },
+  { id: "coupe", label: "Coupe", description: "2-door cars (Mustang, Camaro, BRZ, etc.)", avgSqft: 242, range: "153–290" },
+  { id: "hatchback", label: "Hatchback", description: "Compact hatchbacks (Golf, Civic Hatch, etc.)", avgSqft: 218, range: "172–274" },
+  { id: "convertible", label: "Convertible / Roadster", description: "Open-top vehicles (Miata, Boxster, etc.)", avgSqft: 199, range: "118–254" },
+  { id: "wagon", label: "Wagon / Estate", description: "Station wagons and estates", avgSqft: 259, range: "198–364" },
+  { id: "crossover", label: "Compact SUV / Crossover", description: "Small-mid SUVs (RAV4, CR-V, CX-5, etc.)", avgSqft: 248, range: "176–311" },
+  { id: "full-suv", label: "Full-Size SUV", description: "Large SUVs (Tahoe, Expedition, 4Runner, etc.)", avgSqft: 275, range: "138–374" },
+  { id: "truck-short", label: "Truck (Standard/Short Bed)", description: "Pickup trucks with short bed", avgSqft: 281, range: "204–342" },
+  { id: "truck-long", label: "Truck (Long Bed)", description: "Pickup trucks with long bed / extended cab", avgSqft: 296, range: "210–374" },
+  { id: "sports", label: "Sports / Exotic", description: "Performance & exotic cars (911, Corvette, Ferrari, etc.)", avgSqft: 254, range: "211–361" },
+  { id: "van", label: "Van / Minivan", description: "Cargo vans, minivans, Sprinters, etc.", avgSqft: 371, range: "207–580" },
+];
+
 // Coverage options
 export const coverageOptions = [
   { id: "full", label: "Full Wrap", description: "Complete vehicle coverage", multiplier: 1.0 },
