@@ -1,18 +1,18 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import {
-  coverageOptions,
+  panelDefinitions,
+  panelPresets,
+  getPanelSummary,
   designTiers,
   finishOptions,
   installOptions,
-  getAllMakes,
-  getModelsForMake,
-  getVariantsForModel,
   bodyTypeCategories,
   calculatePrice,
+  vehicleDatabase,
 } from "@/data/vehicles";
 import type { VehicleEntry } from "@/data/vehicles";
 import {
@@ -47,42 +47,80 @@ export default function PricingPage() {
   const [vehicleNotListed, setVehicleNotListed] = useState(false);
   const [selectedBodyType, setSelectedBodyType] = useState("");
   const [customVehicleName, setCustomVehicleName] = useState("");
-  const [selectedCoverage, setSelectedCoverage] = useState("");
+  const [selectedPanels, setSelectedPanels] = useState<string[]>([]);
   const [selectedDesign, setSelectedDesign] = useState("");
   const [selectedFinish, setSelectedFinish] = useState("gloss");
   const [selectedInstall, setSelectedInstall] = useState("");
   const [checkingOut, setCheckingOut] = useState(false);
 
-  const allMakes = useMemo(() => getAllMakes(), []);
-  const modelsForMake = useMemo(
-    () => (selectedMake ? getModelsForMake(selectedMake) : []),
-    [selectedMake]
-  );
-  const variantsForModel = useMemo(
-    () => (selectedMake && selectedModel ? getVariantsForModel(selectedMake, selectedModel) : []),
-    [selectedMake, selectedModel]
-  );
+  // Try loading dynamic vehicles from Supabase (admin-uploaded),
+  // fall back to static vehicleDatabase if API fails or returns empty
+  const [dynamicVehicles, setDynamicVehicles] = useState<VehicleEntry[] | null>(null);
 
-  const coverage = coverageOptions.find((c) => c.id === selectedCoverage);
+  useEffect(() => {
+    fetch("/api/vehicles")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.vehicles && data.vehicles.length > 0) {
+          setDynamicVehicles(
+            data.vehicles.map((v: { make: string; model: string; year: number; trim: string; total_sqft: number }) => ({
+              make: v.make,
+              model: v.model,
+              year: v.year,
+              trim: v.trim,
+              totalSqft: Number(v.total_sqft),
+            }))
+          );
+        }
+      })
+      .catch(() => {
+        // Use static fallback
+      });
+  }, []);
+
+  // Use dynamic data if available, else static
+  const db = dynamicVehicles ?? vehicleDatabase;
+
+  const allMakes = useMemo(() => {
+    const makes = new Set<string>();
+    db.forEach((v) => makes.add(v.make));
+    return Array.from(makes).sort();
+  }, [db]);
+
+  const modelsForMake = useMemo(() => {
+    if (!selectedMake) return [];
+    const models = new Set<string>();
+    db.filter((v) => v.make === selectedMake).forEach((v) => models.add(v.model));
+    return Array.from(models).sort();
+  }, [db, selectedMake]);
+
+  const variantsForModel = useMemo(() => {
+    if (!selectedMake || !selectedModel) return [];
+    return db
+      .filter((v) => v.make === selectedMake && v.model === selectedModel)
+      .sort((a, b) => b.year - a.year);
+  }, [db, selectedMake, selectedModel]);
+
+  const panelSummary = getPanelSummary(selectedPanels);
   const design = designTiers.find((d) => d.id === selectedDesign);
   const finish = finishOptions.find((f) => f.id === selectedFinish);
   const install = installOptions.find((i) => i.id === selectedInstall);
 
   const quote = useMemo(() => {
-    if (!selectedSqft || !coverage || !design || !finish || !install) return null;
+    if (!selectedSqft || selectedPanels.length === 0 || !design || !finish || !install) return null;
     return calculatePrice(
       selectedSqft,
-      coverage.multiplier,
+      selectedPanels,
       design.pricePerSqft,
       finish.priceAdd,
       install.price
     );
-  }, [selectedSqft, coverage, design, finish, install]);
+  }, [selectedSqft, selectedPanels, design, finish, install]);
 
   const canProceed = () => {
     switch (currentStep) {
       case 1: return vehicleNotListed ? (selectedBodyType !== "" && selectedSqft > 0) : (selectedMake !== "" && selectedModel !== "" && selectedSqft > 0);
-      case 2: return !!selectedCoverage;
+      case 2: return selectedPanels.length > 0;
       case 3: return !!selectedDesign;
       case 4: return !!selectedFinish;
       case 5: return !!selectedInstall;
@@ -330,7 +368,7 @@ export default function PricingPage() {
                 </motion.div>
               )}
 
-              {/* Step 2: Coverage */}
+              {/* Step 2: Panel Selection */}
               {currentStep === 2 && (
                 <motion.div
                   key="step2"
@@ -339,32 +377,98 @@ export default function PricingPage() {
                   exit={{ opacity: 0, x: -30 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h2 className="text-2xl font-bold text-white mb-2">Choose Coverage</h2>
-                  <p className="text-muted-light text-sm mb-8">
-                    How much of your {selectedMake} {selectedModel} do you want wrapped?
+                  <h2 className="text-2xl font-bold text-white mb-2">Select Panels to Wrap</h2>
+                  <p className="text-muted-light text-sm mb-6">
+                    Pick which panels of your {vehicleNotListed ? "vehicle" : `${selectedMake} ${selectedModel}`} you want wrapped.
                   </p>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {coverageOptions.map((opt) => (
-                      <button
-                        key={opt.id}
-                        onClick={() => setSelectedCoverage(opt.id)}
-                        className={`p-5 rounded-2xl border text-left transition-all ${
-                          selectedCoverage === opt.id
-                            ? "border-accent bg-accent/[0.05] shadow-[0_0_30px_rgba(255,26,108,0.06)]"
-                            : "border-white/5 bg-white/[0.02] hover:border-white/10"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="font-bold text-white">{opt.label}</span>
-                          <span className="text-xs text-muted">
-                            ~{Math.round(selectedSqft * opt.multiplier)} sqft
-                          </span>
-                        </div>
-                        <p className="text-muted-light text-sm">{opt.description}</p>
-                      </button>
-                    ))}
+                  {/* Quick presets */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {panelPresets.map((preset) => {
+                      const isActive =
+                        preset.panelIds.length === selectedPanels.length &&
+                        preset.panelIds.every((id) => selectedPanels.includes(id));
+                      return (
+                        <button
+                          key={preset.id}
+                          onClick={() => setSelectedPanels(isActive ? [] : [...preset.panelIds])}
+                          className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all ${
+                            isActive
+                              ? "border-accent bg-accent/10 text-accent"
+                              : "border-white/10 bg-white/[0.02] text-muted-light hover:border-white/20 hover:text-white"
+                          }`}
+                        >
+                          {preset.label}
+                        </button>
+                      );
+                    })}
                   </div>
+
+                  {/* Individual panel checkboxes */}
+                  <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    {panelDefinitions.map((panel) => {
+                      const isSelected = selectedPanels.includes(panel.id);
+                      const panelSqft = Math.round(selectedSqft * panel.percentOfTotal);
+                      return (
+                        <button
+                          key={panel.id}
+                          onClick={() =>
+                            setSelectedPanels((prev) =>
+                              isSelected ? prev.filter((id) => id !== panel.id) : [...prev, panel.id]
+                            )
+                          }
+                          className={`p-4 rounded-2xl border text-left transition-all ${
+                            isSelected
+                              ? "border-accent bg-accent/[0.05] shadow-[0_0_20px_rgba(255,26,108,0.05)]"
+                              : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div
+                              className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${
+                                isSelected
+                                  ? "border-accent bg-accent"
+                                  : "border-white/20 bg-transparent"
+                              }`}
+                            >
+                              {isSelected && <Check size={12} className="text-white" />}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="font-semibold text-white text-sm">{panel.label}</span>
+                                <span className="text-xs text-muted ml-2">~{panelSqft} sqft</span>
+                              </div>
+                              <p className="text-muted text-xs">{panel.description}</p>
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Running total */}
+                  {selectedPanels.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-xl bg-accent/[0.05] border border-accent/20 text-sm flex items-center justify-between"
+                    >
+                      <span className="text-muted-light">
+                        <span className="text-accent font-semibold">{panelSummary}</span>
+                        {" "}&mdash; {selectedPanels.length} of {panelDefinitions.length} panels
+                      </span>
+                      <span className="text-white font-bold">
+                        ~{Math.round(
+                          selectedSqft *
+                            selectedPanels.reduce(
+                              (s, id) => s + (panelDefinitions.find((p) => p.id === id)?.percentOfTotal ?? 0),
+                              0
+                            )
+                        )}{" "}
+                        sqft
+                      </span>
+                    </motion.div>
+                  )}
                 </motion.div>
               )}
 
@@ -506,9 +610,9 @@ export default function PricingPage() {
                       </span>
                     </div>
                     <div className="flex justify-between py-3 border-b border-white/5">
-                      <span className="text-muted-light">Coverage</span>
+                      <span className="text-muted-light">Panels</span>
                       <span className="text-white font-medium">
-                        {coverage?.label} ({quote.effectiveSqft} sqft)
+                        {panelSummary} ({quote.coveredSqft} sqft)
                       </span>
                     </div>
                     <div className="flex justify-between py-3 border-b border-white/5">
@@ -591,10 +695,10 @@ export default function PricingPage() {
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
                               product_name: vehicleNotListed
-                                ? `${customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label || "Custom"} — ${coverage?.label ?? ""} ${design?.label ?? ""}`
-                                : `${selectedVariant?.year} ${selectedMake} ${selectedModel} — ${coverage?.label ?? ""} ${design?.label ?? ""}`,
+                                ? `${customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label || "Custom"} — ${panelSummary} ${design?.label ?? ""}`
+                                : `${selectedVariant?.year} ${selectedMake} ${selectedModel} — ${panelSummary} ${design?.label ?? ""}`,
                               product_slug: "",
-                              wrap_type: coverage?.label ?? "",
+                              wrap_type: panelSummary,
                               design_tier: design?.label ?? "",
                               vehicle_info: vehicleNotListed
                                 ? `${customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label || "Custom"} (~${selectedSqft} sqft est.)`

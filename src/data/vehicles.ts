@@ -1242,16 +1242,61 @@ export const bodyTypeCategories: BodyTypeCategory[] = [
   { id: "van", label: "Van / Minivan", description: "Cargo vans, minivans, Sprinters, etc.", avgSqft: 371, range: "207–580" },
 ];
 
-// Coverage options
-export const coverageOptions = [
-  { id: "full", label: "Full Wrap", description: "Complete vehicle coverage", multiplier: 1.0 },
-  { id: "half", label: "Half Wrap", description: "One side + hood or rear", multiplier: 0.55 },
-  { id: "partial", label: "Partial Wrap", description: "Selected panels only", multiplier: 0.35 },
-  { id: "hood-roof", label: "Hood + Roof", description: "Top surfaces only", multiplier: 0.2 },
-  { id: "hood", label: "Hood Only", description: "Front hood panel", multiplier: 0.1 },
-  { id: "rear", label: "Rear Only", description: "Trunk/tailgate area", multiplier: 0.12 },
-  { id: "side-panels", label: "Side Panels", description: "Both door areas", multiplier: 0.4 },
+// ─── Panel-based coverage system ──────────────────────────
+// Each panel is a percentage of total vehicle sqft (sums to 100%)
+export interface PanelDefinition {
+  id: string;
+  label: string;
+  description: string;
+  percentOfTotal: number; // e.g. 0.09 = 9%
+}
+
+export const panelDefinitions: PanelDefinition[] = [
+  { id: "hood", label: "Hood", description: "Front hood panel", percentOfTotal: 0.09 },
+  { id: "roof", label: "Roof", description: "Top roof panel", percentOfTotal: 0.11 },
+  { id: "front-bumper", label: "Front Bumper", description: "Front bumper cover", percentOfTotal: 0.07 },
+  { id: "rear-bumper", label: "Rear Bumper", description: "Rear bumper cover", percentOfTotal: 0.06 },
+  { id: "trunk", label: "Trunk / Tailgate", description: "Rear trunk lid or tailgate", percentOfTotal: 0.06 },
+  { id: "front-fenders", label: "Front Fenders", description: "Both left & right front fenders", percentOfTotal: 0.08 },
+  { id: "driver-front-door", label: "Driver Front Door", description: "Driver-side front door", percentOfTotal: 0.09 },
+  { id: "passenger-front-door", label: "Passenger Front Door", description: "Passenger-side front door", percentOfTotal: 0.09 },
+  { id: "driver-rear-door", label: "Driver Rear Door", description: "Driver-side rear door (4-door)", percentOfTotal: 0.07 },
+  { id: "passenger-rear-door", label: "Passenger Rear Door", description: "Passenger-side rear door (4-door)", percentOfTotal: 0.07 },
+  { id: "quarter-panels", label: "Quarter Panels", description: "Both rear quarter panels", percentOfTotal: 0.10 },
+  { id: "rockers", label: "Rocker Panels", description: "Both side skirts / rocker panels", percentOfTotal: 0.05 },
+  { id: "mirrors", label: "Side Mirrors", description: "Both side mirror caps", percentOfTotal: 0.01 },
+  { id: "pillars", label: "Pillars & Trim", description: "A/B/C pillars and window trim", percentOfTotal: 0.05 },
 ];
+
+// Quick-select presets for common wrap jobs
+export const panelPresets = [
+  { id: "full", label: "Full Wrap", description: "All panels", panelIds: panelDefinitions.map((p) => p.id) },
+  { id: "half-driver", label: "Half Wrap (Driver)", description: "Hood, roof, bumpers, trunk + driver doors", panelIds: ["hood", "roof", "front-bumper", "rear-bumper", "trunk", "front-fenders", "driver-front-door", "driver-rear-door", "quarter-panels"] },
+  { id: "half-passenger", label: "Half Wrap (Passenger)", description: "Hood, roof, bumpers, trunk + passenger doors", panelIds: ["hood", "roof", "front-bumper", "rear-bumper", "trunk", "front-fenders", "passenger-front-door", "passenger-rear-door", "quarter-panels"] },
+  { id: "hood-roof", label: "Hood + Roof", description: "Top surfaces only", panelIds: ["hood", "roof"] },
+  { id: "doors-only", label: "All Doors", description: "All four door panels", panelIds: ["driver-front-door", "passenger-front-door", "driver-rear-door", "passenger-rear-door"] },
+];
+
+// Helper: calculate sqft for selected panels
+export function getPanelSqft(totalSqft: number, panelIds: string[]): number {
+  const totalPercent = panelIds.reduce((sum, id) => {
+    const panel = panelDefinitions.find((p) => p.id === id);
+    return sum + (panel?.percentOfTotal ?? 0);
+  }, 0);
+  return Math.round(totalSqft * totalPercent);
+}
+
+// Helper: get a readable label for selected panels
+export function getPanelSummary(panelIds: string[]): string {
+  if (panelIds.length === panelDefinitions.length) return "Full Wrap";
+  if (panelIds.length === 0) return "None";
+  if (panelIds.length <= 3) {
+    return panelIds
+      .map((id) => panelDefinitions.find((p) => p.id === id)?.label ?? id)
+      .join(", ");
+  }
+  return `${panelIds.length} panels selected`;
+}
 
 // Design tier pricing per sqft (base rate from Ed: $14/sqft)
 export const designTiers = [
@@ -1292,17 +1337,17 @@ export const installOptions = [
   { id: "install-partner", label: "Install via Partner Shop", price: 600 },
 ];
 
-// Calculate price
+// Calculate price based on selected panels
 export function calculatePrice(
-  sqft: number,
-  coverageMultiplier: number,
+  totalSqft: number,
+  selectedPanelIds: string[],
   pricePerSqft: number,
   finishAdd: number,
   installPrice: number
-): { subtotal: number; designFee: number; total: number; effectiveSqft: number } {
-  const effectiveSqft = Math.round(sqft * coverageMultiplier);
-  const subtotal = effectiveSqft * (pricePerSqft + finishAdd);
+): { subtotal: number; designFee: number; total: number; coveredSqft: number } {
+  const coveredSqft = getPanelSqft(totalSqft, selectedPanelIds);
+  const subtotal = coveredSqft * (pricePerSqft + finishAdd);
   const designFee = 99; // Refundable design fee
   const total = subtotal + installPrice + designFee;
-  return { subtotal, designFee, total, effectiveSqft };
+  return { subtotal, designFee, total, coveredSqft };
 }
