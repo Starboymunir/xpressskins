@@ -123,8 +123,9 @@ export interface Order {
   total_price: number;
   deposit_amount: number;
   amount_paid: number;
-  stripe_payment_intent: string;
-  stripe_checkout_session: string;
+  square_payment_link_id: string;
+  square_order_id: string;
+  square_payment_id: string;
   payment_status: 'pending' | 'deposit_paid' | 'partially_paid' | 'paid' | 'refunded';
   status: 'pending' | 'confirmed' | 'in_production' | 'shipped' | 'installing' | 'completed' | 'cancelled';
   notes: string;

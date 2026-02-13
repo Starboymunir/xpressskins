@@ -234,8 +234,9 @@ CREATE TABLE orders (
   total_price NUMERIC(10,2) NOT NULL DEFAULT 0,
   deposit_amount NUMERIC(10,2) NOT NULL DEFAULT 0,
   amount_paid NUMERIC(10,2) NOT NULL DEFAULT 0,
-  stripe_payment_intent TEXT DEFAULT '',
-  stripe_checkout_session TEXT DEFAULT '',
+  square_payment_link_id TEXT DEFAULT '',
+  square_order_id TEXT DEFAULT '',
+  square_payment_id TEXT DEFAULT '',
   payment_status TEXT NOT NULL DEFAULT 'pending'
     CHECK (payment_status IN ('pending','deposit_paid','partially_paid','paid','refunded')),
   status TEXT NOT NULL DEFAULT 'pending'

@@ -1,8 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
-import Stripe from "stripe";
+import { SquareClient } from "square";
 import { createServiceClient } from "@/lib/supabase/server";
+import { randomUUID } from "crypto";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+/* ── Square client (singleton) ─────────────────────────── */
+const square = new SquareClient({
+  token: process.env.SQUARE_ACCESS_TOKEN!,
+  environment: process.env.SQUARE_ENVIRONMENT === "production" ? "production" : "sandbox",
+});
+
+/* ── Auto-resolve location ID ──────────────────────────── */
+let cachedLocationId: string | null = null;
+
+async function getLocationId(): Promise<string> {
+  if (process.env.SQUARE_LOCATION_ID) return process.env.SQUARE_LOCATION_ID;
+  if (cachedLocationId) return cachedLocationId;
+
+  const response = await square.locations.list();
+  const locations = response.locations ?? [];
+  if (!locations.length) throw new Error("No Square locations found — check your access token.");
+  cachedLocationId = locations[0].id!;
+  return cachedLocationId;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,43 +51,35 @@ export async function POST(request: NextRequest) {
     // Generate order number
     const orderNumber = `XS-${Date.now().toString(36).toUpperCase()}`;
 
-    // Create Stripe Checkout Session for 25% deposit
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            unit_amount: depositCents,
-            product_data: {
-              name: `${product_name || "Custom Wrap"} — 25% Deposit`,
-              description: `Deposit for ${wrap_type || "wrap"} (Total: $${total_price.toLocaleString()})`,
-            },
-          },
-          quantity: 1,
+    const locationId = await getLocationId();
+
+    // Create Square Payment Link for 25 % deposit
+    const linkResponse = await square.checkout.paymentLinks.create({
+      idempotencyKey: randomUUID(),
+      quickPay: {
+        name: `${product_name || "Custom Wrap"} — 25% Deposit`,
+        priceMoney: {
+          amount: BigInt(depositCents),
+          currency: "USD",
         },
-      ],
-      customer_email: customer_email || undefined,
-      metadata: {
-        order_number: orderNumber,
-        product_slug: product_slug || "",
-        wrap_type: wrap_type || "",
-        total_price: String(total_price),
-        deposit_amount: String(deposit_amount),
-        customer_name: customer_name || "",
-        vehicle_info: vehicle_info || "",
-        design_tier: design_tier || "",
+        locationId,
       },
-      success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/collections${product_slug ? `/${product_slug}` : ""}`,
+      checkoutOptions: {
+        redirectUrl: `${origin}/checkout/success?order=${orderNumber}`,
+      },
+      paymentNote: `Order ${orderNumber} | ${wrap_type || "wrap"} | Total: $${total_price}`,
     });
+
+    const paymentLink = linkResponse.paymentLink;
+    if (!paymentLink?.url) {
+      throw new Error("Square did not return a payment link URL.");
+    }
 
     // Create order in Supabase (status: pending until webhook confirms)
     const supabase = createServiceClient();
     await supabase.from("orders").insert({
       order_number: orderNumber,
-      customer_email: customer_email || session.customer_email || "",
+      customer_email: customer_email || "",
       customer_name: customer_name || "",
       vehicle_info: vehicle_info || "",
       wrap_type: wrap_type || "",
@@ -76,12 +87,13 @@ export async function POST(request: NextRequest) {
       total_price: total_price,
       deposit_amount: deposit_amount,
       amount_paid: 0,
-      stripe_checkout_session: session.id,
+      square_payment_link_id: paymentLink.id || "",
+      square_order_id: paymentLink.orderId || "",
       payment_status: "pending",
       status: "pending",
     });
 
-    return NextResponse.json({ url: session.url, order_number: orderNumber });
+    return NextResponse.json({ url: paymentLink.url, order_number: orderNumber });
   } catch (error: unknown) {
     console.error("Checkout error:", error);
     const message = error instanceof Error ? error.message : "Failed to create checkout session";
