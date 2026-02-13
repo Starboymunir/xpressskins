@@ -4,15 +4,16 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import {
-  vehicleDatabase,
   coverageOptions,
   designTiers,
   finishOptions,
   installOptions,
   getAllMakes,
   getModelsForMake,
+  getVariantsForModel,
   calculatePrice,
 } from "@/data/vehicles";
+import type { VehicleEntry } from "@/data/vehicles";
 import {
   Car,
   Paintbrush,
@@ -40,6 +41,7 @@ export default function PricingPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
+  const [selectedVariant, setSelectedVariant] = useState<VehicleEntry | null>(null);
   const [selectedSqft, setSelectedSqft] = useState(0);
   const [selectedCoverage, setSelectedCoverage] = useState("");
   const [selectedDesign, setSelectedDesign] = useState("");
@@ -51,6 +53,10 @@ export default function PricingPage() {
   const modelsForMake = useMemo(
     () => (selectedMake ? getModelsForMake(selectedMake) : []),
     [selectedMake]
+  );
+  const variantsForModel = useMemo(
+    () => (selectedMake && selectedModel ? getVariantsForModel(selectedMake, selectedModel) : []),
+    [selectedMake, selectedModel]
   );
 
   const coverage = coverageOptions.find((c) => c.id === selectedCoverage);
@@ -160,10 +166,11 @@ export default function PricingPage() {
                 >
                   <h2 className="text-2xl font-bold text-white mb-2">Select Your Vehicle</h2>
                   <p className="text-muted-light text-sm mb-8">
-                    Choose your make and model so we can calculate the wrap area.
+                    Choose your make, model, and year so we can calculate the exact wrap area.
                   </p>
 
-                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="grid md:grid-cols-3 gap-6 mb-6">
+                    {/* Make */}
                     <div>
                       <label className="block text-sm font-medium text-muted-light mb-2">Make</label>
                       <select
@@ -171,6 +178,7 @@ export default function PricingPage() {
                         onChange={(e) => {
                           setSelectedMake(e.target.value);
                           setSelectedModel("");
+                          setSelectedVariant(null);
                           setSelectedSqft(0);
                         }}
                         className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
@@ -183,38 +191,70 @@ export default function PricingPage() {
                         ))}
                       </select>
                     </div>
+
+                    {/* Model */}
                     <div>
                       <label className="block text-sm font-medium text-muted-light mb-2">Model</label>
                       <select
                         value={selectedModel}
                         onChange={(e) => {
-                          const model = modelsForMake.find(
-                            (m) => m.model === e.target.value
-                          );
                           setSelectedModel(e.target.value);
-                          setSelectedSqft(model?.totalSqft || 0);
+                          setSelectedVariant(null);
+                          setSelectedSqft(0);
                         }}
                         className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
                         disabled={!selectedMake}
                       >
                         <option value="">Select model...</option>
                         {modelsForMake.map((model) => (
-                          <option key={model.model} value={model.model}>
-                            {model.model} (~{model.totalSqft} sqft)
+                          <option key={model} value={model}>
+                            {model}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Year / Trim */}
+                    <div>
+                      <label className="block text-sm font-medium text-muted-light mb-2">Year / Trim</label>
+                      <select
+                        value={selectedVariant ? `${selectedVariant.year}|${selectedVariant.trim}` : ""}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          if (!val) { setSelectedVariant(null); setSelectedSqft(0); return; }
+                          const [year, ...trimParts] = val.split("|");
+                          const trim = trimParts.join("|");
+                          const v = variantsForModel.find(
+                            (v) => v.year === Number(year) && v.trim === trim
+                          );
+                          if (v) {
+                            setSelectedVariant(v);
+                            setSelectedSqft(v.totalSqft);
+                          }
+                        }}
+                        className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
+                        disabled={!selectedModel}
+                      >
+                        <option value="">Select year...</option>
+                        {variantsForModel.map((v) => (
+                          <option key={`${v.year}-${v.trim}`} value={`${v.year}|${v.trim}`}>
+                            {v.year} {v.trim} — {v.totalSqft} sqft
                           </option>
                         ))}
                       </select>
                     </div>
                   </div>
 
-                  {selectedSqft > 0 && (
+                  {selectedSqft > 0 && selectedVariant && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 rounded-xl bg-accent/[0.05] border border-accent/20 text-sm"
                     >
-                      <span className="text-accent font-semibold">{selectedMake} {selectedModel}</span>
-                      <span className="text-muted-light"> — Estimated total surface: </span>
+                      <span className="text-accent font-semibold">
+                        {selectedVariant.year} {selectedMake} {selectedModel} {selectedVariant.trim}
+                      </span>
+                      <span className="text-muted-light"> — Total wrap area: </span>
                       <span className="text-white font-bold">{selectedSqft} sqft</span>
                     </motion.div>
                   )}
@@ -223,27 +263,6 @@ export default function PricingPage() {
                     <p className="text-muted text-xs">
                       Don&apos;t see your vehicle? <Link href="/contact" className="text-accent underline">Contact us</Link> for a custom quote.
                     </p>
-                  </div>
-
-                  {/* Quick select by category */}
-                  <div className="mt-8">
-                    <p className="text-sm text-muted mb-3">Or quick-select by category:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {vehicleDatabase.map((cat) => (
-                        <button
-                          key={cat.type}
-                          onClick={() => {
-                            const firstModel = cat.models[0];
-                            setSelectedMake(firstModel.make);
-                            setSelectedModel(firstModel.model);
-                            setSelectedSqft(firstModel.totalSqft);
-                          }}
-                          className="px-3 py-1.5 text-xs rounded-full bg-white/5 text-muted-light hover:bg-accent/[0.08] hover:text-accent border border-white/5 hover:border-accent/20 transition-all"
-                        >
-                          {cat.type} (~{cat.avgSqft} sqft)
-                        </button>
-                      ))}
-                    </div>
                   </div>
                 </motion.div>
               )}
@@ -417,7 +436,9 @@ export default function PricingPage() {
                   <div className="max-w-lg mx-auto space-y-3 mb-8">
                     <div className="flex justify-between py-3 border-b border-white/5">
                       <span className="text-muted-light">Vehicle</span>
-                      <span className="text-white font-medium">{selectedMake} {selectedModel}</span>
+                      <span className="text-white font-medium">
+                        {selectedVariant?.year} {selectedMake} {selectedModel} {selectedVariant?.trim}
+                      </span>
                     </div>
                     <div className="flex justify-between py-3 border-b border-white/5">
                       <span className="text-muted-light">Coverage</span>
@@ -504,11 +525,11 @@ export default function PricingPage() {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
-                              product_name: `${selectedMake} ${selectedModel} — ${coverage?.label ?? ""} ${design?.label ?? ""}`,
+                              product_name: `${selectedVariant?.year} ${selectedMake} ${selectedModel} — ${coverage?.label ?? ""} ${design?.label ?? ""}`,
                               product_slug: "",
                               wrap_type: coverage?.label ?? "",
                               design_tier: design?.label ?? "",
-                              vehicle_info: `${selectedMake} ${selectedModel}`,
+                              vehicle_info: `${selectedVariant?.year} ${selectedMake} ${selectedModel} ${selectedVariant?.trim}`,
                               total_price: quote.total,
                               deposit_amount: Math.round(quote.total * 0.25),
                             }),
