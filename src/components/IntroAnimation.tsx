@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, Sparkles } from "lucide-react";
 import Matter from "matter-js";
 
 /* ─── ball definitions ─── */
@@ -240,23 +240,26 @@ export default function PhysicsBallsSection() {
         style={{ touchAction: "none" }}
       />
 
-      {/* "Enter Site" button — scrolls to top */}
+      {/* "Enter Site" button — big, themed, scrolls to top */}
       <motion.button
         onClick={enterSite}
-        className="absolute left-1/2 top-8 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-white/80 transition-colors hover:text-white"
-        initial={{ opacity: 0, y: -20 }}
+        className="absolute left-1/2 top-6 z-30 flex -translate-x-1/2 flex-col items-center gap-3 md:top-10"
+        initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 1.5, duration: 0.6 }}
+        transition={{ delay: 1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <motion.div
-          animate={{ y: [0, -6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          className="group relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-accent/60 bg-accent/10 shadow-[0_0_30px_rgba(255,26,108,0.3)] backdrop-blur-md transition-all hover:border-accent hover:bg-accent/20 hover:shadow-[0_0_50px_rgba(255,26,108,0.5)] md:h-24 md:w-24"
         >
-          <ChevronUp size={24} />
+          {/* Pulsing ring */}
+          <span className="absolute inset-0 animate-ping rounded-full border border-accent/20" />
+          <ChevronUp size={36} className="text-white transition-transform group-hover:-translate-y-1 md:h-10 md:w-10" />
         </motion.div>
-        <span className="text-[10px] font-bold uppercase tracking-[0.4em]">
+        <span className="rounded-full border border-white/10 bg-white/5 px-5 py-1.5 text-[11px] font-bold uppercase tracking-[0.35em] text-white/90 backdrop-blur-sm transition-colors hover:bg-white/10">
+          <Sparkles size={12} className="mb-0.5 mr-1.5 inline text-accent" />
           Enter Site
         </span>
       </motion.button>
