@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import IntroAnimation from "@/components/IntroAnimation";
+import PhysicsBallsSection from "@/components/IntroAnimation";
 import { driveImg, driveVideo, portfolioImages, videoAssets } from "@/data/assets";
 import {
   ArrowRight,
@@ -21,9 +21,6 @@ import {
 export default function Home() {
   return (
     <>
-      {/* Cinematic intro overlay — plays once per session */}
-      <IntroAnimation />
-
       {/* ══════════════════════════════════════════════
           VIDEO HERO
          ══════════════════════════════════════════════ */}
@@ -338,6 +335,11 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════
+          PHYSICS BALLS — visitors land here first
+         ══════════════════════════════════════════════ */}
+      <PhysicsBallsSection />
     </>
   );
 }

@@ -1,164 +1,190 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
+import { ChevronUp } from "lucide-react";
 import Matter from "matter-js";
 
-/* ─── ball data ─── */
+/* ─── ball definitions ─── */
 const BALLS: { label: string; color: string; r: number }[] = [
   { label: "CUSTOM",    color: "#ff1a6c", r: 80 },
-  { label: "ANIME",     color: "#a855f7", r: 90 },
-  { label: "PREMIUM",   color: "#06b6d4", r: 75 },
-  { label: "VINYL",     color: "#facc15", r: 70 },
+  { label: "ANIME",     color: "#a855f7", r: 95 },
+  { label: "PREMIUM",   color: "#06b6d4", r: 70 },
+  { label: "VINYL",     color: "#facc15", r: 65 },
   { label: "HOUSTON",   color: "#f97316", r: 85 },
-  { label: "ITASHA",    color: "#ff1a6c", r: 95 },
-  { label: "WRAPS",     color: "#ffffff", r: 80 },
-  { label: "DESIGN",    color: "#ec4899", r: 70 },
+  { label: "ITASHA",    color: "#ff1a6c", r: 100 },
+  { label: "WRAPS",     color: "#ffffff", r: 85 },
+  { label: "DESIGN",    color: "#ec4899", r: 75 },
   { label: "3M",        color: "#ef4444", r: 55 },
   { label: "AVERY",     color: "#a855f7", r: 65 },
   { label: "ART",       color: "#06b6d4", r: 60 },
-  { label: "QUALITY",   color: "#facc15", r: 85 },
+  { label: "QUALITY",   color: "#facc15", r: 90 },
   { label: "PASSION",   color: "#f97316", r: 70 },
-  { label: "CRAFT",     color: "#ec4899", r: 65 },
+  { label: "CRAFT",     color: "#ec4899", r: 60 },
 ];
 
 /**
- * Cinematic intro:  Phase 1 → text reveal  |  Phase 2 → physics balls  |  Phase 3 → exit
- * Plays once per browser session.
+ * Full-screen section placed at the BOTTOM of the page.
+ * On first visit the page auto-scrolls here; user clicks "Enter Site" to scroll up.
+ * Balls have real gravity, collide, and are draggable.
  */
-export default function IntroAnimation() {
-  const [show, setShow] = useState(false);
-  const [phase, setPhase] = useState<"text" | "balls" | "exit">("text");
-  const sceneRef = useRef<HTMLDivElement>(null);
+export default function PhysicsBallsSection() {
+  const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const engineRef = useRef<Matter.Engine | null>(null);
   const runnerRef = useRef<Matter.Runner | null>(null);
   const renderLoopRef = useRef<number>(0);
-  const mouseConstraintRef = useRef<Matter.MouseConstraint | null>(null);
+  const bodiesRef = useRef<Matter.Body[]>([]);
+  const initRef = useRef(false);
 
-  /* ─── cleanup helper ─── */
-  const cleanup = useCallback(() => {
-    cancelAnimationFrame(renderLoopRef.current);
-    if (runnerRef.current) Matter.Runner.stop(runnerRef.current);
-    if (engineRef.current) Matter.Engine.clear(engineRef.current);
-    engineRef.current = null;
-    runnerRef.current = null;
+  /* ─── scroll to top ─── */
+  const enterSite = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  /* ─── lifecycle: show once per session ─── */
+  /* ─── auto-scroll to this section on first visit ─── */
   useEffect(() => {
-    if (sessionStorage.getItem("xpress-intro-seen")) return;
-    sessionStorage.setItem("xpress-intro-seen", "1");
-    document.body.style.overflow = "hidden";
-    setShow(true);
-    return () => { document.body.style.overflow = ""; };
+    if (sessionStorage.getItem("xpress-entered")) return;
+    // Wait for layout then scroll to bottom
+    const raf = requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({ behavior: "instant" as ScrollBehavior });
+    });
+    return () => cancelAnimationFrame(raf);
   }, []);
 
-  /* ─── phase timers ─── */
+  /* ─── mark "entered" when user scrolls away from this section ─── */
   useEffect(() => {
-    if (!show) return;
-    // text → balls after 2.6s
-    const t1 = setTimeout(() => setPhase("balls"), 2600);
-    // balls → exit after 7.5s total
-    const t2 = setTimeout(() => setPhase("exit"), 7500);
-    // unmount after exit anim
-    const t3 = setTimeout(() => {
-      setShow(false);
-      cleanup();
-      document.body.style.overflow = "";
-    }, 8400);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, [show, cleanup]);
+    const onScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      // If the section is mostly off-screen below, mark as entered
+      if (rect.top > window.innerHeight * 0.5) {
+        sessionStorage.setItem("xpress-entered", "1");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  /* ─── Matter.js physics scene ─── */
+  /* ─── Matter.js physics ─── */
   useEffect(() => {
-    if (phase !== "balls" || !sceneRef.current || !canvasRef.current) return;
+    if (initRef.current || !canvasRef.current || !sectionRef.current) return;
+    initRef.current = true;
 
-    const W = window.innerWidth;
-    const H = window.innerHeight;
+    const section = sectionRef.current;
     const canvas = canvasRef.current;
+    const W = section.clientWidth;
+    const H = section.clientHeight;
     canvas.width = W;
     canvas.height = H;
     const ctx = canvas.getContext("2d")!;
+    const dpr = window.devicePixelRatio || 1;
+
+    // Hi-DPI canvas
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+    ctx.scale(dpr, dpr);
 
     // Engine
-    const engine = Matter.Engine.create({ gravity: { x: 0, y: 1.2 } });
+    const engine = Matter.Engine.create({ gravity: { x: 0, y: 1.4 } });
     engineRef.current = engine;
 
-    // Walls (invisible)
-    const wallOpts = { isStatic: true, restitution: 0.5, friction: 0.1 } as const;
-    const walls = [
-      Matter.Bodies.rectangle(W / 2, H + 30, W + 100, 60, wallOpts),   // floor
-      Matter.Bodies.rectangle(W / 2, -30, W + 100, 60, wallOpts),      // ceiling
-      Matter.Bodies.rectangle(-30, H / 2, 60, H + 100, wallOpts),      // left
-      Matter.Bodies.rectangle(W + 30, H / 2, 60, H + 100, wallOpts),   // right
-    ];
-    Matter.Composite.add(engine.world, walls);
+    // Walls
+    const wallT = 60;
+    const wallOpts = { isStatic: true, restitution: 0.4, friction: 0.1 } as const;
+    Matter.Composite.add(engine.world, [
+      Matter.Bodies.rectangle(W / 2, H + wallT / 2, W + 200, wallT, wallOpts),  // floor
+      Matter.Bodies.rectangle(-wallT / 2, H / 2, wallT, H * 3, wallOpts),       // left
+      Matter.Bodies.rectangle(W + wallT / 2, H / 2, wallT, H * 3, wallOpts),    // right
+    ]);
 
-    // Scale ball radii for viewport
-    const scale = Math.min(W, H) / 900;
+    // Scale balls for viewport
+    const scale = Math.min(W, H) / 850;
 
-    // Create circles — spawn above viewport so they fall in
+    // Create circles — spawn scattered above so they fall in naturally
     const bodies = BALLS.map((b, i) => {
-      const r = b.r * scale;
-      const x = (W * 0.1) + Math.random() * (W * 0.8);
-      const y = -100 - i * 60 - Math.random() * 100;
+      const r = Math.max(25, b.r * scale);
+      const x = W * 0.08 + Math.random() * W * 0.84;
+      const y = -r * 2 - i * 55 - Math.random() * 80;
       const body = Matter.Bodies.circle(x, y, r, {
-        restitution: 0.6,
-        friction: 0.05,
-        frictionAir: 0.01,
-        density: 0.002,
+        restitution: 0.55,
+        friction: 0.08,
+        frictionAir: 0.008,
+        density: 0.0015,
         label: b.label,
-        render: { fillStyle: b.color },
       });
       (body as any)._color = b.color;
       (body as any)._radius = r;
       return body;
     });
+    bodiesRef.current = bodies;
     Matter.Composite.add(engine.world, bodies);
 
-    // Mouse interaction for dragging
+    // Mouse constraint for drag
     const mouse = Matter.Mouse.create(canvas);
-    const mouseConstraint = Matter.MouseConstraint.create(engine, {
+    // Correct mouse pixel ratio so coordinates match
+    mouse.pixelRatio = dpr;
+    const mc = Matter.MouseConstraint.create(engine, {
       mouse,
-      constraint: { stiffness: 0.2, render: { visible: false } },
+      constraint: {
+        stiffness: 0.2,
+        damping: 0.1,
+        render: { visible: false },
+      },
     });
-    Matter.Composite.add(engine.world, mouseConstraint);
-    mouseConstraintRef.current = mouseConstraint;
+    Matter.Composite.add(engine.world, mc);
 
-    // Fix for hi-dpi / CSS scaling
-    mouse.pixelRatio = window.devicePixelRatio || 1;
+    // Keep mouse in sync with engine
+    (engine.world as any).mouse = mouse;
 
     // Runner
     const runner = Matter.Runner.create();
     runnerRef.current = runner;
     Matter.Runner.run(runner, engine);
 
-    // Custom canvas render loop
+    // Render loop
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
 
       for (const body of bodies) {
         const { x, y } = body.position;
+        const angle = body.angle;
         const r = (body as any)._radius as number;
         const color = (body as any)._color as string;
         const label = body.label;
 
-        // Circle
         ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+
+        // Shadow
+        ctx.shadowColor = "rgba(0,0,0,0.3)";
+        ctx.shadowBlur = 15;
+        ctx.shadowOffsetY = 5;
+
+        // Circle
         ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
         ctx.fillStyle = color;
         ctx.fill();
         ctx.closePath();
 
-        // Text
-        const fontSize = Math.max(10, r * 0.35);
-        ctx.fillStyle = color === "#ffffff" || color === "#facc15" ? "#050508" : "#ffffff";
-        ctx.font = `900 ${fontSize}px "Inter", "Helvetica Neue", sans-serif`;
+        // Reset shadow before text
+        ctx.shadowColor = "transparent";
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetY = 0;
+
+        // Text label
+        const fontSize = Math.max(11, r * 0.32);
+        ctx.fillStyle =
+          color === "#ffffff" || color === "#facc15" ? "#050508" : "#ffffff";
+        ctx.font = `900 ${fontSize}px "Inter", "Helvetica Neue", Arial, sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText(label, x, y);
+        ctx.fillText(label, 0, 0);
+
         ctx.restore();
       }
 
@@ -166,95 +192,81 @@ export default function IntroAnimation() {
     };
     draw();
 
+    // Resize handler
+    const onResize = () => {
+      const nW = section.clientWidth;
+      const nH = section.clientHeight;
+      canvas.width = nW * dpr;
+      canvas.height = nH * dpr;
+      canvas.style.width = nW + "px";
+      canvas.style.height = nH + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    window.addEventListener("resize", onResize);
+
     return () => {
       cancelAnimationFrame(renderLoopRef.current);
+      window.removeEventListener("resize", onResize);
+      if (runnerRef.current) Matter.Runner.stop(runnerRef.current);
+      if (engineRef.current) Matter.Engine.clear(engineRef.current);
     };
-  }, [phase]);
-
-  if (!show) return null;
-
-  const topLine = "XPRESS SKINS";
-  const bottomLine = "CUSTOM ITASHA WRAPS";
-  const topChars = topLine.split("");
-  const bottomChars = bottomLine.split("");
+  }, []);
 
   return (
-    <motion.div
-      className="fixed inset-0 z-[9999] bg-[#050508]"
-      animate={phase === "exit" ? { opacity: 0 } : { opacity: 1 }}
-      transition={phase === "exit" ? { duration: 0.8, ease: [0.76, 0, 0.24, 1] } : undefined}
+    <section
+      ref={sectionRef}
+      id="very-bottom"
+      className="relative h-screen w-full overflow-hidden bg-[#050508]"
     >
-      {/* ── Phase 1: Text reveal ── */}
-      {phase === "text" && (
-        <div className="flex h-full w-full flex-col items-center justify-center">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,26,108,0.06)_0%,transparent_70%)]" />
+      {/* Big headline behind the balls */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center"
+        initial={{ opacity: 0, scale: 0.85 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <h2 className="text-center text-5xl font-black leading-[0.9] text-white/[0.07] sm:text-7xl md:text-[10rem] lg:text-[14rem]">
+          XPRESS
+          <br />
+          SKINS
+        </h2>
+      </motion.div>
 
-          <div className="relative mb-3 flex items-center justify-center overflow-hidden">
-            {topChars.map((char, i) => (
-              <motion.span
-                key={`top-${i}`}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block text-3xl font-black tracking-[0.35em] text-white sm:text-5xl md:text-7xl"
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </div>
+      {/* Physics canvas */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: "none" }}
+      />
 
-          <div className="relative flex items-center justify-center overflow-hidden">
-            {bottomChars.map((char, i) => (
-              <motion.span
-                key={`bot-${i}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + i * 0.03, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block text-xs tracking-[0.4em] text-white/50 sm:text-sm md:text-base"
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </div>
+      {/* "Enter Site" button — scrolls to top */}
+      <motion.button
+        onClick={enterSite}
+        className="absolute left-1/2 top-8 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-white/80 transition-colors hover:text-white"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 1.5, duration: 0.6 }}
+      >
+        <motion.div
+          animate={{ y: [0, -6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm"
+        >
+          <ChevronUp size={24} />
+        </motion.div>
+        <span className="text-[10px] font-bold uppercase tracking-[0.4em]">
+          Enter Site
+        </span>
+      </motion.button>
 
-          <motion.div
-            className="mt-6 h-[2px] rounded-full bg-gradient-to-r from-accent via-accent2 to-accent3"
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 120, opacity: 1 }}
-            transition={{ delay: 2.0, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          />
-          <motion.p
-            className="mt-4 text-[10px] uppercase tracking-[0.5em] text-white/30"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.2, duration: 0.3 }}
-          >
-            Houston, TX
-          </motion.p>
-        </div>
-      )}
-
-      {/* ── Phase 2: Physics balls ── */}
-      {(phase === "balls" || phase === "exit") && (
-        <div ref={sceneRef} className="relative h-full w-full">
-          {/* Big headline behind the balls */}
-          <motion.h2
-            className="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-5xl font-black leading-none text-white sm:text-7xl md:text-[9rem]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            XPRESS
-            <br />
-            SKINS
-          </motion.h2>
-
-          <canvas
-            ref={canvasRef}
-            className="absolute inset-0 h-full w-full cursor-grab active:cursor-grabbing"
-          />
-        </div>
-      )}
-    </motion.div>
+      {/* Bottom tagline */}
+      <div className="absolute bottom-6 left-0 right-0 z-20 text-center">
+        <p className="text-[10px] uppercase tracking-[0.5em] text-white/25">
+          Grab &amp; throw the balls &bull; Houston, TX
+        </p>
+      </div>
+    </section>
   );
 }
