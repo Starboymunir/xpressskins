@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="793.33331"
+   height="1122.6667"
+   viewBox="0 0 793.33331 1122.6667"
+   sodipodi:docname="3m-temp.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="793.33331"
+       height="1122.6667"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <path
+       id="path1"
+       d="m 1321.64,7131.96 h 450.35 c 1,28.17 5.19,53.85 12.88,76.76 27.65,82.31 120.86,126.05 211.22,128.66 102.41,2.99 201.14,-46.84 196.56,-153.11 1.02,-79.82 -58.13,-114.91 -152.42,-124.54 -71.04,0 -142.14,0.11 -213.22,0.11 v -313.07 h 159.66 c 33.88,-3.79 66.6,-15.29 94.56,-32.54 152.86,-94.23 79.98,-293.74 -75.59,-314.53 -96.45,-12.89 -205.04,20.16 -249.1,122.37 -22.69,52.68 -29.68,115.25 -31.4,167.72 h -466.26 c 0,-433.64 246.14,-675.44 703,-674.35 278.12,3.79 555.98,99.64 665.61,306.4 1.76,3.29 3.45,6.59 5.13,9.89 v -277.48 h 474.49 V 7057.5 l 251.45,-1003.25 h 405.79 l 258.02,1002.69 -4.15,-1002.69 h 467.34 v 1614.21 h -696.21 l -224.94,-937.96 -233.2,937.96 h -698.59 v -328.01 c -81.23,270.67 -373.46,355.46 -626.76,358.6 -456.86,1 -662.52,-195.63 -684.22,-567.09 z m 1310.98,-393.19 c -35.66,59.97 -87.83,116.33 -161.08,167.36 -6.89,5.45 -7.55,8.33 0.09,12.87 48.35,29.07 90.27,59.75 121.54,101.39 17.07,22.71 30.05,47.55 39.45,73.71 v -355.33"
+       style="fill:#ed1c24;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,1122.6667)" />
+  </g>
+</svg>

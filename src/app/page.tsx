@@ -2,17 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { driveImg, driveVideo, portfolioImages, allImages, videoAssets } from "@/data/assets";
+import { driveImg, driveVideo, portfolioImages, videoAssets } from "@/data/assets";
 import {
   ArrowRight,
-  Star,
   Zap,
   ShoppingBag,
-  ChevronLeft,
-  ChevronRight,
   Truck,
   Shield,
   Palette,
@@ -21,45 +17,13 @@ import {
   Play,
 } from "lucide-react";
 
-/* ─── HERO SLIDES — best images for full-width hero ─── */
-const heroSlides = [
-  { id: portfolioImages[0].id, heading: "Custom Itasha Wraps", sub: "Designed by artists. Printed on premium Avery vinyl. Shipped nationwide.", cta: "Shop Now", href: "/pricing" },
-  { id: portfolioImages[2].id, heading: "Your Anime, Your Ride", sub: "Full body wraps, partial wraps, hoods — your vision, our craftsmanship.", cta: "Browse Designs", href: "/portfolio" },
-  { id: portfolioImages[5].id, heading: "Professional Installation", sub: "Installed at our Houston studio or shipped to any installer in the US.", cta: "Get a Quote", href: "/pricing" },
-  { id: portfolioImages[3].id, heading: "Premium Materials Only", sub: "Avery Dennison & 3M vinyl with high-gloss UV lamination. Built to last.", cta: "Learn More", href: "/how-it-works" },
-];
-
-/* ─── PRODUCT CATEGORIES (store-like) ─── */
-const collections = [
-  { name: "Itasha / Anime Wraps", image: portfolioImages[0].id, href: "/pricing", count: "20+ Designs" },
-  { name: "Full Body Wraps", image: portfolioImages[4].id, href: "/pricing", count: "Custom" },
-  { name: "Partial Wraps", image: portfolioImages[8].id, href: "/pricing", count: "Hoods, Trunks, Panels" },
-  { name: "Color Change Wraps", image: portfolioImages[12].id, href: "/pricing", count: "Coming Soon" },
-];
-
-/* ─── FEATURED PRODUCTS (from portfolio) ─── */
-const featuredProducts = portfolioImages.slice(0, 8).map((img, i) => ({
-  ...img,
-  title: [
-    "Kia Soul Itasha",
-    "Cyberpunk Lucy GR Corolla",
-    "Angel Tacoma Persona 5",
-    "Hellsing Tacoma Itasha",
-    "Azur Lane Full Wrap",
-    "Benny Corolla Itasha",
-    "Ghost Data Itasha",
-    "Bunsama Danmachi FRS",
-  ][i],
-  price: ["$2,800", "$3,200", "$3,500", "$3,100", "$2,900", "$2,600", "$3,400", "$2,750"][i],
-}));
-
 export default function Home() {
   return (
     <>
       {/* ══════════════════════════════════════════════
-          FULL-WIDTH HERO CAROUSEL
+          VIDEO HERO
          ══════════════════════════════════════════════ */}
-      <FullWidthHero />
+      <VideoHero />
 
       {/* ══════════════════════════════════════════════
           MARQUEE STRIP
@@ -89,116 +53,6 @@ export default function Home() {
               ))}
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          SHOP BY COLLECTION
-         ══════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-20 md:py-28">
-        <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-          <AnimatedSection className="mb-10 flex items-end justify-between">
-            <div>
-              <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.3em] text-accent">
-                Collections
-              </span>
-              <h2 className="text-3xl font-black text-white md:text-4xl">
-                Shop by Category
-              </h2>
-            </div>
-            <Link
-              href="/pricing"
-              className="hidden items-center gap-2 text-sm font-semibold text-accent transition-all hover:gap-3 md:flex"
-            >
-              View All <ArrowRight size={14} />
-            </Link>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">
-            {collections.map((col, i) => (
-              <AnimatedSection key={col.name} delay={i * 0.08}>
-                <Link href={col.href} className="group block">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/[0.04] bg-surface-1">
-                    <Image
-                      src={driveImg(col.image, 600)}
-                      alt={col.name}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-accent">
-                        {col.count}
-                      </p>
-                      <h3 className="mt-1 text-base font-bold text-white md:text-lg">
-                        {col.name}
-                      </h3>
-                      <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-white/70 transition-colors group-hover:text-accent">
-                        Shop Now <ArrowRight size={12} />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          FEATURED PRODUCTS
-         ══════════════════════════════════════════════ */}
-      <section className="section-line relative overflow-hidden py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(168,85,247,0.04),transparent_70%)]" />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-          <AnimatedSection className="mb-10 flex items-end justify-between">
-            <div>
-              <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.3em] text-accent2">
-                Featured
-              </span>
-              <h2 className="text-3xl font-black text-white md:text-4xl">
-                Our Latest Builds
-              </h2>
-            </div>
-            <Link
-              href="/portfolio"
-              className="hidden items-center gap-2 text-sm font-semibold text-accent2 transition-all hover:gap-3 md:flex"
-            >
-              View All <ArrowRight size={14} />
-            </Link>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">
-            {featuredProducts.map((product, i) => (
-              <AnimatedSection key={product.id} delay={i * 0.06}>
-                <Link href="/pricing" className="group block">
-                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/[0.04] bg-surface-1">
-                    <Image
-                      src={driveImg(product.id, 600)}
-                      alt={product.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                  </div>
-                  <div className="mt-3 px-0.5">
-                    <h3 className="text-sm font-semibold text-white transition-colors group-hover:text-accent">
-                      {product.title}
-                    </h3>
-                    <div className="mt-1 flex items-center justify-between">
-                      <span className="text-xs text-muted">{product.category}</span>
-                      <span className="text-sm font-bold text-accent">
-                        {product.price}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -240,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          MORE GALLERY — scrolling image row
+          GALLERY — scrolling image row
          ══════════════════════════════════════════════ */}
       <section className="relative overflow-hidden py-20 md:py-28">
         <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
@@ -280,113 +134,6 @@ export default function Home() {
             See all {portfolioImages.length}+ builds
             <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
           </Link>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          VIDEO SHOWCASE — Behind the Scenes
-         ══════════════════════════════════════════════ */}
-      <section className="section-line relative overflow-hidden py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(255,26,108,0.04),transparent_70%)]" />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-          <AnimatedSection className="mb-10 flex items-end justify-between">
-            <div>
-              <span className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-accent">
-                <Play size={12} className="fill-accent" /> Behind the Scenes
-              </span>
-              <h2 className="text-3xl font-black text-white md:text-4xl">
-                Watch Our Builds Come to Life
-              </h2>
-              <p className="mt-3 max-w-lg text-sm text-muted">
-                From concept to completion — real footage from our Houston studio.
-              </p>
-            </div>
-            <Link
-              href="/portfolio"
-              className="hidden items-center gap-2 text-sm font-semibold text-accent transition-all hover:gap-3 md:flex"
-            >
-              See All <ArrowRight size={14} />
-            </Link>
-          </AnimatedSection>
-
-          {/* Hero video — large */}
-          <AnimatedSection className="mb-4">
-            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/[0.06] bg-surface-1">
-              <iframe
-                src={driveVideo(videoAssets[0].id)}
-                title={videoAssets[0].title}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="h-full w-full border-0"
-              />
-              <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-5">
-                <span className="text-xs font-bold uppercase tracking-wider text-accent">{videoAssets[0].category}</span>
-                <h3 className="mt-1 text-lg font-bold text-white">{videoAssets[0].title}</h3>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Video grid — 2x3 on desktop */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
-            {videoAssets.slice(1, 7).map((video, i) => (
-              <AnimatedSection key={video.id} delay={i * 0.08}>
-                <div className="group relative aspect-video overflow-hidden rounded-2xl border border-white/[0.06] bg-surface-1 transition-all hover:border-accent/20">
-                  <iframe
-                    src={driveVideo(video.id)}
-                    title={video.title}
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    className="h-full w-full border-0"
-                  />
-                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-accent/80">{video.category}</span>
-                    <h3 className="mt-0.5 text-sm font-bold text-white">{video.title}</h3>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          IMAGE MOSAIC — visual impact grid
-         ══════════════════════════════════════════════ */}
-      <section className="section-line relative overflow-hidden py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-background" />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-          <AnimatedSection className="mb-10">
-            <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[0.3em] text-accent2">
-              More Work
-            </span>
-            <h2 className="text-3xl font-black text-white md:text-4xl">
-              From Studio to Street
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            <AnimatedSection className="row-span-2">
-              <div className="relative h-full min-h-[320px] overflow-hidden rounded-2xl border border-white/[0.04] bg-surface-1 md:min-h-[500px]">
-                <Image src={driveImg(allImages[34].id)} alt={allImages[34].alt} fill className="object-cover" />
-              </div>
-            </AnimatedSection>
-            {allImages.slice(35, 38).map((img, i) => (
-              <AnimatedSection key={img.id} delay={i * 0.08}>
-                <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/[0.04] bg-surface-1">
-                  <Image src={driveImg(img.id)} alt={img.alt} fill className="object-cover" />
-                </div>
-              </AnimatedSection>
-            ))}
-            {allImages.slice(38, 41).map((img, i) => (
-              <AnimatedSection key={img.id} delay={(i + 3) * 0.08}>
-                <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/[0.04] bg-surface-1">
-                  <Image src={driveImg(img.id)} alt={img.alt} fill className="object-cover" />
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -488,6 +235,73 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════
+          VIDEO SHOWCASE — Behind the Scenes (second-to-last)
+         ══════════════════════════════════════════════ */}
+      <section className="section-line relative overflow-hidden py-20 md:py-28">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(255,26,108,0.04),transparent_70%)]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+          <AnimatedSection className="mb-10 flex items-end justify-between">
+            <div>
+              <span className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-accent">
+                <Play size={12} className="fill-accent" /> Behind the Scenes
+              </span>
+              <h2 className="text-3xl font-black text-white md:text-4xl">
+                Watch Our Builds Come to Life
+              </h2>
+              <p className="mt-3 max-w-lg text-sm text-muted">
+                From concept to completion — real footage from our Houston studio.
+              </p>
+            </div>
+            <Link
+              href="/portfolio"
+              className="hidden items-center gap-2 text-sm font-semibold text-accent transition-all hover:gap-3 md:flex"
+            >
+              See All <ArrowRight size={14} />
+            </Link>
+          </AnimatedSection>
+
+          {/* Hero video — large */}
+          <AnimatedSection className="mb-4">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/[0.06] bg-surface-1">
+              <iframe
+                src={driveVideo(videoAssets[0].id)}
+                title={videoAssets[0].title}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="h-full w-full border-0"
+              />
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-5">
+                <span className="text-xs font-bold uppercase tracking-wider text-accent">{videoAssets[0].category}</span>
+                <h3 className="mt-1 text-lg font-bold text-white">{videoAssets[0].title}</h3>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Video grid — 2x3 on desktop */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
+            {videoAssets.slice(1, 7).map((video, i) => (
+              <AnimatedSection key={video.id} delay={i * 0.08}>
+                <div className="group relative aspect-video overflow-hidden rounded-2xl border border-white/[0.06] bg-surface-1 transition-all hover:border-accent/20">
+                  <iframe
+                    src={driveVideo(video.id)}
+                    title={video.title}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    className="h-full w-full border-0"
+                  />
+                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-accent/80">{video.category}</span>
+                    <h3 className="mt-0.5 text-sm font-bold text-white">{video.title}</h3>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
           FINAL CTA
          ══════════════════════════════════════════════ */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
@@ -524,41 +338,21 @@ export default function Home() {
   );
 }
 
-/* ─── FULL-WIDTH HERO CAROUSEL ─── */
-function FullWidthHero() {
-  const [idx, setIdx] = useState(0);
-  const next = useCallback(() => setIdx((p) => (p + 1) % heroSlides.length), []);
-  const prev = () => setIdx((p) => (p - 1 + heroSlides.length) % heroSlides.length);
-
-  // Auto-advance
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
-    return () => clearInterval(timer);
-  }, [next]);
-
-  const slide = heroSlides[idx];
-
+/* ─── VIDEO HERO — single slide with video background ─── */
+function VideoHero() {
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
-      {/* Background images */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={slide.id}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={driveImg(slide.id, 1920)}
-            alt={slide.heading}
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
-      </AnimatePresence>
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+        poster={driveImg(portfolioImages[0].id, 1920)}
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
@@ -567,76 +361,36 @@ function FullWidthHero() {
       {/* Content */}
       <div className="absolute inset-0 flex items-end pb-24 md:items-center md:pb-0">
         <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={slide.heading}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-2xl"
-            >
-              {/* Logo watermark */}
-              <Image
-                src="/New Xpressskins Logo cut only2 Large.png"
-                alt=""
-                width={120}
-                height={36}
-                className="mb-6 h-8 w-auto brightness-0 invert opacity-80"
-              />
-
-              <h1 className="mb-4 text-4xl font-black leading-tight text-white md:text-6xl lg:text-7xl">
-                {slide.heading}
-              </h1>
-              <p className="mb-8 max-w-lg text-base text-white/80 md:text-lg">
-                {slide.sub}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href={slide.href} className="btn-primary !px-8 !py-3.5 !text-sm">
-                  <ShoppingBag size={16} />
-                  <span>{slide.cta}</span>
-                  <ArrowRight size={15} />
-                </Link>
-                <Link href="/portfolio" className="btn-ghost !px-6 !py-3.5 !text-sm">
-                  View Portfolio
-                </Link>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl"
+          >
+            <h1 className="mb-4 text-4xl font-black leading-tight text-white md:text-6xl lg:text-7xl">
+              Custom Itasha Wraps
+            </h1>
+            <p className="mb-8 max-w-lg text-base text-white/80 md:text-lg">
+              Designed by artists. Printed on premium Avery vinyl. Shipped nationwide.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/pricing" className="btn-primary !px-8 !py-3.5 !text-sm">
+                <ShoppingBag size={16} />
+                <span>Shop Now</span>
+                <ArrowRight size={15} />
+              </Link>
+              <Link href="/portfolio" className="btn-ghost !px-6 !py-3.5 !text-sm">
+                View Portfolio
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Navigation arrows */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-accent/60 md:left-8"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-accent/60 md:right-8"
-      >
-        <ChevronRight size={24} />
-      </button>
-
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-        {heroSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIdx(i)}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              i === idx ? "w-10 bg-accent" : "w-4 bg-white/30"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Bottom stats bar */}
+      {/* Bottom stats bar with brand logos */}
       <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/10 bg-black/40 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
-          <div className="flex gap-6 md:gap-10">
+          <div className="flex items-center gap-6 md:gap-10">
             {[
               { val: "500+", lab: "Wraps Completed" },
               { val: "4.9★", lab: "Average Rating" },
@@ -647,10 +401,24 @@ function FullWidthHero() {
                 <div className="text-[9px] uppercase tracking-wider text-white/50">{s.lab}</div>
               </div>
             ))}
-          </div>
-          <div className="hidden items-center gap-2 text-xs text-white/60 md:flex">
-            <Star size={12} className="fill-amber-400 text-amber-400" />
-            <span>Houston&apos;s #1 Itasha Studio</span>
+
+            {/* Brand logos next to stats */}
+            <div className="hidden items-center gap-4 border-l border-white/10 pl-6 md:flex">
+              {[
+                { src: "/brands/3m-logo.svg", alt: "3M", w: 40 },
+                { src: "/brands/avery-dennison-logo.svg", alt: "Avery Dennison", w: 80 },
+                { src: "/brands/arlon-logo.svg", alt: "Arlon", w: 60 },
+              ].map((brand) => (
+                <Image
+                  key={brand.alt}
+                  src={brand.src}
+                  alt={brand.alt}
+                  width={brand.w}
+                  height={24}
+                  className="h-5 w-auto brightness-0 invert opacity-60 transition-opacity hover:opacity-100"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
