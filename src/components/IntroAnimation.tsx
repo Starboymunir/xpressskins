@@ -243,7 +243,7 @@ export default function PhysicsBallsSection() {
       {/* "Enter Site" button — big, themed, scrolls to top */}
       <motion.button
         onClick={enterSite}
-        className="absolute left-1/2 top-6 z-30 flex -translate-x-1/2 flex-col items-center gap-3 md:top-10"
+        className="absolute right-8 top-1/2 z-30 flex -translate-y-1/2 flex-col items-center gap-3 md:right-12"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
