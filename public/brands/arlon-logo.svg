@@ -4,10 +4,10 @@
 <svg
    version="1.1"
    id="svg1"
-   width="793.33331"
-   height="1122.6667"
-   viewBox="0 0 793.33331 1122.6667"
-   sodipodi:docname="arlon-temp.pdf"
+   width="240.01866"
+   height="233.65332"
+   viewBox="0 0 240.01866 233.65331"
+   sodipodi:docname="arlon-logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +77,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1">
     <inkscape:page
-       x="0"
-       y="0"
+       x="-287.99066"
+       y="-477.84003"
        inkscape:label="1"
        id="page1"
        width="793.33331"
@@ -89,7 +89,8 @@
   <g
      id="g1"
      inkscape:groupmode="layer"
-     inkscape:label="1">
+     inkscape:label="1"
+     transform="translate(-287.99066,-477.84005)">
     <path
        id="path1"
        d="m 2558,4836.05 c 212.68,0 386.23,-165.13 396.41,-372.6 l -4.56,0.05 c -86.03,0 -166.37,-26.27 -232.8,-71.37 l -113.57,261.01 h -77.04 l -160.24,-368.3 h 86.16 l 33.93,81.43 h 155.21 l 11.58,-27.77 c -70.68,-72.66 -114.4,-171.4 -114.4,-281.05 l 0.05,-4.59 c -210.29,9.93 -377.7,181.31 -377.7,391.34 0,216.41 177.72,391.85 396.97,391.85 z m 396.88,-386.81 0.01,-0.56 -401.45,-396.28 -0.5,0.01 -0.05,5.04 c 0,103.04 40.28,196.79 106.16,266.73 v 0.01 l 0.01,-0.03 c 19.2,20.38 40.57,38.75 63.75,54.73 l -0.01,0.02 v 0.01 c 64.34,44.36 142.61,70.38 227.05,70.38 z m -343.65,-9.79 -47.33,112.99 -47.32,-112.99 z"

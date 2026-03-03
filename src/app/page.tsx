@@ -403,19 +403,19 @@ function VideoHero() {
             ))}
 
             {/* Brand logos next to stats */}
-            <div className="hidden items-center gap-4 border-l border-white/10 pl-6 md:flex">
+            <div className="hidden items-center gap-6 border-l border-white/10 pl-6 md:flex">
               {[
-                { src: "/brands/3m-logo.svg", alt: "3M", w: 40 },
-                { src: "/brands/avery-dennison-logo.svg", alt: "Avery Dennison", w: 80 },
-                { src: "/brands/arlon-logo.svg", alt: "Arlon", w: 60 },
+                { src: "/brands/3m-logo.svg", alt: "3M", w: 80 },
+                { src: "/brands/avery-dennison-logo.svg", alt: "Avery Dennison", w: 120 },
+                { src: "/brands/arlon-logo.svg", alt: "Arlon", w: 100 },
               ].map((brand) => (
                 <Image
                   key={brand.alt}
                   src={brand.src}
                   alt={brand.alt}
                   width={brand.w}
-                  height={24}
-                  className="h-5 w-auto brightness-0 invert opacity-60 transition-opacity hover:opacity-100"
+                  height={40}
+                  className="h-8 w-auto brightness-0 invert opacity-70 transition-opacity hover:opacity-100"
                 />
               ))}
             </div>

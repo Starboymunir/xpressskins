@@ -4,10 +4,10 @@
 <svg
    version="1.1"
    id="svg1"
-   width="793.33331"
-   height="1122.6667"
-   viewBox="0 0 793.33331 1122.6667"
-   sodipodi:docname="avery-temp.pdf"
+   width="257.008"
+   height="257.008"
+   viewBox="0 0 257.00799 257.00798"
+   sodipodi:docname="avery-dennison-logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +24,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1">
     <inkscape:page
-       x="0"
-       y="0"
+       x="-268.34665"
+       y="-432.90268"
        inkscape:label="1"
        id="page1"
        width="793.33331"
@@ -36,7 +36,8 @@
   <g
      id="g1"
      inkscape:groupmode="layer"
-     inkscape:label="1">
+     inkscape:label="1"
+     transform="translate(-268.34666,-432.90272)">
     <path
        id="path1"
        d="M 2012.6,5173.23 H 3940.16 V 3245.67 H 2012.6 v 1927.56"
