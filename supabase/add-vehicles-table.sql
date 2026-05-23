@@ -19,6 +19,7 @@ CREATE INDEX IF NOT EXISTS idx_vehicles_model ON vehicles(make, model);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_vehicles_unique ON vehicles(make, model, year, trim);
 
 -- Updated-at trigger
+DROP TRIGGER IF EXISTS set_updated_at_vehicles ON vehicles;
 CREATE TRIGGER set_updated_at_vehicles
   BEFORE UPDATE ON vehicles
   FOR EACH ROW EXECUTE FUNCTION trigger_set_updated_at();
@@ -26,13 +27,16 @@ CREATE TRIGGER set_updated_at_vehicles
 ALTER TABLE vehicles ENABLE ROW LEVEL SECURITY;
 
 -- Public read access (pricing page needs it)
+DROP POLICY IF EXISTS "Public can read vehicles" ON vehicles;
 CREATE POLICY "Public can read vehicles" ON vehicles
   FOR SELECT USING (true);
 
 -- Admin full access
+DROP POLICY IF EXISTS "Admin full access vehicles" ON vehicles;
 CREATE POLICY "Admin full access vehicles" ON vehicles
   FOR ALL USING (auth.role() = 'authenticated');
 
 -- Service role full access (for upload API)
+DROP POLICY IF EXISTS "Service can manage vehicles" ON vehicles;
 CREATE POLICY "Service can manage vehicles" ON vehicles
   FOR ALL USING (true);

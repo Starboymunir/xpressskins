@@ -1,0 +1,777 @@
+"use client";
+
+import { useState, useMemo, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import {
+  panelDefinitions,
+  panelPresets,
+  getPanelSummary,
+  designTiers,
+  finishOptions,
+  installOptions,
+  bodyTypeCategories,
+  calculatePrice,
+  vehicleDatabase,
+} from "@/data/vehicles";
+import type { VehicleEntry } from "@/data/vehicles";
+import {
+  Car,
+  Paintbrush,
+  Layers,
+  Sparkles,
+  Wrench,
+  ArrowRight,
+  ArrowLeft,
+  Check,
+  Phone,
+  Loader2,
+} from "lucide-react";
+import Link from "next/link";
+
+const steps = [
+  { id: 1, label: "Vehicle", icon: Car },
+  { id: 2, label: "Coverage", icon: Layers },
+  { id: 3, label: "Design", icon: Paintbrush },
+  { id: 4, label: "Finish", icon: Sparkles },
+  { id: 5, label: "Install", icon: Wrench },
+  { id: 6, label: "Quote", icon: Check },
+];
+
+export default function PricingPage() {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [selectedMake, setSelectedMake] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
+  const [selectedVariant, setSelectedVariant] = useState<VehicleEntry | null>(null);
+  const [selectedSqft, setSelectedSqft] = useState(0);
+  const [vehicleNotListed, setVehicleNotListed] = useState(false);
+  const [selectedBodyType, setSelectedBodyType] = useState("");
+  const [customVehicleName, setCustomVehicleName] = useState("");
+  const [selectedPanels, setSelectedPanels] = useState<string[]>([]);
+  const [selectedDesign, setSelectedDesign] = useState("");
+  const [selectedFinish, setSelectedFinish] = useState("gloss");
+  const [selectedInstall, setSelectedInstall] = useState("");
+  const [checkingOut, setCheckingOut] = useState(false);
+
+  // Try loading dynamic vehicles from Supabase (admin-uploaded),
+  // fall back to static vehicleDatabase if API fails or returns empty
+  const [dynamicVehicles, setDynamicVehicles] = useState<VehicleEntry[] | null>(null);
+
+  useEffect(() => {
+    fetch("/api/vehicles")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.vehicles && data.vehicles.length > 0) {
+          setDynamicVehicles(
+            data.vehicles.map((v: { make: string; model: string; year: number; trim: string; total_sqft: number }) => ({
+              make: v.make,
+              model: v.model,
+              year: v.year,
+              trim: v.trim,
+              totalSqft: Number(v.total_sqft),
+            }))
+          );
+        }
+      })
+      .catch(() => {
+        // Use static fallback
+      });
+  }, []);
+
+  // Use dynamic data if available, else static
+  const db = dynamicVehicles ?? vehicleDatabase;
+
+  const allMakes = useMemo(() => {
+    const makes = new Set<string>();
+    db.forEach((v) => makes.add(v.make));
+    return Array.from(makes).sort();
+  }, [db]);
+
+  const modelsForMake = useMemo(() => {
+    if (!selectedMake) return [];
+    const models = new Set<string>();
+    db.filter((v) => v.make === selectedMake).forEach((v) => models.add(v.model));
+    return Array.from(models).sort();
+  }, [db, selectedMake]);
+
+  const variantsForModel = useMemo(() => {
+    if (!selectedMake || !selectedModel) return [];
+    return db
+      .filter((v) => v.make === selectedMake && v.model === selectedModel)
+      .sort((a, b) => b.year - a.year);
+  }, [db, selectedMake, selectedModel]);
+
+  const panelSummary = getPanelSummary(selectedPanels);
+  const design = designTiers.find((d) => d.id === selectedDesign);
+  const finish = finishOptions.find((f) => f.id === selectedFinish);
+  const install = installOptions.find((i) => i.id === selectedInstall);
+
+  const quote = useMemo(() => {
+    if (!selectedSqft || selectedPanels.length === 0 || !design || !finish || !install) return null;
+    return calculatePrice(
+      selectedSqft,
+      selectedPanels,
+      design.pricePerSqft,
+      finish.priceAdd,
+      install.price
+    );
+  }, [selectedSqft, selectedPanels, design, finish, install]);
+
+  const canProceed = () => {
+    switch (currentStep) {
+      case 1: return vehicleNotListed ? (selectedBodyType !== "" && selectedSqft > 0) : (selectedMake !== "" && selectedModel !== "" && selectedSqft > 0);
+      case 2: return selectedPanels.length > 0;
+      case 3: return !!selectedDesign;
+      case 4: return !!selectedFinish;
+      case 5: return !!selectedInstall;
+      default: return true;
+    }
+  };
+
+  const next = () => {
+    if (canProceed() && currentStep < 6) setCurrentStep(currentStep + 1);
+  };
+
+  const prev = () => {
+    if (currentStep > 1) setCurrentStep(currentStep - 1);
+  };
+
+  return (
+    <>
+      {/* Header */}
+      <section className="relative pt-32 pb-12 overflow-hidden">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/[0.05] rounded-full blur-[120px]" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
+              Build Your{" "}
+              <span className="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent">
+                Itasha
+              </span>
+            </h1>
+            <p className="text-muted-light text-lg max-w-xl mx-auto">
+              Get an instant quote in under 2 minutes. No humans needed — but we&apos;re
+              always here if you want to talk.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Calculator */}
+      <section className="relative pb-32">
+        <div className="absolute inset-0 bg-background" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+          {/* Progress bar */}
+          <div className="mb-12">
+            <div className="flex items-center justify-between mb-4">
+              {steps.map((step, i) => (
+                <div key={step.id} className="flex items-center">
+                  <button
+                    onClick={() => {
+                      if (step.id <= currentStep) setCurrentStep(step.id);
+                    }}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold transition-all ${
+                      step.id === currentStep
+                        ? "bg-accent text-white"
+                        : step.id < currentStep
+                        ? "bg-accent/20 text-accent"
+                        : "bg-white/5 text-muted"
+                    }`}
+                  >
+                    <step.icon size={14} />
+                    <span className="hidden sm:inline">{step.label}</span>
+                  </button>
+                  {i < steps.length - 1 && (
+                    <div
+                      className={`hidden sm:block w-8 lg:w-16 h-px mx-2 ${
+                        step.id < currentStep ? "bg-accent/40" : "bg-white/10"
+                      }`}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Step content */}
+          <div className="min-h-[400px] p-8 rounded-3xl bg-surface-1/50 border border-white/5 backdrop-blur">
+            <AnimatePresence mode="wait">
+              {/* Step 1: Vehicle */}
+              {currentStep === 1 && (
+                <motion.div
+                  key="step1"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h2 className="text-2xl font-bold text-white mb-2">Select Your Vehicle</h2>
+                  <p className="text-muted-light text-sm mb-8">
+                    {vehicleNotListed
+                      ? "Select your vehicle\u2019s body type for an estimated wrap area."
+                      : "Choose your make, model, and year so we can calculate the exact wrap area."}
+                  </p>
+
+                  {/* Toggle: listed vs unlisted */}
+                  <button
+                    onClick={() => {
+                      setVehicleNotListed(!vehicleNotListed);
+                      setSelectedMake(""); setSelectedModel(""); setSelectedVariant(null);
+                      setSelectedBodyType(""); setSelectedSqft(0); setCustomVehicleName("");
+                    }}
+                    className="mb-6 text-sm font-medium text-accent hover:text-accent2 transition-colors underline underline-offset-4"
+                  >
+                    {vehicleNotListed ? "\u2190 Back to vehicle lookup" : "My vehicle isn\u2019t listed"}
+                  </button>
+
+                  {!vehicleNotListed ? (
+                    /* ── Database lookup mode ── */
+                    <>
+                      <div className="grid md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                          <label className="block text-sm font-medium text-muted-light mb-2">Make</label>
+                          <select
+                            value={selectedMake}
+                            onChange={(e) => {
+                              setSelectedMake(e.target.value);
+                              setSelectedModel(""); setSelectedVariant(null); setSelectedSqft(0);
+                            }}
+                            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
+                          >
+                            <option value="">Select make...</option>
+                            {allMakes.map((make) => (
+                              <option key={make} value={make}>{make}</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-muted-light mb-2">Model</label>
+                          <select
+                            value={selectedModel}
+                            onChange={(e) => {
+                              setSelectedModel(e.target.value);
+                              setSelectedVariant(null); setSelectedSqft(0);
+                            }}
+                            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
+                            disabled={!selectedMake}
+                          >
+                            <option value="">Select model...</option>
+                            {modelsForMake.map((model) => (
+                              <option key={model} value={model}>{model}</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-muted-light mb-2">Year / Trim</label>
+                          <select
+                            value={selectedVariant ? `${selectedVariant.year}|${selectedVariant.trim}` : ""}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              if (!val) { setSelectedVariant(null); setSelectedSqft(0); return; }
+                              const [year, ...trimParts] = val.split("|");
+                              const trim = trimParts.join("|");
+                              const v = variantsForModel.find(
+                                (v) => v.year === Number(year) && v.trim === trim
+                              );
+                              if (v) { setSelectedVariant(v); setSelectedSqft(v.totalSqft); }
+                            }}
+                            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white focus:border-accent focus:outline-none transition-colors"
+                            disabled={!selectedModel}
+                          >
+                            <option value="">Select year...</option>
+                            {variantsForModel.map((v) => (
+                              <option key={`${v.year}-${v.trim}`} value={`${v.year}|${v.trim}`}>
+                                {v.year} {v.trim} \u2014 {v.totalSqft} sqft
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      {selectedSqft > 0 && selectedVariant && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="p-4 rounded-xl bg-accent/[0.05] border border-accent/20 text-sm"
+                        >
+                          <span className="text-accent font-semibold">
+                            {selectedVariant.year} {selectedMake} {selectedModel} {selectedVariant.trim}
+                          </span>
+                          <span className="text-muted-light"> \u2014 Total wrap area: </span>
+                          <span className="text-white font-bold">{selectedSqft} sqft</span>
+                        </motion.div>
+                      )}
+                    </>
+                  ) : (
+                    /* ── Body-type fallback mode ── */
+                    <>
+                      <div className="mb-6">
+                        <label className="block text-sm font-medium text-muted-light mb-2">
+                          Vehicle Name <span className="text-muted">(optional)</span>
+                        </label>
+                        <input
+                          type="text"
+                          value={customVehicleName}
+                          onChange={(e) => setCustomVehicleName(e.target.value)}
+                          placeholder="e.g. 2024 Kia EV6 GT"
+                          className="w-full md:w-1/2 px-4 py-3 rounded-xl bg-surface-2 border border-white/10 text-white placeholder:text-muted focus:border-accent focus:outline-none transition-colors"
+                        />
+                      </div>
+
+                      <p className="text-sm text-muted-light mb-3">Select body type:</p>
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+                        {bodyTypeCategories.map((cat) => (
+                          <button
+                            key={cat.id}
+                            onClick={() => {
+                              setSelectedBodyType(cat.id);
+                              setSelectedSqft(cat.avgSqft);
+                            }}
+                            className={`p-4 rounded-2xl border text-left transition-all ${
+                              selectedBodyType === cat.id
+                                ? "border-accent bg-accent/[0.05] shadow-[0_0_30px_rgba(255,26,108,0.06)]"
+                                : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                            }`}
+                          >
+                            <div className="flex items-center justify-between mb-1">
+                              <span className="font-bold text-white text-sm">{cat.label}</span>
+                              <span className="text-xs text-accent font-semibold">~{cat.avgSqft} sqft</span>
+                            </div>
+                            <p className="text-muted text-xs">{cat.description}</p>
+                          </button>
+                        ))}
+                      </div>
+
+                      {selectedSqft > 0 && selectedBodyType && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="p-4 rounded-xl bg-accent2/[0.06] border border-accent2/20 text-sm"
+                        >
+                          <span className="text-accent2 font-semibold">
+                            {customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label}
+                          </span>
+                          <span className="text-muted-light"> \u2014 Estimated wrap area: </span>
+                          <span className="text-white font-bold">~{selectedSqft} sqft</span>
+                          <span className="text-muted text-xs ml-2">(average for this body type)</span>
+                        </motion.div>
+                      )}
+                    </>
+                  )}
+
+                  <div className="mt-6">
+                    <p className="text-muted text-xs">
+                      Need an exact quote? <Link href="/contact" className="text-accent underline">Contact us</Link> and we\u2019ll measure your vehicle.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Step 2: Panel Selection */}
+              {currentStep === 2 && (
+                <motion.div
+                  key="step2"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h2 className="text-2xl font-bold text-white mb-2">Select Panels to Wrap</h2>
+                  <p className="text-muted-light text-sm mb-6">
+                    Pick which panels of your {vehicleNotListed ? "vehicle" : `${selectedMake} ${selectedModel}`} you want wrapped.
+                  </p>
+
+                  {/* Quick presets */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {panelPresets.map((preset) => {
+                      const isActive =
+                        preset.panelIds.length === selectedPanels.length &&
+                        preset.panelIds.every((id) => selectedPanels.includes(id));
+                      return (
+                        <button
+                          key={preset.id}
+                          onClick={() => setSelectedPanels(isActive ? [] : [...preset.panelIds])}
+                          className={`px-4 py-2 rounded-full text-xs font-semibold border transition-all ${
+                            isActive
+                              ? "border-accent bg-accent/10 text-accent"
+                              : "border-white/10 bg-white/[0.02] text-muted-light hover:border-white/20 hover:text-white"
+                          }`}
+                        >
+                          {preset.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Individual panel checkboxes */}
+                  <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    {panelDefinitions.map((panel) => {
+                      const isSelected = selectedPanels.includes(panel.id);
+                      const panelSqft = Math.round(selectedSqft * panel.percentOfTotal);
+                      return (
+                        <button
+                          key={panel.id}
+                          onClick={() =>
+                            setSelectedPanels((prev) =>
+                              isSelected ? prev.filter((id) => id !== panel.id) : [...prev, panel.id]
+                            )
+                          }
+                          className={`p-4 rounded-2xl border text-left transition-all ${
+                            isSelected
+                              ? "border-accent bg-accent/[0.05] shadow-[0_0_20px_rgba(255,26,108,0.05)]"
+                              : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div
+                              className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${
+                                isSelected
+                                  ? "border-accent bg-accent"
+                                  : "border-white/20 bg-transparent"
+                              }`}
+                            >
+                              {isSelected && <Check size={12} className="text-white" />}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between">
+                                <span className="font-semibold text-white text-sm">{panel.label}</span>
+                                <span className="text-xs text-muted ml-2">~{panelSqft} sqft</span>
+                              </div>
+                              <p className="text-muted text-xs">{panel.description}</p>
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Running total */}
+                  {selectedPanels.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-xl bg-accent/[0.05] border border-accent/20 text-sm flex items-center justify-between"
+                    >
+                      <span className="text-muted-light">
+                        <span className="text-accent font-semibold">{panelSummary}</span>
+                        {" "}&mdash; {selectedPanels.length} of {panelDefinitions.length} panels
+                      </span>
+                      <span className="text-white font-bold">
+                        ~{Math.round(
+                          selectedSqft *
+                            selectedPanels.reduce(
+                              (s, id) => s + (panelDefinitions.find((p) => p.id === id)?.percentOfTotal ?? 0),
+                              0
+                            )
+                        )}{" "}
+                        sqft
+                      </span>
+                    </motion.div>
+                  )}
+                </motion.div>
+              )}
+
+              {/* Step 3: Design Tier */}
+              {currentStep === 3 && (
+                <motion.div
+                  key="step3"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h2 className="text-2xl font-bold text-white mb-2">Select Design Tier</h2>
+                  <p className="text-muted-light text-sm mb-8">
+                    Choose the level of customization for your Itasha artwork.
+                  </p>
+
+                  <div className="grid gap-4">
+                    {designTiers.map((tier) => (
+                      <button
+                        key={tier.id}
+                        onClick={() => setSelectedDesign(tier.id)}
+                        className={`p-6 rounded-2xl border text-left transition-all ${
+                          selectedDesign === tier.id
+                            ? "border-accent bg-accent/[0.05] shadow-[0_0_30px_rgba(255,26,108,0.06)]"
+                            : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-lg font-bold text-white">{tier.label}</span>
+                          <span className="text-accent font-bold">
+                            ${tier.pricePerSqft}/sqft
+                          </span>
+                        </div>
+                        <p className="text-muted-light text-sm mb-2">{tier.description}</p>
+                        <p className="text-muted text-xs">Turnaround: {tier.turnaround}</p>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Step 4: Finish */}
+              {currentStep === 4 && (
+                <motion.div
+                  key="step4"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h2 className="text-2xl font-bold text-white mb-2">Choose Finish</h2>
+                  <p className="text-muted-light text-sm mb-8">
+                    Select the lamination finish for your vinyl wrap.
+                  </p>
+
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    {finishOptions.map((opt) => (
+                      <button
+                        key={opt.id}
+                        onClick={() => setSelectedFinish(opt.id)}
+                        className={`p-6 rounded-2xl border text-center transition-all ${
+                          selectedFinish === opt.id
+                            ? "border-accent bg-accent/[0.05] shadow-[0_0_30px_rgba(255,26,108,0.06)]"
+                            : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                        }`}
+                      >
+                        <span className="text-lg font-bold text-white block mb-1">{opt.label}</span>
+                        <span className="text-muted text-sm">
+                          {opt.priceAdd === 0 ? "Included" : `+$${opt.priceAdd}/sqft`}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Step 5: Installation */}
+              {currentStep === 5 && (
+                <motion.div
+                  key="step5"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h2 className="text-2xl font-bold text-white mb-2">Installation</h2>
+                  <p className="text-muted-light text-sm mb-8">
+                    How would you like to receive your wrap?
+                  </p>
+
+                  <div className="grid gap-4">
+                    {installOptions.map((opt) => (
+                      <button
+                        key={opt.id}
+                        onClick={() => setSelectedInstall(opt.id)}
+                        className={`p-6 rounded-2xl border text-left transition-all ${
+                          selectedInstall === opt.id
+                            ? "border-accent bg-accent/[0.05] shadow-[0_0_30px_rgba(255,26,108,0.06)]"
+                            : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-white">{opt.label}</span>
+                          <span className="text-accent font-bold">
+                            {opt.price === 0 ? "Free" : `+$${opt.price}`}
+                          </span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Step 6: Quote */}
+              {currentStep === 6 && quote && (
+                <motion.div
+                  key="step6"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-black text-white mb-2">Your Instant Quote</h2>
+                    <p className="text-muted-light text-sm">
+                      Here&apos;s your estimated price for a custom Itasha wrap.
+                    </p>
+                  </div>
+
+                  {/* Summary */}
+                  <div className="max-w-lg mx-auto space-y-3 mb-8">
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Vehicle</span>
+                      <span className="text-white font-medium">
+                        {vehicleNotListed
+                          ? (customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label || "Custom") + " (est.)"
+                          : `${selectedVariant?.year} ${selectedMake} ${selectedModel} ${selectedVariant?.trim}`}
+                      </span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Panels</span>
+                      <span className="text-white font-medium">
+                        {panelSummary} ({quote.coveredSqft} sqft)
+                      </span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Design Tier</span>
+                      <span className="text-white font-medium">{design?.label}</span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Finish</span>
+                      <span className="text-white font-medium">{finish?.label}</span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Installation</span>
+                      <span className="text-white font-medium">{install?.label}</span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Wrap Cost</span>
+                      <span className="text-white font-medium">
+                        ${quote.subtotal.toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between py-3 border-b border-white/5">
+                      <span className="text-muted-light">Design Fee (refundable)</span>
+                      <span className="text-white font-medium">${quote.designFee}</span>
+                    </div>
+                    {install && install.price > 0 && (
+                      <div className="flex justify-between py-3 border-b border-white/5">
+                        <span className="text-muted-light">Installation</span>
+                        <span className="text-white font-medium">
+                          ${install.price.toLocaleString()}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Total */}
+                  <div className="max-w-lg mx-auto p-6 rounded-2xl bg-gradient-to-r from-accent/10 to-accent2/10 border border-accent/20 text-center mb-8">
+                    <p className="text-muted-light text-sm mb-1">Estimated Total</p>
+                    <p className="text-5xl font-black text-white">
+                      ${quote.total.toLocaleString()}
+                    </p>
+                    <p className="text-muted text-xs mt-2">
+                      First payment: ${Math.round(quote.total * 0.25).toLocaleString()} (25% deposit)
+                    </p>
+                  </div>
+
+                  {/* Payment breakdown */}
+                  <div className="max-w-lg mx-auto grid grid-cols-3 gap-3 mb-8">
+                    <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+                      <p className="text-accent font-bold text-lg">25%</p>
+                      <p className="text-muted text-xs">To Start Art</p>
+                      <p className="text-white text-sm font-semibold">
+                        ${Math.round(quote.total * 0.25).toLocaleString()}
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+                      <p className="text-accent2 font-bold text-lg">25%</p>
+                      <p className="text-muted text-xs">On Approval</p>
+                      <p className="text-white text-sm font-semibold">
+                        ${Math.round(quote.total * 0.25).toLocaleString()}
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+                      <p className="text-accent3 font-bold text-lg">50%</p>
+                      <p className="text-muted text-xs">Print & Ship</p>
+                      <p className="text-white text-sm font-semibold">
+                        ${Math.round(quote.total * 0.5).toLocaleString()}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* CTAs */}
+                  <div className="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                    <button
+                      onClick={async () => {
+                        if (!quote) return;
+                        setCheckingOut(true);
+                        try {
+                          const res = await fetch("/api/checkout", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                              product_name: vehicleNotListed
+                                ? `${customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label || "Custom"} — ${panelSummary} ${design?.label ?? ""}`
+                                : `${selectedVariant?.year} ${selectedMake} ${selectedModel} — ${panelSummary} ${design?.label ?? ""}`,
+                              product_slug: "",
+                              wrap_type: panelSummary,
+                              design_tier: design?.label ?? "",
+                              vehicle_info: vehicleNotListed
+                                ? `${customVehicleName || bodyTypeCategories.find((c) => c.id === selectedBodyType)?.label || "Custom"} (~${selectedSqft} sqft est.)`
+                                : `${selectedVariant?.year} ${selectedMake} ${selectedModel} ${selectedVariant?.trim}`,
+                              total_price: quote.total,
+                              deposit_amount: Math.round(quote.total * 0.25),
+                            }),
+                          });
+                          const data = await res.json();
+                          if (data.url) {
+                            window.location.href = data.url;
+                          } else {
+                            alert(data.error || "Something went wrong.");
+                            setCheckingOut(false);
+                          }
+                        } catch {
+                          alert("Network error. Please try again.");
+                          setCheckingOut(false);
+                        }
+                      }}
+                      disabled={checkingOut}
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-accent to-accent2 rounded-full hover:shadow-[0_0_40px_#ff2d7b44] hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {checkingOut ? (
+                        <><Loader2 size={18} className="animate-spin" /> Redirecting…</>
+                      ) : (
+                        <>Pay ${Math.round(quote.total * 0.25).toLocaleString()} Deposit <ArrowRight size={18} /></>
+                      )}
+                    </button>
+                    <a
+                      href="tel:+13463177987"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white border border-white/10 rounded-full hover:bg-white/5 transition-all"
+                    >
+                      <Phone size={18} />
+                      Call Us
+                    </a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation buttons */}
+          {currentStep < 6 && (
+            <div className="flex items-center justify-between mt-6">
+              <button
+                onClick={prev}
+                disabled={currentStep === 1}
+                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all ${
+                  currentStep === 1
+                    ? "text-dark-500 cursor-not-allowed"
+                    : "text-white border border-white/10 hover:bg-white/5"
+                }`}
+              >
+                <ArrowLeft size={16} />
+                Back
+              </button>
+              <button
+                onClick={next}
+                disabled={!canProceed()}
+                className={`inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-bold transition-all ${
+                  canProceed()
+                    ? "text-white bg-gradient-to-r from-accent to-accent2 hover:shadow-[0_0_30px_#ff2d7b44] hover:scale-105"
+                    : "text-dark-500 bg-surface-2 cursor-not-allowed"
+                }`}
+              >
+                Next
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
+  );
+}

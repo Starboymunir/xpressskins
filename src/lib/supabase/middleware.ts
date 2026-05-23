@@ -49,6 +49,32 @@ export async function updateSession(request: NextRequest) {
       url.pathname = '/admin/login';
       return NextResponse.redirect(url);
     }
+
+    // Role gate for builder-only routes (pages/theme/assets). admin role
+    // gets in everywhere, editor role gets builder routes only.
+    const path = request.nextUrl.pathname;
+    const builderOnly = /^\/admin\/(pages|theme|assets)(\/|$)/.test(path);
+    const { data: roleRow } = await supabase
+      .from('admin_users')
+      .select('role')
+      .eq('user_id', user.id)
+      .maybeSingle();
+    const role = (roleRow as { role?: 'admin' | 'editor' } | null)?.role ?? null;
+
+    if (!role) {
+      // Logged in but not provisioned as builder/admin user — sign out path
+      const url = request.nextUrl.clone();
+      url.pathname = '/admin/login';
+      url.searchParams.set('error', 'not-authorized');
+      return NextResponse.redirect(url);
+    }
+
+    if (role === 'editor' && !builderOnly && path !== '/admin') {
+      // Editors can only see /admin landing + builder routes
+      const url = request.nextUrl.clone();
+      url.pathname = '/admin/pages';
+      return NextResponse.redirect(url);
+    }
   }
 
   // Protect customer portal routes

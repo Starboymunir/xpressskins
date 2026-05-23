@@ -14,6 +14,9 @@ import {
   FileText,
   FolderKanban,
   Car,
+  Palette,
+  Layers,
+  ImagePlus,
   LogOut,
   Menu,
   X,
@@ -23,6 +26,9 @@ import {
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/pages", label: "Pages (Builder)", icon: Layers },
+  { href: "/admin/theme", label: "Theme", icon: Palette },
+  { href: "/admin/assets", label: "Assets", icon: ImagePlus },
   { href: "/admin/products", label: "Products", icon: Package },
   { href: "/admin/portfolio", label: "Portfolio & Media", icon: ImageIcon },
   { href: "/admin/vehicles", label: "Vehicles", icon: Car },
