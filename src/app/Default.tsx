@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import PhysicsBallsSection from "@/components/IntroAnimation";
 import { driveImg, driveVideo, portfolioImages, videoAssets } from "@/data/assets";
 import {
   ArrowRight,
@@ -335,11 +334,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════
-          PHYSICS BALLS — visitors land here first
-         ══════════════════════════════════════════════ */}
-      <PhysicsBallsSection />
     </>
   );
 }

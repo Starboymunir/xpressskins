@@ -152,7 +152,6 @@ const homeData = data([
     secondaryHref: "/contact",
     height: "medium",
   }),
-  blk("PhysicsBalls"),
 ]);
 
 /* ─── CONTACT ───────────────────────────────────────────── */
