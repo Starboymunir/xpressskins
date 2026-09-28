@@ -5,6 +5,6 @@ import { Footer } from "@/components/Footer";
 
 export default function PublicFooter() {
   const path = usePathname() || "";
-  if (path.startsWith("/admin") || path.startsWith("/portal")) return null;
+  if (path.startsWith("/admin") || path.startsWith("/portal") || path.startsWith("/studio")) return null;
   return <Footer />;
 }

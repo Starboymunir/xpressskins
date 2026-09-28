@@ -53,6 +53,33 @@ export default function PricingPage() {
   const [selectedInstall, setSelectedInstall] = useState("");
   const [checkingOut, setCheckingOut] = useState(false);
 
+  // Pre-fill from the Wrap Studio (/studio) hand-off:
+  // /pricing?make=Honda&model=Civic&panels=hood,roof&tier=semicustom&finish=gloss&install=ship
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const panels = sp.get("panels");
+    if (!panels) return;
+    const make = sp.get("make") ?? "";
+    const model = sp.get("model") ?? "";
+    const tier = sp.get("tier") ?? "";
+    const finish = sp.get("finish") ?? "";
+    const install = sp.get("install") ?? "";
+    const variant = vehicleDatabase
+      .filter((v) => v.make === make && v.model === model)
+      .sort((a, b) => b.year - a.year)[0];
+    if (variant) {
+      setSelectedMake(make);
+      setSelectedModel(model);
+      setSelectedVariant(variant);
+      setSelectedSqft(variant.totalSqft);
+    }
+    setSelectedPanels(panels.split(",").filter(Boolean));
+    if (tier) setSelectedDesign(tier);
+    if (finish) setSelectedFinish(finish);
+    if (install) setSelectedInstall(install);
+    setCurrentStep(variant && tier && install ? 6 : variant ? 2 : 1);
+  }, []);
+
   // Try loading dynamic vehicles from Supabase (admin-uploaded),
   // fall back to static vehicleDatabase if API fails or returns empty
   const [dynamicVehicles, setDynamicVehicles] = useState<VehicleEntry[] | null>(null);
@@ -362,7 +389,7 @@ export default function PricingPage() {
 
                   <div className="mt-6">
                     <p className="text-muted text-xs">
-                      Need an exact quote? <Link href="/contact" className="text-accent underline">Contact us</Link> and we\u2019ll measure your vehicle.
+                      Need an exact quote? <Link href="/contact" className="text-accent underline">Contact us</Link> and we&rsquo;ll measure your vehicle.
                     </p>
                   </div>
                 </motion.div>
