@@ -78,21 +78,24 @@ interface Props {
   finish?: Finish;
   hovered?: CarPanelId | null;
   onHover?: (id: CarPanelId | null) => void;
-  onToggle?: (id: CarPanelId) => void;
+  onToggle?: (id: CarPanelId, point?: { x: number; y: number }) => void;
   interactive?: boolean;
   className?: string;
   /** "paper" = light page, "ink" = dark page */
   tone?: "paper" | "ink";
+  /** thicker manga-style linework */
+  bold?: boolean;
 }
 
 export function ItashaCar({
   selected, design, finish = "gloss", hovered = null, onHover, onToggle,
-  interactive = true, className = "", tone = "paper",
+  interactive = true, className = "", tone = "paper", bold = false,
 }: Props) {
   const uid = useId().replace(/:/g, "");
-  const base = tone === "paper" ? "#e7e5df" : "#2a2a32";
-  const line = tone === "paper" ? "#0c0c10" : "#f4f1ea";
-  const glass = tone === "paper" ? "#c9d2db" : "#3b4652";
+  const base = tone === "paper" ? "#ffffff" : "#2a2a32";
+  const line = tone === "paper" ? "#08080a" : "#fffdf5";
+  const glass = tone === "paper" ? "#bfe9ff" : "#3b4652";
+  const lw = bold ? 2.2 : 1;
   const glossOpacity = finish === "gloss" ? 0.38 : finish === "satin" ? 0.16 : 0.05;
   const kanjiFont = "var(--font-kanji), 'Noto Sans JP', sans-serif";
 
@@ -154,7 +157,7 @@ export function ItashaCar({
 
       {/* base body panels */}
       {CAR_PANELS.map((p) => (
-        <path key={p.id} d={p.d} fill={base} stroke={line} strokeWidth="1.5" strokeLinejoin="round" />
+        <path key={p.id} d={p.d} fill={base} stroke={line} strokeWidth={1.5 * lw} strokeLinejoin="round" />
       ))}
 
       {/* glass */}
@@ -209,10 +212,10 @@ export function ItashaCar({
           <path
             key={`o-${p.id}`}
             d={p.d}
-            fill="#b936a2"
-            fillOpacity={isHover ? 0.18 : 0}
-            stroke={isHover ? "#b936a2" : line}
-            strokeWidth={isHover ? 3.5 : isOn ? 2 : 1.2}
+            fill="#ff2fb3"
+            fillOpacity={isHover ? 0.28 : 0}
+            stroke={isHover ? "#ff2fb3" : line}
+            strokeWidth={(isHover ? 4 : isOn ? 2 : 1.2) * lw}
             strokeLinejoin="round"
             style={{ transition: "stroke-width .15s, fill-opacity .15s", pointerEvents: "none" }}
           />
@@ -220,7 +223,7 @@ export function ItashaCar({
       })}
 
       {/* silhouette outline for crispness */}
-      <path d={SILHOUETTE} fill="none" stroke={line} strokeWidth="2.5" strokeLinejoin="round" style={{ pointerEvents: "none" }} />
+      <path d={SILHOUETTE} fill="none" stroke={line} strokeWidth={2.5 * lw} strokeLinejoin="round" style={{ pointerEvents: "none" }} />
 
       {/* details: lights, handles */}
       <g style={{ pointerEvents: "none" }}>
@@ -234,7 +237,7 @@ export function ItashaCar({
       {[235, 765].map((cx) => (
         <g key={cx} style={{ pointerEvents: "none" }}>
           <circle cx={cx} cy="318" r="60" fill="#111116" />
-          <circle cx={cx} cy="318" r="37" fill={tone === "paper" ? "#f4f1ea" : "#d9d9de"} stroke={line} strokeWidth="2" />
+          <circle cx={cx} cy="318" r="37" fill={tone === "paper" ? "#ffffff" : "#d9d9de"} stroke={line} strokeWidth={2 * lw} />
           {[0, 72, 144, 216, 288].map((a) => (
             <rect key={a} x={cx - 4} y="290" width="8" height="28" rx="3" fill="#111116" transform={`rotate(${a} ${cx} 318)`} />
           ))}
@@ -253,7 +256,7 @@ export function ItashaCar({
             style={{ cursor: "pointer" }}
             onMouseEnter={() => onHover?.(p.id)}
             onMouseLeave={() => onHover?.(null)}
-            onClick={() => onToggle?.(p.id)}
+            onClick={(e) => onToggle?.(p.id, { x: e.clientX, y: e.clientY })}
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onToggle?.(p.id); } }}
             aria-label={`${p.label}${selected.has(p.id) ? " (wrapped)" : ""}`}
