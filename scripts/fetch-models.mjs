@@ -35,7 +35,9 @@ let done = 0;
 
 for (const [key, q] of order) {
   if (done >= LIMIT) break;
-  const pick = q.candidates[0];
+  // skip movie cars, old generations and race/wreck versions when a cleaner candidate exists
+  const UNSUITABLE = /F&F|fast ?(and|&) ?furious|furious|\bice\b|'[5-9]\d\b|\b19[5-9]\d\b|nascar|wreck|crash|rally|drift|widebody|police|taxi/i;
+  const pick = q.candidates.find((c) => !UNSUITABLE.test(c.name)) ?? q.candidates[0];
   manifest.groups[key] = { make: q.make, base: q.base, body: q.body, models: q.models, uid: pick.uid };
   if (manifest.models[pick.uid]?.file) { done++; continue; }
   try {
