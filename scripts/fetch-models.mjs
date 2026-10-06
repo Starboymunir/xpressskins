@@ -26,31 +26,48 @@ const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, 
 
 const POPULAR = ["Toyota", "Honda", "Ford", "Chevrolet", "Nissan", "Subaru", "Tesla", "Jeep", "Dodge", "Ram", "Hyundai", "Kia", "Mazda", "BMW", "Mercedes-Benz", "Audi", "Lexus", "Volkswagen", "GMC"];
 const order = Object.entries(MATCHES)
-  .filter(([, q]) => q.candidates.length)
+  .filter(([, q]) => q.vetted && q.pick) // only models that passed scripts/vet-models.mjs
   .sort(([, a], [, b]) => (POPULAR.indexOf(a.make) + 1 || 99) - (POPULAR.indexOf(b.make) + 1 || 99));
 
-const gt = path.join(ROOT, "node_modules/.bin", process.platform === "win32" ? "gltf-transform.cmd" : "gltf-transform");
+// call the CLI through node directly: no shell, so paths with spaces stay intact
+const GT_CLI = path.join(ROOT, "node_modules/@gltf-transform/cli/bin/cli.js");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Sketchfab sometimes drops connections from busy IPs; wait it out instead of failing.
+async function retryFetch(url, opts = {}, label = "") {
+  for (let attempt = 0; attempt < 12; attempt++) {
+    try {
+      const res = await fetch(url, { ...opts, signal: AbortSignal.timeout(120000) });
+      if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
+      return res;
+    } catch (e) {
+      const wait = Math.min(300000, 15000 * 2 ** Math.min(attempt, 4));
+      console.log(`  … ${label} ${e.message || e}; retrying in ${Math.round(wait / 1000)}s`);
+      await sleep(wait);
+    }
+  }
+  throw new Error("network unavailable after retries");
+}
 let done = 0;
 
 for (const [key, q] of order) {
   if (done >= LIMIT) break;
   // skip movie cars, old generations and race/wreck versions when a cleaner candidate exists
-  const UNSUITABLE = /F&F|fast ?(and|&) ?furious|furious|\bice\b|'[5-9]\d\b|\b19[5-9]\d\b|nascar|wreck|crash|rally|drift|widebody|police|taxi/i;
-  const pick = q.candidates.find((c) => !UNSUITABLE.test(c.name)) ?? q.candidates[0];
+  const UNSUITABLE = /photo ?scan|\bscan\b|F&F|fast ?(and|&) ?furious|furious|\bice\b|'[5-9]\d\b|\b19[5-9]\d\b|nascar|wreck|crash|rally|drift|widebody|police|taxi/i;
+  const pick = q.candidates.find((c) => c.uid === q.pick);
+  if (!pick) continue;
   manifest.groups[key] = { make: q.make, base: q.base, body: q.body, models: q.models, uid: pick.uid };
   if (manifest.models[pick.uid]?.file) { done++; continue; }
   try {
-    const res = await fetch(`https://api.sketchfab.com/v3/models/${pick.uid}/download`, { headers: { Authorization: `Token ${TOKEN}` } });
+    const res = await retryFetch(`https://api.sketchfab.com/v3/models/${pick.uid}/download`, { headers: { Authorization: `Token ${TOKEN}` } }, key);
     if (res.status === 401 || res.status === 403) throw new Error(`auth ${res.status} (check token)`);
     if (res.status === 429) { await sleep(10000); continue; }
     const info = await res.json();
     const glb = info.glb?.url;
     if (!glb) throw new Error("no GLB archive offered");
     const tmp = path.join(os.tmpdir(), `${pick.uid}.glb`);
-    fs.writeFileSync(tmp, Buffer.from(await (await fetch(glb)).arrayBuffer()));
+    fs.writeFileSync(tmp, Buffer.from(await (await retryFetch(glb, {}, key)).arrayBuffer()));
     const out = path.join(OUTDIR, `${pick.uid}.glb`);
-    execFileSync(gt, ["optimize", tmp, out, "--compress", "draco", "--texture-compress", "webp", "--texture-size", "2048", "--simplify", "false"], { stdio: "ignore", shell: process.platform === "win32" });
+    execFileSync(process.execPath, [GT_CLI, "optimize", tmp, out, "--compress", "draco", "--texture-compress", "webp", "--texture-size", "2048", "--simplify", "false"], { stdio: "ignore" });
     fs.rmSync(tmp, { force: true });
     manifest.models[pick.uid] = { file: `/models/cars/${pick.uid}.glb`, name: pick.name, author: pick.author, authorUrl: pick.authorUrl, url: pick.url, license: pick.license, bytes: fs.statSync(out).size };
     console.log(`✓ ${key.padEnd(36)} ${(fs.statSync(out).size / 1e6).toFixed(1)} MB  "${pick.name}" by ${pick.author}`);

@@ -19,6 +19,12 @@
      "likes": 4,
      "score": 87.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Acura ILX: 1300k tris"
    ]
   },
   "Acura|Integra-A": {
@@ -62,7 +68,11 @@
      "likes": 8,
      "score": 87.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "92026dae99b74374b9540b5dfa0ed9a9",
+   "thumb": "https://media.sketchfab.com/models/92026dae99b74374b9540b5dfa0ed9a9/thumbnails/1916d3869f794ab897c15ba6bbb0e950/5d1fca29fc3d41859c9a8db626032cf8.jpeg",
+   "rejected": []
   },
   "Acura|MDX": {
    "make": "Acura",
@@ -106,7 +116,11 @@
      "likes": 8,
      "score": 88.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "4519ec970756490792548ac1790a816b",
+   "thumb": "https://media.sketchfab.com/models/4519ec970756490792548ac1790a816b/thumbnails/35677b80f1a74d29a57be8d75eb10f75/eccc8e0e19c5457e9fa83fa4d2f926d8.jpeg",
+   "rejected": []
   },
   "Acura|NSX": {
    "make": "Acura",
@@ -149,7 +163,11 @@
      "likes": 28,
      "score": 98.77438798739374
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "77ce87d5be824af89dae4a1ffa0d58a1",
+   "thumb": "https://media.sketchfab.com/models/77ce87d5be824af89dae4a1ffa0d58a1/thumbnails/6535daa830b44fc8a976cd2eea369579/f1a7947bb5564a8fa266922716f15ff1.jpeg",
+   "rejected": []
   },
   "Acura|RDX": {
    "make": "Acura",
@@ -170,6 +188,12 @@
      "likes": 4,
      "score": 87.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Acura RDX Prototype: 1456k tris"
    ]
   },
   "Acura|RL": {
@@ -191,6 +215,12 @@
      "likes": 7,
      "score": 95.41853992195166
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Acura_RL Not Fixed: only 1 materials"
    ]
   },
   "Acura|RLX": {
@@ -244,6 +274,12 @@
      "likes": 8,
      "score": 88.72545505663595
     }
+   ],
+   "vetted": true,
+   "pick": "a88f9230a9a64828a49145026e48ff65",
+   "thumb": "https://media.sketchfab.com/models/a88f9230a9a64828a49145026e48ff65/thumbnails/052ec8a238a148c6b30afc192e5c7ef2/64fbfef30d514ab2803fa91a62aade8a.jpeg",
+   "rejected": [
+    "Photoscanned Acura TL: name"
    ]
   },
   "Acura|TLX": {
@@ -276,7 +312,11 @@
      "likes": 1,
      "score": 84.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "041ea5b7ee1741caae446f8d704b3690",
+   "thumb": "https://media.sketchfab.com/models/041ea5b7ee1741caae446f8d704b3690/thumbnails/0e4c1fe1e8d440a98376fbb6ce50e477/8b186b307a4c41a6a34457ee647e8a8d.jpeg",
+   "rejected": []
   },
   "Acura|TSX": {
    "make": "Acura",
@@ -297,6 +337,12 @@
      "likes": 8,
      "score": 88.72545505663595
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Acura TSX: 23k tris"
    ]
   },
   "Acura|ZDX": {
@@ -350,7 +396,11 @@
      "likes": 5,
      "score": 94.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ae0f680cc2494f12b3f78b6dfd9ad5ff",
+   "thumb": "https://media.sketchfab.com/models/ae0f680cc2494f12b3f78b6dfd9ad5ff/thumbnails/9617f2246f56498e9d50ddc92cf277e0/61826f40d94a4b87a2afd969b417292d.jpeg",
+   "rejected": []
   },
   "Alfa Romeo|Giulia": {
    "make": "Alfa Romeo",
@@ -393,7 +443,11 @@
      "likes": 25,
      "score": 98.4898400878249
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7a5e219a35ed49e99b91fb1a085d8528",
+   "thumb": "https://media.sketchfab.com/models/7a5e219a35ed49e99b91fb1a085d8528/thumbnails/db85c108ef294012bcbeec1c70fee5f9/727ce1d0619e41e896773be7e216a065.jpeg",
+   "rejected": []
   },
   "Alfa Romeo|Stelvio": {
    "make": "Alfa Romeo",
@@ -436,7 +490,11 @@
      "likes": 6,
      "score": 95.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b6e382aee4a44fb3b1222d7191470640",
+   "thumb": "https://media.sketchfab.com/models/b6e382aee4a44fb3b1222d7191470640/thumbnails/631e270df05f41ceb47c8b552b5066da/eab139b8a1154d47a54efa02562c6db8.jpeg",
+   "rejected": []
   },
   "Alfa Romeo|Stelvio Veloce": {
    "make": "Alfa Romeo",
@@ -488,6 +546,14 @@
      "likes": 10,
      "score": 89.24835611094935
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Aston Martin DB9: only 3 materials",
+    "aston martin db9 coupe: 28k tris",
+    "Aston Martin DB9 Coupé: 27k tris"
    ]
   },
   "Aston Martin|DBS": {
@@ -531,7 +597,11 @@
      "likes": 50,
      "score": 100.24542105658762
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c7fb95e6b7ce40df8e3c4a55b7ecf9d9",
+   "thumb": "https://media.sketchfab.com/models/c7fb95e6b7ce40df8e3c4a55b7ecf9d9/thumbnails/628fa11546114e89807ba204384e4b0b/5ecce5653d2c454293a1535d17ce8986.jpeg",
+   "rejected": []
   },
   "Aston Martin|Rapide": {
    "make": "Aston Martin",
@@ -563,7 +633,11 @@
      "likes": 8,
      "score": 88.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3a6eab743fa0448bbc5e59a00376f5d4",
+   "thumb": "https://media.sketchfab.com/models/3a6eab743fa0448bbc5e59a00376f5d4/thumbnails/4f3214c9f35144f7852d672ad67dea2f/6c1f3776dc3a4cda80cc55444168935f.jpeg",
+   "rejected": []
   },
   "Aston Martin|Vanquish": {
    "make": "Aston Martin",
@@ -606,7 +680,11 @@
      "likes": 27,
      "score": 98.68294818805332
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5d76b6b5036e496ab36302948541a769",
+   "thumb": "https://media.sketchfab.com/models/5d76b6b5036e496ab36302948541a769/thumbnails/43f32b4cab764f6bacae318a53bd95a6/b3c03ca56c1f47c8ac488f7f18f53e32.jpeg",
+   "rejected": []
   },
   "Aston Martin|Vantage": {
    "make": "Aston Martin",
@@ -650,7 +728,11 @@
      "likes": 144,
      "score": 102.96820801340985
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dbdd5aadc1d64df289f65fc0f6da3c07",
+   "thumb": "https://media.sketchfab.com/models/dbdd5aadc1d64df289f65fc0f6da3c07/thumbnails/e914a2249aa94ba1b6f752442c261705/f5422ed0971b42cab601eb12325d0897.jpeg",
+   "rejected": []
   },
   "Audi|A3": {
    "make": "Audi",
@@ -694,7 +776,11 @@
      "likes": 11,
      "score": 96.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bb52322182cb47848a6b6ffd7b03bf87",
+   "thumb": "https://media.sketchfab.com/models/bb52322182cb47848a6b6ffd7b03bf87/thumbnails/93d94608c2584d77a82ee7bee26076da/e2ae030b54ff405ca9fd6d13321c1312.jpeg",
+   "rejected": []
   },
   "Audi|A3 Sportback Etron": {
    "make": "Audi",
@@ -746,7 +832,11 @@
      "likes": 22,
      "score": 98.17036701610556
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b5861ddefcb8478b858b3150aa44cd7f",
+   "thumb": "https://media.sketchfab.com/models/b5861ddefcb8478b858b3150aa44cd7f/thumbnails/332bf2d85b874baab8adabcd036956bc/044c898697f3439485a2b6275d885794.jpeg",
+   "rejected": []
   },
   "Audi|A5": {
    "make": "Audi",
@@ -790,7 +880,11 @@
      "likes": 130,
      "score": 95.70362777393458
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6cc9ad5e96454be29bcd9bac66aa5320",
+   "thumb": "https://media.sketchfab.com/models/6cc9ad5e96454be29bcd9bac66aa5320/thumbnails/0c3985d8d2924637bea596e184e77d73/d81892b1b4a145c2a74c3a86bfa10106.jpeg",
+   "rejected": []
   },
   "Audi|A6": {
    "make": "Audi",
@@ -834,7 +928,11 @@
      "likes": 15,
      "score": 97.22471989593555
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "04925f2cea0c4090a58d13d88e3f16d9",
+   "thumb": "https://media.sketchfab.com/models/04925f2cea0c4090a58d13d88e3f16d9/thumbnails/a7f4553ec1954c939ff3c99aa4d6ab99/2ad368f6672b471eb4c556884ead6c45.jpeg",
+   "rejected": []
   },
   "Audi|A8 L TFSI": {
    "make": "Audi",
@@ -904,7 +1002,11 @@
      "likes": 8,
      "score": 95.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a0159b9bee094c2d8f9b9d5694c94f45",
+   "thumb": "https://media.sketchfab.com/models/a0159b9bee094c2d8f9b9d5694c94f45/thumbnails/5ec0798b293b4c1d81ae56aa8e0d4a85/4a3f50007237472982d9b11723878198.jpeg",
+   "rejected": []
   },
   "Audi|Q3 +": {
    "make": "Audi",
@@ -947,7 +1049,11 @@
      "likes": 8,
      "score": 95.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a0159b9bee094c2d8f9b9d5694c94f45",
+   "thumb": "https://media.sketchfab.com/models/a0159b9bee094c2d8f9b9d5694c94f45/thumbnails/5ec0798b293b4c1d81ae56aa8e0d4a85/4a3f50007237472982d9b11723878198.jpeg",
+   "rejected": []
   },
   "Audi|Q4 Etron": {
    "make": "Audi",
@@ -990,7 +1096,11 @@
      "likes": 7,
      "score": 65.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "17930a5fbd6a4868b4f25c5c1ec1915b",
+   "thumb": "https://media.sketchfab.com/models/17930a5fbd6a4868b4f25c5c1ec1915b/thumbnails/5a6ddaf478e04c0ca8e2883f40dbdf67/d52fb1eded894135bb323efb7d5a0910.jpeg",
+   "rejected": []
   },
   "Audi|Q5": {
    "make": "Audi",
@@ -1033,7 +1143,11 @@
      "likes": 8,
      "score": 95.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9cf08cf1dac24654a34dbdad76cce52c",
+   "thumb": "https://media.sketchfab.com/models/9cf08cf1dac24654a34dbdad76cce52c/thumbnails/d6ebdb38a12d4311b7a8b710a5854150/737d1e43425b46aa85e485effe883bd8.jpeg",
+   "rejected": []
   },
   "Audi|Q7": {
    "make": "Audi",
@@ -1076,7 +1190,11 @@
      "likes": 84,
      "score": 94.57651355428575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1bd807b75ca744c2b639740ecd7ff6fa",
+   "thumb": "https://media.sketchfab.com/models/1bd807b75ca744c2b639740ecd7ff6fa/thumbnails/c6c546b70c58413d956d135b84adf89a/d6ac39eee2744be187c691af86abd0a4.jpeg",
+   "rejected": []
   },
   "Audi|Q8": {
    "make": "Audi",
@@ -1119,7 +1237,11 @@
      "likes": 12,
      "score": 96.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c30b4a6ec479473a814d030da10e97a8",
+   "thumb": "https://media.sketchfab.com/models/c30b4a6ec479473a814d030da10e97a8/thumbnails/6fc73b36345641b08822b6134b86d4ab/dc021f009f354da6b52dcc08db952a01.jpeg",
+   "rejected": []
   },
   "Audi|R8": {
    "make": "Audi",
@@ -1163,7 +1285,11 @@
      "likes": 88,
      "score": 101.69634003986948
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e17e438f076f4427a58d93aa779edaed",
+   "thumb": "https://media.sketchfab.com/models/e17e438f076f4427a58d93aa779edaed/thumbnails/25b4546fb1a240258d75bcde2d12d5de/1b451f7913104630b3a422b71fdc8228.jpeg",
+   "rejected": []
   },
   "Audi|RS Etron GT": {
    "make": "Audi",
@@ -1184,7 +1310,11 @@
      "likes": 29,
      "score": 78.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "206871e20a3d4ba3a10ae077d351f577",
+   "thumb": "https://media.sketchfab.com/models/206871e20a3d4ba3a10ae077d351f577/thumbnails/eb7c5cdad4b746129a3e47530e471804/f5680efa61c14405b2e5cd683a37fcac.jpeg",
+   "rejected": []
   },
   "Audi|RS5": {
    "make": "Audi",
@@ -1227,7 +1357,11 @@
      "likes": 37,
      "score": 99.47870157970087
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "75d636ab26b1423ca61ffd0fd758fd0a",
+   "thumb": "https://media.sketchfab.com/models/75d636ab26b1423ca61ffd0fd758fd0a/thumbnails/28cf96b7b2b9404381ced6b3b33487a0/f9884a223f3d48e182fe3e941aa0408d.jpeg",
+   "rejected": []
   },
   "Audi|RS5 Sportback": {
    "make": "Audi",
@@ -1270,7 +1404,11 @@
      "likes": 24,
      "score": 68.38764005203222
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bf6235312cd64f79ab6fac02e1ea642e",
+   "thumb": "https://media.sketchfab.com/models/bf6235312cd64f79ab6fac02e1ea642e/thumbnails/c6a49419a6564e808ef34c215b4c3121/bb89c5aeb61440da91bdc977e573d551.jpeg",
+   "rejected": []
   },
   "Audi|S4": {
    "make": "Audi",
@@ -1314,7 +1452,11 @@
      "likes": 13,
      "score": 88.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "33677f65ef1546a5a546449b786a7ad3",
+   "thumb": "https://media.sketchfab.com/models/33677f65ef1546a5a546449b786a7ad3/thumbnails/8240de627a3e4cbebc7e5a5678d1c0f0/7c219c2efe874d7189fc545bdf8026a3.jpeg",
+   "rejected": []
   },
   "Audi|S4 Avant": {
    "make": "Audi",
@@ -1335,7 +1477,11 @@
      "likes": 7,
      "score": 95.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "33677f65ef1546a5a546449b786a7ad3",
+   "thumb": "https://media.sketchfab.com/models/33677f65ef1546a5a546449b786a7ad3/thumbnails/8240de627a3e4cbebc7e5a5678d1c0f0/7c219c2efe874d7189fc545bdf8026a3.jpeg",
+   "rejected": []
   },
   "Audi|S5": {
    "make": "Audi",
@@ -1378,7 +1524,11 @@
      "likes": 31,
      "score": 99.03089986991944
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "89f94a142d434188a5af2824bb4a50f5",
+   "thumb": "https://media.sketchfab.com/models/89f94a142d434188a5af2824bb4a50f5/thumbnails/e36a7d3778934c5d998d3cdfd766147f/b5e65e104bec41fe90fe9deef1ffdc97.jpeg",
+   "rejected": []
   },
   "Audi|S6": {
    "make": "Audi",
@@ -1399,7 +1549,11 @@
      "likes": 13,
      "score": 96.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "622928b520c94fb2a4c70d0ddfffa128",
+   "thumb": "https://media.sketchfab.com/models/622928b520c94fb2a4c70d0ddfffa128/thumbnails/1ee8772f713444e589210680f9f5af3b/64a03aa84d0b4cfeb7ed6ea2bb2df353.jpeg",
+   "rejected": []
   },
   "Audi|S6 Quattro": {
    "make": "Audi",
@@ -1420,7 +1574,11 @@
      "likes": 13,
      "score": 96.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "622928b520c94fb2a4c70d0ddfffa128",
+   "thumb": "https://media.sketchfab.com/models/622928b520c94fb2a4c70d0ddfffa128/thumbnails/1ee8772f713444e589210680f9f5af3b/64a03aa84d0b4cfeb7ed6ea2bb2df353.jpeg",
+   "rejected": []
   },
   "Audi|S7": {
    "make": "Audi",
@@ -1461,7 +1619,11 @@
      "likes": 3,
      "score": 86.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "44f95a01a6774b07b3a7fb7fa5bafc7b",
+   "thumb": "https://media.sketchfab.com/models/44f95a01a6774b07b3a7fb7fa5bafc7b/thumbnails/b04fef05e24a4067aeae70cd7c9951fb/9c055c81de1d4403b262ed467d983712.jpeg",
+   "rejected": []
   },
   "Audi|SQ5 Sportback": {
    "make": "Audi",
@@ -1482,7 +1644,11 @@
      "likes": 12,
      "score": 96.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1c71c71d66394be89500171d067e8c82",
+   "thumb": "https://media.sketchfab.com/models/1c71c71d66394be89500171d067e8c82/thumbnails/de0df26e39ae4b3b9cc06315e35253a6/63339c14f6574fc5a3a5b9d46dd2b778.jpeg",
+   "rejected": []
   },
   "Audi|SQ7": {
    "make": "Audi",
@@ -1536,7 +1702,11 @@
      "likes": 86,
      "score": 94.63711551571171
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9e73c96ee379447f8ff4e0123a30ae15",
+   "thumb": "https://media.sketchfab.com/models/9e73c96ee379447f8ff4e0123a30ae15/thumbnails/1b0e80e8615043a2b5b7d3d2b81b8835/a56ea7ae4c7d4406a780d1f6fedc3e0f.jpeg",
+   "rejected": []
   },
   "BMW|1 Series 128i": {
    "make": "BMW",
@@ -1597,7 +1767,11 @@
      "likes": 13,
      "score": 61.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "d2b715563f1e474099b8eef1f262c8a6",
+   "thumb": "https://media.sketchfab.com/models/d2b715563f1e474099b8eef1f262c8a6/thumbnails/e24dd73ec3734a3b92181bab21a7e02b/bfce7d48329c4031939c00ec8c0a9659.jpeg",
+   "rejected": []
   },
   "BMW|3 Series": {
    "make": "BMW",
@@ -1630,7 +1804,11 @@
      "likes": 308,
      "score": 89.93975087654901
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "13d0a12ecda04317b96ce1e618300412",
+   "thumb": "https://media.sketchfab.com/models/13d0a12ecda04317b96ce1e618300412/thumbnails/a4c0b461361f412298f146d2ed16c1cc/90d5ecec14d54dc69e9ef7226427348e.jpeg",
+   "rejected": []
   },
   "BMW|4 Series 430i Gran": {
    "make": "BMW",
@@ -1682,7 +1860,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8db7d0707a6b4ffc85f81c5e7feb0633",
+   "thumb": "https://media.sketchfab.com/models/8db7d0707a6b4ffc85f81c5e7feb0633/thumbnails/f15ffdbc66f04a1d9ad62239e8bb49ac/0148bf8f535d4c14b3255469bb7b5867.jpeg",
+   "rejected": []
   },
   "BMW|4 Series M4": {
    "make": "BMW",
@@ -1734,7 +1916,11 @@
      "likes": 17,
      "score": 59.53163503061984
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c2910a4e0d154f2ebdc41e6265eaaac3",
+   "thumb": "https://media.sketchfab.com/models/c2910a4e0d154f2ebdc41e6265eaaac3/thumbnails/c53bc9b2670844feb9eb0b549d67ed11/e064834247034106952119d3a87280d2.jpeg",
+   "rejected": []
   },
   "BMW|5 Series": {
    "make": "BMW",
@@ -1778,7 +1964,11 @@
      "likes": 17,
      "score": 89.53163503061984
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c2910a4e0d154f2ebdc41e6265eaaac3",
+   "thumb": "https://media.sketchfab.com/models/c2910a4e0d154f2ebdc41e6265eaaac3/thumbnails/c53bc9b2670844feb9eb0b549d67ed11/e064834247034106952119d3a87280d2.jpeg",
+   "rejected": []
   },
   "BMW|6 Series 650i": {
    "make": "BMW",
@@ -1839,6 +2029,12 @@
      "likes": 8,
      "score": 67.72545505663595
     }
+   ],
+   "vetted": true,
+   "pick": "2776b1c99913465a8200264fd6c25b28",
+   "thumb": "https://media.sketchfab.com/models/2776b1c99913465a8200264fd6c25b28/thumbnails/3847cbc25e894fe0b7c0aea01650511f/537707ec36d449b88eff32db26243a22.jpeg",
+   "rejected": [
+    "BMW 7-series M short: 1456k tris"
    ]
   },
   "BMW|740iL": {
@@ -1878,7 +2074,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e2ab0372faac452fad5f70b66d0824ce",
+   "thumb": "https://media.sketchfab.com/models/e2ab0372faac452fad5f70b66d0824ce/thumbnails/e2d9c2ce10ac4f0a81c0494e8f8ffd15/12534b187cb04bfc8fc8d486785ddb9a.jpeg",
+   "rejected": []
   },
   "BMW|8 Series m850i": {
    "make": "BMW",
@@ -1921,6 +2121,14 @@
      "likes": 11,
      "score": 89.47508747628575
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "BMW 8- Series G15 Coupe M850i: 1296k tris",
+    "BMW 8-Series (G15) Coupe M850i: 1296k tris",
+    "BMW 8-series G14 Convertible M: 1297k tris"
    ]
   },
   "BMW|M2": {
@@ -1964,7 +2172,11 @@
      "likes": 95,
      "score": 101.89362739823741
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "394feedd0a0742c595917c7b0f6edcad",
+   "thumb": "https://media.sketchfab.com/models/394feedd0a0742c595917c7b0f6edcad/thumbnails/f715a865579f4aad8f45ccb3f483dfd4/50898d6ae2a6459999c035776df28924.jpeg",
+   "rejected": []
   },
   "BMW|M3": {
    "make": "BMW",
@@ -2008,7 +2220,11 @@
      "likes": 437,
      "score": 105
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ac3c7013434e403e8faff87948caf422",
+   "thumb": "https://media.sketchfab.com/models/ac3c7013434e403e8faff87948caf422/thumbnails/6b70554c8b284da0b8a10fd36f810c75/110682aa362946699814a2f8fb268954.jpeg",
+   "rejected": []
   },
   "BMW|M8": {
    "make": "BMW",
@@ -2051,7 +2267,11 @@
      "likes": 94,
      "score": 101.86634163173309
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "25d5b4f6d13e4217afa09bbf89f8d993",
+   "thumb": "https://media.sketchfab.com/models/25d5b4f6d13e4217afa09bbf89f8d993/thumbnails/2f9d2c8473ea4f3c8b4e20f6e7ddc9de/e3f4642ad4c34d259c41060ce8c2dfa2.jpeg",
+   "rejected": []
   },
   "BMW|X1": {
    "make": "BMW",
@@ -2094,7 +2314,11 @@
      "likes": 39,
      "score": 92.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3835ac29df8b4bb19a2f64a24bf28a80",
+   "thumb": "https://media.sketchfab.com/models/3835ac29df8b4bb19a2f64a24bf28a80/thumbnails/3abed64b4680476c8f3bf2718d4e3aba/29600b04647a4a1eb82aafa7c80d9182.jpeg",
+   "rejected": []
   },
   "BMW|X2": {
    "make": "BMW",
@@ -2116,7 +2340,11 @@
      "likes": 12,
      "score": 96.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0171e70eb4df4b47878c3cd81e698a3e",
+   "thumb": "https://media.sketchfab.com/models/0171e70eb4df4b47878c3cd81e698a3e/thumbnails/dd5d49e0671c44bdb0ed97690d96896f/598dfd681bf44529a0db2f28d0a61d25.jpeg",
+   "rejected": []
   },
   "BMW|X3": {
    "make": "BMW",
@@ -2159,7 +2387,11 @@
      "likes": 6,
      "score": 95.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5142078aebec406688e19401985050ec",
+   "thumb": "https://media.sketchfab.com/models/5142078aebec406688e19401985050ec/thumbnails/64a48d8ed8984400ad795cff42a89ac8/3ee8068fa31d473fa09a30e401d05b82.jpeg",
+   "rejected": []
   },
   "BMW|X3 M": {
    "make": "BMW",
@@ -2180,7 +2412,11 @@
      "likes": 20,
      "score": 97.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5142078aebec406688e19401985050ec",
+   "thumb": "https://media.sketchfab.com/models/5142078aebec406688e19401985050ec/thumbnails/64a48d8ed8984400ad795cff42a89ac8/3ee8068fa31d473fa09a30e401d05b82.jpeg",
+   "rejected": []
   },
   "BMW|X3 xDrive30i": {
    "make": "BMW",
@@ -2201,7 +2437,11 @@
      "likes": 20,
      "score": 67.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5142078aebec406688e19401985050ec",
+   "thumb": "https://media.sketchfab.com/models/5142078aebec406688e19401985050ec/thumbnails/64a48d8ed8984400ad795cff42a89ac8/3ee8068fa31d473fa09a30e401d05b82.jpeg",
+   "rejected": []
   },
   "BMW|X4": {
    "make": "BMW",
@@ -2233,7 +2473,11 @@
      "likes": 11,
      "score": 89.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bc3e714e021b44f4844ddf847288e99a",
+   "thumb": "https://media.sketchfab.com/models/bc3e714e021b44f4844ddf847288e99a/thumbnails/05ff709a23f346948d212de66eb90b7f/a468329f7cd14dcf9a036188f82ef9e3.jpeg",
+   "rejected": []
   },
   "BMW|X4 M40i": {
    "make": "BMW",
@@ -2285,7 +2529,11 @@
      "likes": 30,
      "score": 98.94817016300564
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9b211d525797457e988c903f67d0b753",
+   "thumb": "https://media.sketchfab.com/models/9b211d525797457e988c903f67d0b753/thumbnails/73a635eda48b458a8cab195188a274e6/0337281919974f798b863f6b26efba52.jpeg",
+   "rejected": []
   },
   "BMW|X5 35i": {
    "make": "BMW",
@@ -2306,7 +2554,11 @@
      "likes": 4,
      "score": 57.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "54020f5b85f94db1b0f2cc2a0b7de425",
+   "thumb": "https://media.sketchfab.com/models/54020f5b85f94db1b0f2cc2a0b7de425/thumbnails/bd773d3558b74ff7a355979426b51de4/e75ef3381e454cfdbf444e7e20e1dd28.jpeg",
+   "rejected": []
   },
   "BMW|X6": {
    "make": "BMW",
@@ -2349,7 +2601,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9a1778479324447e881fef98c675ac58",
+   "thumb": "https://media.sketchfab.com/models/9a1778479324447e881fef98c675ac58/thumbnails/975a0f92b5ed4854bcd02bfc9f52284f/d1455422cd50437fada999c16d8dfa94.jpeg",
+   "rejected": []
   },
   "BMW|X6 M": {
    "make": "BMW",
@@ -2392,7 +2648,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9a1778479324447e881fef98c675ac58",
+   "thumb": "https://media.sketchfab.com/models/9a1778479324447e881fef98c675ac58/thumbnails/975a0f92b5ed4854bcd02bfc9f52284f/d1455422cd50437fada999c16d8dfa94.jpeg",
+   "rejected": []
   },
   "BMW|X6 xDrive35i": {
    "make": "BMW",
@@ -2424,7 +2684,11 @@
      "likes": 4,
      "score": 49.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "fb6d33b744fb4e06a440cc7d47c68ee0",
+   "thumb": "https://media.sketchfab.com/models/fb6d33b744fb4e06a440cc7d47c68ee0/thumbnails/29eb9890d4114e62a3d6106e09bb6a82/341c8796372c44c7810bf5e69c943dfe.jpeg",
+   "rejected": []
   },
   "BMW|X7": {
    "make": "BMW",
@@ -2467,7 +2731,11 @@
      "likes": 20,
      "score": 97.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3dd065c7eefc4701af71b6e4b3f21a4f",
+   "thumb": "https://media.sketchfab.com/models/3dd065c7eefc4701af71b6e4b3f21a4f/thumbnails/6548d3e25f5e4cdfbd6a89854799700c/664dd37360a244bda07070fa0c479422.jpeg",
+   "rejected": []
   },
   "BMW|XM": {
    "make": "BMW",
@@ -2510,7 +2778,11 @@
      "likes": 20,
      "score": 97.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e307c3f1df9d40afafbb36f6f69c28d1",
+   "thumb": "https://media.sketchfab.com/models/e307c3f1df9d40afafbb36f6f69c28d1/thumbnails/fbe706ec6a094a249d8b89ec711bec08/d07546bdd8dc4672bc19225496c1f6fc.jpeg",
+   "rejected": []
   },
   "BMW|Z4": {
    "make": "BMW",
@@ -2554,7 +2826,11 @@
      "likes": 45,
      "score": 92.97654699008945
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b0bd4892203c4a159fa8813ab0b46806",
+   "thumb": "https://media.sketchfab.com/models/b0bd4892203c4a159fa8813ab0b46806/thumbnails/196dd41b59d242ec9d7146da42949e81/e000b6545c174938a403d502eb0f38a3.jpeg",
+   "rejected": []
   },
   "BMW|i3": {
    "make": "BMW",
@@ -2597,7 +2873,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "983e461b3e5b4f078c4e71d5d293b09a",
+   "thumb": "https://media.sketchfab.com/models/983e461b3e5b4f078c4e71d5d293b09a/thumbnails/39b26d25478b4e7b938ecd34fd89e2c5/1953385983fa48bdad9620cf40bfdb62.jpeg",
+   "rejected": []
   },
   "BMW|i4": {
    "make": "BMW",
@@ -2640,7 +2920,11 @@
      "likes": 11,
      "score": 96.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1f23525ab55746899e3645e3352981c2",
+   "thumb": "https://media.sketchfab.com/models/1f23525ab55746899e3645e3352981c2/thumbnails/e5607752fcba486a950a535ea27dba3b/9674a6544cad4601897982d04e7d22db.jpeg",
+   "rejected": []
   },
   "BMW|i5 eDrive40": {
    "make": "BMW",
@@ -2692,7 +2976,11 @@
      "likes": 71,
      "score": 101.14399497858761
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b7108d20560c43e2b0a2d1473b311cfb",
+   "thumb": "https://media.sketchfab.com/models/b7108d20560c43e2b0a2d1473b311cfb/thumbnails/0cf510069bac49dcb3fc324e2df417bb/32f86bc423d24b4d9ff5c71ee7a14d45.jpeg",
+   "rejected": []
   },
   "BMW|iX xDrive50": {
    "make": "BMW",
@@ -2744,7 +3032,11 @@
      "likes": 140,
      "score": 95.89531467593228
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2bb8aff1bbc54e9c9e59557f0484162d",
+   "thumb": "https://media.sketchfab.com/models/2bb8aff1bbc54e9c9e59557f0484162d/thumbnails/1c437952da404b769cfa6ea2c8203f76/103e3aedd0d141718d15aa22427c3dcf.jpeg",
+   "rejected": []
   },
   "Buick|Century": {
    "make": "Buick",
@@ -2776,7 +3068,11 @@
      "likes": 18,
      "score": 82.67252160571698
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "72c558d84448489592a9db227a161dac",
+   "thumb": "https://media.sketchfab.com/models/72c558d84448489592a9db227a161dac/thumbnails/f4077d531e5b497dbfb75a5c3e5af8f9/3bde3fe5ee814a1ca9261fba7b84441e.jpeg",
+   "rejected": []
   },
   "Buick|Enclave": {
    "make": "Buick",
@@ -2808,6 +3104,13 @@
      "likes": 3,
      "score": 93.61235994796778
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned Buick Enclave (2025: only 1 materials",
+    "3D Scanned Buick Enclave (2013: only 1 materials"
    ]
   },
   "Buick|Encore": {
@@ -2841,6 +3144,13 @@
      "likes": 0,
      "score": 90
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2015 Buick Encore Photoscan: name",
+    "3D Scanned Buick Encore GX (20: only 1 materials"
    ]
   },
   "Buick|Encore GX": {
@@ -2863,6 +3173,12 @@
      "likes": 0,
      "score": 90
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned Buick Encore GX (20: only 1 materials"
    ]
   },
   "Buick|Envision": {
@@ -2885,6 +3201,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Buick Envision 2019: only 1 materials"
    ]
   },
   "Buick|Envista": {
@@ -2916,7 +3238,11 @@
      "likes": 7,
      "score": 95.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9852ece4440b49d5a8ee539cc0379877",
+   "thumb": "https://media.sketchfab.com/models/9852ece4440b49d5a8ee539cc0379877/thumbnails/8e0ac073a69b4d788952e0d37c4cbeff/141eca35de744da2bc3e7a25e297c675.jpeg",
+   "rejected": []
   },
   "Buick|Rainier": {
    "make": "Buick",
@@ -2986,7 +3312,11 @@
      "likes": 150,
      "score": 95.07386168375902
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3fe0733dcc3942828d348a10ec05645e",
+   "thumb": "https://media.sketchfab.com/models/3fe0733dcc3942828d348a10ec05645e/thumbnails/c4f280fc2a22487e9e35c1c17dfc40e4/ac835132d7594b658e77566e552277fa.jpeg",
+   "rejected": []
   },
   "Buick|Rendezvous": {
    "make": "Buick",
@@ -3056,7 +3386,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "82b9b3f14c1e48febfd567be2c2c26c7",
+   "thumb": "https://media.sketchfab.com/models/82b9b3f14c1e48febfd567be2c2c26c7/thumbnails/5251078126d54e169f9833392938fa2c/d75f9e41ce594973a43d81fa94e03a85.jpeg",
+   "rejected": []
   },
   "Chrysler|Aspen": {
    "make": "Chrysler",
@@ -3097,7 +3431,11 @@
      "likes": 45,
      "score": 84.97654699008945
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e8f2ad3dceb24e65b6b3b5b4259305eb",
+   "thumb": "https://media.sketchfab.com/models/e8f2ad3dceb24e65b6b3b5b4259305eb/thumbnails/1c802d3c1c494a1aa7958f788519809d/75a0bc9965374ed5818426f11322465f.jpeg",
+   "rejected": []
   },
   "Chrysler|Pacifica": {
    "make": "Chrysler",
@@ -3140,7 +3478,11 @@
      "likes": 9,
      "score": 89
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "340730deef5747d1a6868dc87438f1d1",
+   "thumb": "https://media.sketchfab.com/models/340730deef5747d1a6868dc87438f1d1/thumbnails/1ed53bced9a249329ccb7e790e7a1a58/7fe71b6a81e542ab98dabbcc563128c3.jpeg",
+   "rejected": []
   },
   "Chrysler|Sebring": {
    "make": "Chrysler",
@@ -3161,6 +3503,12 @@
      "likes": 2,
      "score": 85.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Chrysler Sebring Remasterizado: only 1 materials"
    ]
   },
   "Chrysler|Town & Country": {
@@ -3182,6 +3530,12 @@
      "likes": 5,
      "score": 79.66890750230186
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned Chrysler Town & Cou: only 1 materials"
    ]
   },
   "Chrysler|Town & Country Extended": {
@@ -3232,6 +3586,13 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2010 Dodge Avenger Photoscan: name",
+    "Dodge Avenger: only 1 materials"
    ]
   },
   "Dodge|Challanger": {
@@ -3293,6 +3654,12 @@
      "likes": 168,
      "score": 103.36732022768204
     }
+   ],
+   "vetted": true,
+   "pick": "b222b6cb1d2c485293546b4157f48ecf",
+   "thumb": "https://media.sketchfab.com/models/b222b6cb1d2c485293546b4157f48ecf/thumbnails/118db3ae7d0848d582376311b12fef30/6db12ca392524f38b4a677738c62f3e7.jpeg",
+   "rejected": [
+    "F&F 8 | Dominic Toretto's ICE : name"
    ]
   },
   "Dodge|Charger SRT Hellcat Widebody": {
@@ -3336,6 +3703,12 @@
      "likes": 16,
      "score": 82.38269352826964
     }
+   ],
+   "vetted": true,
+   "pick": "b222b6cb1d2c485293546b4157f48ecf",
+   "thumb": "https://media.sketchfab.com/models/b222b6cb1d2c485293546b4157f48ecf/thumbnails/118db3ae7d0848d582376311b12fef30/6db12ca392524f38b4a677738c62f3e7.jpeg",
+   "rejected": [
+    "Dodge-charger-srt-hellcat-wide: name"
    ]
   },
   "Dodge|Dakota": {
@@ -3370,6 +3743,12 @@
      "likes": 22,
      "score": 83.17036701610556
     }
+   ],
+   "vetted": true,
+   "pick": "4af1fe3d7ead4658aa6b1ea6839cfa45",
+   "thumb": "https://media.sketchfab.com/models/4af1fe3d7ead4658aa6b1ea6839cfa45/thumbnails/46e5df5cd82d4de29a113ea148c7a0dd/8989cc844d4740afa944c64a38e091cf.jpeg",
+   "rejected": [
+    "Dodge_ Dakota_(Mk1)_ Regular C: 1224k tris"
    ]
   },
   "Dodge|Dart": {
@@ -3413,6 +3792,14 @@
      "likes": 18,
      "score": 90.67252160571698
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2015 Dodge Dart Photoscan: name",
+    "dodge dart gt: 28k tris",
+    "dodge dart x edition: 35k tris"
    ]
   },
   "Dodge|Durango": {
@@ -3456,7 +3843,11 @@
      "likes": 18,
      "score": 97.67252160571698
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ff66f958267b479ebe8fd0780277bcba",
+   "thumb": "https://media.sketchfab.com/models/ff66f958267b479ebe8fd0780277bcba/thumbnails/d323343a2db54053a8ebc6a2c6cb55a1/4148293c5cd24341ada8a415cd32d4e5.jpeg",
+   "rejected": []
   },
   "Dodge|Durango R/T": {
    "make": "Dodge",
@@ -3518,6 +3909,12 @@
      "likes": 25,
      "score": 90.4898400878249
     }
+   ],
+   "vetted": true,
+   "pick": "feaad7cc49064a4aa2157eba8401c95d",
+   "thumb": "https://media.sketchfab.com/models/feaad7cc49064a4aa2157eba8401c95d/thumbnails/f3f9e052ecf844edb87c929ce164ac43/163a0b880536476b9c1b018be711a90d.jpeg",
+   "rejected": [
+    "Photoscanned Dodge Grand Carav: name"
    ]
   },
   "Dodge|Grand Caravan Extended Body": {
@@ -3589,7 +3986,11 @@
      "likes": 1,
      "score": 91.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "205306cc98384cd790303f4a15c1e77e",
+   "thumb": "https://media.sketchfab.com/models/205306cc98384cd790303f4a15c1e77e/thumbnails/b58cd1d55be340fa94899d26d942adfa/9a32a902c4e04514852743e4b9b61ae1.jpeg",
+   "rejected": []
   },
   "Dodge|Magnum": {
    "make": "Dodge",
@@ -3632,7 +4033,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b34f5bdd1de84da7864079dfa587d297",
+   "thumb": "https://media.sketchfab.com/models/b34f5bdd1de84da7864079dfa587d297/thumbnails/f76ee746e8b64ab6a2cbe8b5b1e6369a/6d1e7e097a6a4aebbf2ada400dde7da0.jpeg",
+   "rejected": []
   },
   "Dodge|Neon": {
    "make": "Dodge",
@@ -3675,7 +4080,11 @@
      "likes": 5,
      "score": 86.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "529620651df548939aff2618763ddfea",
+   "thumb": "https://media.sketchfab.com/models/529620651df548939aff2618763ddfea/thumbnails/56a580aea6f44779a203319b8c80368b/508536cc10af4b09bac3459932f53762.jpeg",
+   "rejected": []
   },
   "Dodge|Ram 1500": {
    "make": "Dodge",
@@ -3720,7 +4129,11 @@
      "likes": 22,
      "score": 98.17036701610556
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5b3898052ca64641ab1857a638551039",
+   "thumb": "https://media.sketchfab.com/models/5b3898052ca64641ab1857a638551039/thumbnails/6338137cc717430bb591c3a1ffa739cc/5c20d7e329ae45b7a106a7ffec688b91.jpeg",
+   "rejected": []
   },
   "Dodge|Ram 2500": {
    "make": "Dodge",
@@ -3765,6 +4178,12 @@
      "likes": 3,
      "score": 93.61235994796778
     }
+   ],
+   "vetted": true,
+   "pick": "20dfe0fc6a684c539e11bfe5e6a43fee",
+   "thumb": "https://media.sketchfab.com/models/20dfe0fc6a684c539e11bfe5e6a43fee/thumbnails/57146c61b3314aff83f06691bf07b262/5a707c12634e468f862bf4443ff0dce6.jpeg",
+   "rejected": [
+    "Dodge Ram 2500: only 4 materials"
    ]
   },
   "Dodge|Ram 2500 Regular Car": {
@@ -3822,7 +4241,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "40604d4eb4f3454685e66a77e447f23e",
+   "thumb": "https://media.sketchfab.com/models/40604d4eb4f3454685e66a77e447f23e/thumbnails/b56493b944a147948f0db92d3e18d6be/b5257443518e45cc9457fb37729da3e9.jpeg",
+   "rejected": []
   },
   "Dodge|Ram": {
    "make": "Dodge",
@@ -3865,7 +4288,11 @@
      "likes": 36,
      "score": 99.40921034440197
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "de045bf2f3b141a48a4248885d3fee1c",
+   "thumb": "https://media.sketchfab.com/models/de045bf2f3b141a48a4248885d3fee1c/thumbnails/2bdd5ee24b47441f994ad1b4b362f553/12224c85edb140449eb0a65c0727510f.jpeg",
+   "rejected": []
   },
   "Dodge|Sprinter 2500": {
    "make": "Dodge",
@@ -3955,7 +4382,11 @@
      "likes": 51,
      "score": 92.29602006180879
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b4234b7970fa464faaecaf637acb0912",
+   "thumb": "https://media.sketchfab.com/models/b4234b7970fa464faaecaf637acb0912/thumbnails/778f123501b848ad8e849b5fc506bd56/a8cd2e00e7ca4fec903f39eb9189f40b.jpeg",
+   "rejected": []
   },
   "Ferrari|California T": {
    "make": "Ferrari",
@@ -4016,7 +4447,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b59a403dfa1d40318c1126e658f87c19",
+   "thumb": "https://media.sketchfab.com/models/b59a403dfa1d40318c1126e658f87c19/thumbnails/9bfd6ca94ba343918410b52c0c291754/f6b25dd3df6941278e766390f57c516f.jpeg",
+   "rejected": []
   },
   "Fiat|500": {
    "make": "Fiat",
@@ -4059,7 +4494,11 @@
      "likes": 243,
      "score": 104.32433895803237
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f412bdec4b494692b9d5d9c03f4178ad",
+   "thumb": "https://media.sketchfab.com/models/f412bdec4b494692b9d5d9c03f4178ad/thumbnails/c6414825fb094366ad8d54a7b0a25831/a0b16c3c22b847e8a0da48f39c054d17.jpeg",
+   "rejected": []
   },
   "Fiat|500L": {
    "make": "Fiat",
@@ -4140,7 +4579,11 @@
      "likes": 112,
      "score": 102.31847066090052
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "09ebc68dcb634807a9dace7404ce5e66",
+   "thumb": "https://media.sketchfab.com/models/09ebc68dcb634807a9dace7404ce5e66/thumbnails/741dd6c2cf5e4c6d8f7814f9ab49951f/528372c01379482381aec2eaf7cf4a63.jpeg",
+   "rejected": []
   },
   "Ford|Bronco Outer Banks": {
    "make": "Ford",
@@ -4192,7 +4635,11 @@
      "likes": 18,
      "score": 67.67252160571698
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7b515bb801f54b7fbc2e72d9413d504e",
+   "thumb": "https://media.sketchfab.com/models/7b515bb801f54b7fbc2e72d9413d504e/thumbnails/bda85b0168a64246846c1ba4636c1d6b/c4ac756a0d3f4023b0e2f8818bcbe08c.jpeg",
+   "rejected": []
   },
   "Ford|C-Max": {
    "make": "Ford",
@@ -4213,6 +4660,12 @@
      "likes": 12,
      "score": 89.68366011384101
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2013 Ford C-max Titanium: 27k tris"
    ]
   },
   "Ford|Crown Victoria": {
@@ -4256,7 +4709,11 @@
      "likes": 83,
      "score": 101.54567571637129
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b1615ed43a5443a2876c8020a734cf6e",
+   "thumb": "https://media.sketchfab.com/models/b1615ed43a5443a2876c8020a734cf6e/thumbnails/a0b295ff5ddf4427a1d5017607704ffb/d6b850023aec4f39a911b314e80e4fec.jpeg",
+   "rejected": []
   },
   "Ford|E-150": {
    "make": "Ford",
@@ -4329,7 +4786,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3f06f5bc72274089b06e4bc838ea4223",
+   "thumb": "https://media.sketchfab.com/models/3f06f5bc72274089b06e4bc838ea4223/thumbnails/4f91aef09ab540d78eb33c2fb1d1e3e5/a5e8076672984becbd70841440e989be.jpeg",
+   "rejected": []
   },
   "Ford|Edge": {
    "make": "Ford",
@@ -4373,6 +4834,12 @@
      "likes": 4,
      "score": 94.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": "15f4861b68b4421b84a75a0b035da313",
+   "thumb": "https://media.sketchfab.com/models/15f4861b68b4421b84a75a0b035da313/thumbnails/9c32073514e344debdb436fb05872b69/1f1aeac21b32488184bfd5547eaee619.jpeg",
+   "rejected": [
+    "2016 Ford Edge Titanium Photos: name"
    ]
   },
   "Ford|Edge ST": {
@@ -4405,6 +4872,13 @@
      "likes": 1,
      "score": 84.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Ford Edge ST ivory white: only 1 materials",
+    "Ford Edge ST 2020: only 1 materials"
    ]
   },
   "Ford|Escape": {
@@ -4448,6 +4922,12 @@
      "likes": 10,
      "score": 96.24835611094935
     }
+   ],
+   "vetted": true,
+   "pick": "151f53c4542b4fcaad1e1de2492ab4b6",
+   "thumb": "https://media.sketchfab.com/models/151f53c4542b4fcaad1e1de2492ab4b6/thumbnails/d53dc92f1b804005b58236ce2a770649/19417eadf676443da9465bc00bed680f.jpeg",
+   "rejected": [
+    "Ford Escape Dashboard: only 1 materials"
    ]
   },
   "Ford|Excursion": {
@@ -4480,7 +4960,11 @@
      "likes": 4,
      "score": 87.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "61d2800a3a9548db81f21eebc1f257fb",
+   "thumb": "https://media.sketchfab.com/models/61d2800a3a9548db81f21eebc1f257fb/thumbnails/1da700e6c4bb429fa598ce7e3965fb0b/c8cc14d408b54894b43be864dea79c44.jpeg",
+   "rejected": []
   },
   "Ford|Expedition": {
    "make": "Ford",
@@ -4523,7 +5007,11 @@
      "likes": 40,
      "score": 99.67670314031841
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b4034a12c61641429a172a8cbb873ddc",
+   "thumb": "https://media.sketchfab.com/models/b4034a12c61641429a172a8cbb873ddc/thumbnails/82593efe73a74e9ebe6768b8297db110/149b59fe36764adda40e3c46df2c5340.jpeg",
+   "rejected": []
   },
   "Ford|Expedition EL": {
    "make": "Ford",
@@ -4566,7 +5054,11 @@
      "likes": 2,
      "score": 92.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1c020a625713489f933ce59b52a32c0b",
+   "thumb": "https://media.sketchfab.com/models/1c020a625713489f933ce59b52a32c0b/thumbnails/907eb42514df4011a6397b6f9648cfa3/1862f099fd0644139f313d1a48796e89.jpeg",
+   "rejected": []
   },
   "Ford|Expedition Extended Length": {
    "make": "Ford",
@@ -4618,7 +5110,11 @@
      "likes": 75,
      "score": 81.28488155368476
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "edea9d0701044ba3965dfb8cbdd20141",
+   "thumb": "https://media.sketchfab.com/models/edea9d0701044ba3965dfb8cbdd20141/thumbnails/4db1f1401d14480db71f80c016a2fbe8/3ece70acdc8c45488e5e2a2317a51594.jpeg",
+   "rejected": []
   },
   "Ford|Explorer Trac": {
    "make": "Ford",
@@ -4686,7 +5182,11 @@
      "likes": 55,
      "score": 100.4891281620372
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "eff90788c3b44d398bcf5e63ccabbb52",
+   "thumb": "https://media.sketchfab.com/models/eff90788c3b44d398bcf5e63ccabbb52/thumbnails/9fcb0208fdd94b74957a6f0b11baf427/b3d79af129834b1a92062e938d0b015e.jpeg",
+   "rejected": []
   },
   "Ford|F-150 Lightning": {
    "make": "Ford",
@@ -4707,6 +5207,12 @@
      "likes": 16,
      "score": 60.38269352826964
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Ford F-150 Replica - Kerbal Sp: 29k tris"
    ]
   },
   "Ford|F-150 Raptor": {
@@ -4751,7 +5257,11 @@
      "likes": 17,
      "score": 97.53163503061984
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "eff90788c3b44d398bcf5e63ccabbb52",
+   "thumb": "https://media.sketchfab.com/models/eff90788c3b44d398bcf5e63ccabbb52/thumbnails/9fcb0208fdd94b74957a6f0b11baf427/b3d79af129834b1a92062e938d0b015e.jpeg",
+   "rejected": []
   },
   "Ford|F-250": {
    "make": "Ford",
@@ -4800,7 +5310,11 @@
      "likes": 1,
      "score": 84.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "870e97c1d9804427a6dbb1101260d1ae",
+   "thumb": "https://media.sketchfab.com/models/870e97c1d9804427a6dbb1101260d1ae/thumbnails/f1904675837d4f11ba8ba2d949053652/fff5a81a71ee4d7b84d01568e34a920d.jpeg",
+   "rejected": []
   },
   "Ford|F-250 SD": {
    "make": "Ford",
@@ -4885,7 +5399,11 @@
      "likes": 5,
      "score": 87.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "610cecc94c9646e3826ac918917e997c",
+   "thumb": "https://media.sketchfab.com/models/610cecc94c9646e3826ac918917e997c/thumbnails/e877b85153db45e9a9bc20565a0ed832/990ae96f2ea0430293df941d9cc1cbfd.jpeg",
+   "rejected": []
   },
   "Ford|F-650": {
    "make": "Ford",
@@ -4939,7 +5457,11 @@
      "likes": 17,
      "score": 90.53163503061984
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8b3f0c6876c74c0480ca04e698582db3",
+   "thumb": "https://media.sketchfab.com/models/8b3f0c6876c74c0480ca04e698582db3/thumbnails/406aad0269a54fa1aa7923beda6781a6/71a3824cdd484c9fbadaf11a30bc9cfd.jpeg",
+   "rejected": []
   },
   "Ford|Flex": {
    "make": "Ford",
@@ -4991,7 +5513,11 @@
      "likes": 32,
      "score": 99.11108363926732
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ed2e9355b8a64e6a8700973df1a5b8f0",
+   "thumb": "https://media.sketchfab.com/models/ed2e9355b8a64e6a8700973df1a5b8f0/thumbnails/7fbe1c067fe24461833418b502d8750f/c73abdbb63fa44479256a22d81a7d09e.jpeg",
+   "rejected": []
   },
   "Ford|Focus RS": {
    "make": "Ford",
@@ -5034,7 +5560,11 @@
      "likes": 37,
      "score": 92.47870157970087
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a629401cee34495ca77695d8e68f59f7",
+   "thumb": "https://media.sketchfab.com/models/a629401cee34495ca77695d8e68f59f7/thumbnails/1a02834095c94e0bb2733e9519324b18/44e4a045953d4e399049f2dfb7a8015b.jpeg",
+   "rejected": []
   },
   "Ford|Freestar": {
    "make": "Ford",
@@ -5066,6 +5596,13 @@
      "likes": 0,
      "score": 75
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned Ford Freestar (2004: only 1 materials",
+    "2007 Ford Freestar SE: only 1 materials"
    ]
   },
   "Ford|Fusion": {
@@ -5109,6 +5646,12 @@
      "likes": 21,
      "score": 91.05453608493323
     }
+   ],
+   "vetted": true,
+   "pick": "5fb34983f3ff41428d6fe2a6192b553d",
+   "thumb": "https://media.sketchfab.com/models/5fb34983f3ff41428d6fe2a6192b553d/thumbnails/f343117da7724474aac32b9753810ce1/496f4f8d5bab4449a64ac77ce7610f16.jpeg",
+   "rejected": [
+    "2016 Ford Fusion Photoscan: name"
    ]
   },
   "Ford|Fusion Energi": {
@@ -5161,6 +5704,14 @@
      "likes": 0,
      "score": 70
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2022 Ford Maverick: only 1 materials",
+    "Stave Island Maverick: only 1 materials",
+    "23 Maverick Passenger: only 1 materials"
    ]
   },
   "Ford|Mustang": {
@@ -5205,7 +5756,11 @@
      "likes": 364,
      "score": 105
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0eaa7a16796540f29461ddae05ecdeb3",
+   "thumb": "https://media.sketchfab.com/models/0eaa7a16796540f29461ddae05ecdeb3/thumbnails/51117b537b1448beb6218d9a765a71a5/54c615ddb50b4da5a08510364a97fcc2.jpeg",
+   "rejected": []
   },
   "Ford|Mustang GT": {
    "make": "Ford",
@@ -5248,7 +5803,11 @@
      "likes": 86,
      "score": 93.63711551571171
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7999c3aec2fc4973a5668603e1d288ae",
+   "thumb": "https://media.sketchfab.com/models/7999c3aec2fc4973a5668603e1d288ae/thumbnails/907f358de4e74e2bb5521ac87d4ab239/a4f03daed7f74d8fb1d237683b89c9d2.jpeg",
+   "rejected": []
   },
   "Ford|Mustang Mach-E": {
    "make": "Ford",
@@ -5291,7 +5850,11 @@
      "likes": 8,
      "score": 88.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c0677825d1304149b0ea5a82a6dc676d",
+   "thumb": "https://media.sketchfab.com/models/c0677825d1304149b0ea5a82a6dc676d/thumbnails/69dc5c65dc2344a3b863e0492713043f/fb6f13c410c84a418ae26f398391225f.jpeg",
+   "rejected": []
   },
   "Ford|Mustang Shelby GT500": {
    "make": "Ford",
@@ -5334,7 +5897,11 @@
      "likes": 39,
      "score": 99.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0eaa7a16796540f29461ddae05ecdeb3",
+   "thumb": "https://media.sketchfab.com/models/0eaa7a16796540f29461ddae05ecdeb3/thumbnails/51117b537b1448beb6218d9a765a71a5/54c615ddb50b4da5a08510364a97fcc2.jpeg",
+   "rejected": []
   },
   "Ford|Ranger": {
    "make": "Ford",
@@ -5380,7 +5947,11 @@
      "likes": 319,
      "score": 98
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7c94a52bf2f14060bd054f51f7b06d19",
+   "thumb": "https://media.sketchfab.com/models/7c94a52bf2f14060bd054f51f7b06d19/thumbnails/51a216c28ff04231a456fc771b4a288b/5147fcac694942c78116f76616ca7030.jpeg",
+   "rejected": []
   },
   "Ford|Ranger Raport": {
    "make": "Ford",
@@ -5441,6 +6012,12 @@
      "likes": 7,
      "score": 88.41853992195166
     }
+   ],
+   "vetted": true,
+   "pick": "d26a53de3f194989aaa7b062be6e1e9a",
+   "thumb": "https://media.sketchfab.com/models/d26a53de3f194989aaa7b062be6e1e9a/thumbnails/65667336ac9c4f258bcd528dcfe0cae1/9a6ba03e06474251bd67a7d00df38a57.jpeg",
+   "rejected": [
+    "Ford Taurus (Mk7) CN-spec 2016: 1488k tris"
    ]
   },
   "Ford|Transit 150 LR": {
@@ -5496,6 +6073,13 @@
      "likes": 6,
      "score": 57.07058824008554
     }
+   ],
+   "vetted": true,
+   "pick": "ef441fcc51fa425aaa393d589a156ba6",
+   "thumb": "https://media.sketchfab.com/models/ef441fcc51fa425aaa393d589a156ba6/thumbnails/585726e0b3694b439236662849ab99d6/728f0ce9920146e59d44e6d0c64c2d28.jpeg",
+   "rejected": [
+    "2014 Ford Transit Connect Carg: only 4 materials",
+    "Photoscanned Ford Transit Conn: name"
    ]
   },
   "Ford|Transit Connect Short Wheel": {
@@ -5613,6 +6197,12 @@
      "likes": 0,
      "score": 90
     }
+   ],
+   "vetted": true,
+   "pick": "5ce87a955d2345f69d7191839796f239",
+   "thumb": "https://media.sketchfab.com/models/5ce87a955d2345f69d7191839796f239/thumbnails/7053f19f90ea418192221c147e573b15/ca09407951e3439da9ceb6b98ea1c652.jpeg",
+   "rejected": [
+    "2016 GMC Acadia Photoscan: name"
    ]
   },
   "GMC|Canyon": {
@@ -5638,6 +6228,12 @@
      "likes": 14,
      "score": 90.05654755433409
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "GMC Canyon 2021: only 1 materials"
    ]
   },
   "GMC|Envoy": {
@@ -5670,6 +6266,13 @@
      "likes": 0,
      "score": 82
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned GMC Envoy (2002) [F: only 1 materials",
+    "Gmc envoy 2006: only 1 materials"
    ]
   },
   "GMC|Savana 1500": {
@@ -5739,7 +6342,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f1c33f582f184e50857be2e832c74c20",
+   "thumb": "https://media.sketchfab.com/models/f1c33f582f184e50857be2e832c74c20/thumbnails/b7f2ac5709164fd3a1172176ada3cd07/2c0f3fd517824a5b9ca2eeb07321c18c.jpeg",
+   "rejected": []
   },
   "GMC|Sierra 1500HD": {
    "make": "GMC",
@@ -5781,7 +6388,11 @@
      "likes": 68,
      "score": 71.03309454442353
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0fb040c349a24defadaa9ab9f0cb5f22",
+   "thumb": "https://media.sketchfab.com/models/0fb040c349a24defadaa9ab9f0cb5f22/thumbnails/b316689aa07e453db6c861a32210740a/5964ef24e4704136814d9bda0a0e37ba.jpeg",
+   "rejected": []
   },
   "GMC|Sierra 2500HD": {
    "make": "GMC",
@@ -5867,6 +6478,12 @@
      "likes": 2,
      "score": 92.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": "47acfe6a6bde48f1ad986fbdcc82e8fd",
+   "thumb": "https://media.sketchfab.com/models/47acfe6a6bde48f1ad986fbdcc82e8fd/thumbnails/06ce3d3bed6e432fbb7a94c062438bd0/40d3bb2841a14705995d805cca45b611.jpeg",
+   "rejected": [
+    "2014 GMC Terrain Photoscan: name"
    ]
   },
   "GMC|Terrian": {
@@ -5921,7 +6538,11 @@
      "likes": 1,
      "score": 91.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e9ab3869e58f4399bb80f6a0301a726c",
+   "thumb": "https://media.sketchfab.com/models/e9ab3869e58f4399bb80f6a0301a726c/thumbnails/0a5e4832d6ad4f38a4ce8c3f581356b8/53dd1c48a4f64a8d8cde9d342f7792b5.jpeg",
+   "rejected": []
   },
   "GMC|Yukon XL": {
    "make": "GMC",
@@ -5964,7 +6585,11 @@
      "likes": 7,
      "score": 87.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "85859f1078824fa596b79bd382b3f9e6",
+   "thumb": "https://media.sketchfab.com/models/85859f1078824fa596b79bd382b3f9e6/thumbnails/da65ac83d2b74de5b91a37246d7dcd32/0c3f7dfc985545b282f17d3d920e6c5c.jpeg",
+   "rejected": []
   },
   "GMC|Yukon XL Extended": {
    "make": "GMC",
@@ -6006,7 +6631,11 @@
      "likes": 102,
      "score": 95.07702334823104
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "396e31bc56914955bb5996477ded4c17",
+   "thumb": "https://media.sketchfab.com/models/396e31bc56914955bb5996477ded4c17/thumbnails/5af3f314e5674423afdea3718f3d644f/15b9c73f27c6487b9d0b58dabaa1f1d2.jpeg",
+   "rejected": []
   },
   "Genesis|G70": {
    "make": "Genesis",
@@ -6038,6 +6667,13 @@
      "likes": 15,
      "score": 90.22471989593555
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Genesis G70: 1202k tris",
+    "Genesis G70: 1230k tris"
    ]
   },
   "Genesis|G80 3.5T": {
@@ -6068,6 +6704,12 @@
      "likes": 1,
      "score": 84.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Genesis G90 2017: only 1 materials"
    ]
   },
   "Genesis|GV70": {
@@ -6089,6 +6731,12 @@
      "likes": 2,
      "score": 85.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Genesis Gv70: only 1 materials"
    ]
   },
   "Genesis|GV80": {
@@ -6132,7 +6780,11 @@
      "likes": 1,
      "score": 84.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3486b7b7a25541498032cd1281de37fe",
+   "thumb": "https://media.sketchfab.com/models/3486b7b7a25541498032cd1281de37fe/thumbnails/3f9f5b744b374a4ea9f42d07f4d30afe/d58913eb9c7441628e2fa0098dc405d6.jpeg",
+   "rejected": []
   },
   "Honda|Accord": {
    "make": "Honda",
@@ -6175,7 +6827,14 @@
      "likes": 26,
      "score": 98.58818258495393
     }
-   ]
+   ],
+   "thumb": "https://media.sketchfab.com/models/aad70ad7eae3467e99c71ef0c7150138/thumbnails/49a118ac762f497989b2081d4ac381d0/f6a6bb632d7b45e59077c555fbb7e3c5.jpeg",
+   "rejected": [
+    "2018 Honda Accord: only 1 materials",
+    "Honda-Accord - offf road - 4x4: modified build"
+   ],
+   "vetted": true,
+   "pick": "aad70ad7eae3467e99c71ef0c7150138"
   },
   "Honda|CR-V": {
    "make": "Honda",
@@ -6218,7 +6877,11 @@
      "likes": 9,
      "score": 96
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "91c6673859444597bf006a0ef8570005",
+   "thumb": "https://media.sketchfab.com/models/91c6673859444597bf006a0ef8570005/thumbnails/1eb63fc2b3594d59a0d76bb374b6a531/95021420983546f0b198f705480d6052.jpeg",
+   "rejected": []
   },
   "Honda|CR-Z": {
    "make": "Honda",
@@ -6250,7 +6913,11 @@
      "likes": 2,
      "score": 85.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "d5af69ef34834f43a65b4aac78ca8929",
+   "thumb": "https://media.sketchfab.com/models/d5af69ef34834f43a65b4aac78ca8929/thumbnails/930751afbbc44444ac0164889aca7b00/37045501f4384c3bb15d041825a9d1f0.jpeg",
+   "rejected": []
   },
   "Honda|Civic": {
    "make": "Honda",
@@ -6294,7 +6961,11 @@
      "likes": 129,
      "score": 102.68366011384103
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b9604dd71c6546ec842702682019492a",
+   "thumb": "https://media.sketchfab.com/models/b9604dd71c6546ec842702682019492a/thumbnails/03fecf9a4ebc427780aa7a2a415337e3/c7af811cb5794959a7e94315a1e1188c.jpeg",
+   "rejected": []
   },
   "Honda|Civic Type-R": {
    "make": "Honda",
@@ -6337,7 +7008,11 @@
      "likes": 89,
      "score": 101.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b9604dd71c6546ec842702682019492a",
+   "thumb": "https://media.sketchfab.com/models/b9604dd71c6546ec842702682019492a/thumbnails/03fecf9a4ebc427780aa7a2a415337e3/c7af811cb5794959a7e94315a1e1188c.jpeg",
+   "rejected": []
   },
   "Honda|Clarity": {
    "make": "Honda",
@@ -6367,7 +7042,11 @@
      "likes": 11,
      "score": 89.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8d0d4ce034ef435db9167b18161ef57f",
+   "thumb": "https://media.sketchfab.com/models/8d0d4ce034ef435db9167b18161ef57f/thumbnails/52605903b1844ec5900e89f9a52fa648/3ebb8aec8b5442ebafea9364fdffaad8.jpeg",
+   "rejected": []
   },
   "Honda|Element": {
    "make": "Honda",
@@ -6428,6 +7107,12 @@
      "likes": 6,
      "score": 95.07058824008554
     }
+   ],
+   "vetted": true,
+   "pick": "974385e940e84fd6bf47ca04c2e69313",
+   "thumb": "https://media.sketchfab.com/models/974385e940e84fd6bf47ca04c2e69313/thumbnails/9e95f1e6a0e8463d8ee5872bc2553f37/74c4bb5c5efa4dd694b39d6da2df6620.jpeg",
+   "rejected": [
+    "Honda Fit: only 1 materials"
    ]
   },
   "Honda|HR-V": {
@@ -6472,7 +7157,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e9128a46adc34e5e995ab7e8ad36339c",
+   "thumb": "https://media.sketchfab.com/models/e9128a46adc34e5e995ab7e8ad36339c/thumbnails/7ac48f612899495d96349d04017fb278/edbd5367204d46ddb87f31bb684d1026.jpeg",
+   "rejected": []
   },
   "Honda|Odyssey": {
    "make": "Honda",
@@ -6515,7 +7204,11 @@
      "likes": 18,
      "score": 90.67252160571698
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a4827c4d86224ab586218654559f4627",
+   "thumb": "https://media.sketchfab.com/models/a4827c4d86224ab586218654559f4627/thumbnails/2bd96a7239f043aea951a7382272ff08/29eee7cd55024706a82d867d5e405889.jpeg",
+   "rejected": []
   },
   "Honda|Passport": {
    "make": "Honda",
@@ -6536,6 +7229,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Honda Passport 2020: only 1 materials"
    ]
   },
   "Honda|Pilot": {
@@ -6579,7 +7278,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "61f267e6f4e844bcb36c6f3ac580849f",
+   "thumb": "https://media.sketchfab.com/models/61f267e6f4e844bcb36c6f3ac580849f/thumbnails/888e16c11f7649e19976addd1d045490/f8daa190d51a4be3aebdfcfa2c5d14e3.jpeg",
+   "rejected": []
   },
   "Honda|Ridgeline": {
    "make": "Honda",
@@ -6623,7 +7326,11 @@
      "likes": 26,
      "score": 91.58818258495393
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "76c8c4d7d49949e8ba9d6b6d3a94c473",
+   "thumb": "https://media.sketchfab.com/models/76c8c4d7d49949e8ba9d6b6d3a94c473/thumbnails/a9c7a7143d0249b79cf9c790a02db20b/77bf7bde2a6f453d9a94800101029539.jpeg",
+   "rejected": []
   },
   "Honda|S2000": {
    "make": "Honda",
@@ -6666,7 +7373,11 @@
      "likes": 44,
      "score": 99.91927508265206
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c8f87ba8790d4154929103e4012d1e66",
+   "thumb": "https://media.sketchfab.com/models/c8f87ba8790d4154929103e4012d1e66/thumbnails/ad18c7301a2c4dc6860eade0303a1a8e/fd0364264e7a49c092900c7e74297521.jpeg",
+   "rejected": []
   },
   "Hummer|H1": {
    "make": "Hummer",
@@ -6709,7 +7420,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "fae2bbeb0d9946b8bb7d5dbf90e3f9a8",
+   "thumb": "https://media.sketchfab.com/models/fae2bbeb0d9946b8bb7d5dbf90e3f9a8/thumbnails/ed12161d50194fd18961fe7052044d38/9f7c2d67c1a14a92bd0967f26fe2e6d0.jpeg",
+   "rejected": []
   },
   "Hummer|H2": {
    "make": "Hummer",
@@ -6752,7 +7467,11 @@
      "likes": 27,
      "score": 98.68294818805332
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5cd3ea8eb94c4f5597cc086b2df40e58",
+   "thumb": "https://media.sketchfab.com/models/5cd3ea8eb94c4f5597cc086b2df40e58/thumbnails/8a81a459e8d8484f95958c5ba5303cce/a2de914ff1b446a59f58e9e747bb2ab7.jpeg",
+   "rejected": []
   },
   "Hummer|H3": {
    "make": "Hummer",
@@ -6795,7 +7514,11 @@
      "likes": 19,
      "score": 90.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "278c15b01448495b8484b153962de919",
+   "thumb": "https://media.sketchfab.com/models/278c15b01448495b8484b153962de919/thumbnails/9543b41c698d4f54a97d5eae1fa5842e/3dc83d367453442da83c4f357d5bdf40.jpeg",
+   "rejected": []
   },
   "Hyundai|Accent": {
    "make": "Hyundai",
@@ -6839,7 +7562,11 @@
      "likes": 40,
      "score": 92.67670314031841
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "cec6b04b06724f1088129c1054ccb1ec",
+   "thumb": "https://media.sketchfab.com/models/cec6b04b06724f1088129c1054ccb1ec/thumbnails/4d49f00493f04fac8485b00bac6ffca0/b573eb4392a64e498e51c38c481320b9.jpeg",
+   "rejected": []
   },
   "Hyundai|Azera": {
    "make": "Hyundai",
@@ -6860,7 +7587,11 @@
      "likes": 13,
      "score": 88.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "711b67ea05f9441a863dce4badaca660",
+   "thumb": "https://media.sketchfab.com/models/711b67ea05f9441a863dce4badaca660/thumbnails/9bb9940e82f547f4a6820d2878dd6d90/8e7440b347f24316966f46408e366a21.jpeg",
+   "rejected": []
   },
   "Hyundai|Elanta": {
    "make": "Hyundai",
@@ -6915,7 +7646,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "cd5741852515425aa3c058b7e081dd2c",
+   "thumb": "https://media.sketchfab.com/models/cd5741852515425aa3c058b7e081dd2c/thumbnails/91403257d1024bed8804db546cb33164/a5bc5510a9914df58f4d5bb95d70778c.jpeg",
+   "rejected": []
   },
   "Hyundai|Elantra GT": {
    "make": "Hyundai",
@@ -6945,6 +7680,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Hyundai Entourage: only 1 materials"
    ]
   },
   "Hyundai|Equus": {
@@ -6977,6 +7718,13 @@
      "likes": 0,
      "score": 75
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Hyundai Equus 2004: only 1 materials",
+    "Hyundai Equus 1999: only 1 materials"
    ]
   },
   "Hyundai|Genesis": {
@@ -7009,6 +7757,12 @@
      "likes": 104,
      "score": 82.12713579441963
     }
+   ],
+   "vetted": true,
+   "pick": "da53b2c73baa426bb58d576c00b32ef1",
+   "thumb": "https://media.sketchfab.com/models/da53b2c73baa426bb58d576c00b32ef1/thumbnails/114a3947a8344d35a13345822650de98/90f638fdb54a4bd2894bb09e63d4f87e.jpeg",
+   "rejected": [
+    "Hyundai Genesis Photocatch Rec: only 1 materials"
    ]
   },
   "Hyundai|Genesis G80": {
@@ -7061,7 +7815,11 @@
      "likes": 1,
      "score": 91.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2e62fa6cd7814178acf49df42bb4ff24",
+   "thumb": "https://media.sketchfab.com/models/2e62fa6cd7814178acf49df42bb4ff24/thumbnails/9ed2d083f9b6432b80b82f865ffc7c5a/8576d6a9fe2b4f75b79e1f6078e7316d.jpeg",
+   "rejected": []
   },
   "Hyundai|Ioniq 6": {
    "make": "Hyundai",
@@ -7104,7 +7862,11 @@
      "likes": 43,
      "score": 92.86071605891712
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bddb0ecb7bd04ffbb0a46a977e5e64a2",
+   "thumb": "https://media.sketchfab.com/models/bddb0ecb7bd04ffbb0a46a977e5e64a2/thumbnails/49016088239043229657be7a602b27cd/8b376f5769594e13b7e7a0f60b0f25f9.jpeg",
+   "rejected": []
   },
   "Hyundai|Kona": {
    "make": "Hyundai",
@@ -7149,7 +7911,11 @@
      "likes": 21,
      "score": 98.05453608493323
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "343a128d7284471b91e7c4575910722e",
+   "thumb": "https://media.sketchfab.com/models/343a128d7284471b91e7c4575910722e/thumbnails/754ff5605e6241c396fa332f24254cee/0c9ad94c7b0e49aea00ab4b1bb97f1db.jpeg",
+   "rejected": []
   },
   "Hyundai|Kona EV": {
    "make": "Hyundai",
@@ -7181,7 +7947,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9d48397817094507a4e77f526b0cdb9e",
+   "thumb": "https://media.sketchfab.com/models/9d48397817094507a4e77f526b0cdb9e/thumbnails/8523e42a5eb846f18186a56e70bd632c/35f6693520bf42d59a673ffcbb0df226.jpeg",
+   "rejected": []
   },
   "Hyundai|Kona N": {
    "make": "Hyundai",
@@ -7222,7 +7992,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3c1213c997b243f1aee5998bdba6be5e",
+   "thumb": "https://media.sketchfab.com/models/3c1213c997b243f1aee5998bdba6be5e/thumbnails/b9b079a8ae704cffb9886b48a0e5a047/c56a332ffab0467595eb43451aaf361e.jpeg",
+   "rejected": []
   },
   "Hyundai|Palisade": {
    "make": "Hyundai",
@@ -7243,6 +8017,12 @@
      "likes": 0,
      "score": 90
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Hyundai Palisade 2026: only 1 materials"
    ]
   },
   "Hyundai|Santa Cruz": {
@@ -7264,6 +8044,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Hyundai Santa Cruz: only 1 materials"
    ]
   },
   "Hyundai|Santa Fe": {
@@ -7309,7 +8095,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "44162eff25084d74964688b1e139ede8",
+   "thumb": "https://media.sketchfab.com/models/44162eff25084d74964688b1e139ede8/thumbnails/b297be71f1914112a109c7b400afc9fa/715b5568cea541578576f8bfe77e7df6.jpeg",
+   "rejected": []
   },
   "Hyundai|Sonata": {
    "make": "Hyundai",
@@ -7354,7 +8144,11 @@
      "likes": 6,
      "score": 95.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c435ef02b27140e2a5f800c622bb4c04",
+   "thumb": "https://media.sketchfab.com/models/c435ef02b27140e2a5f800c622bb4c04/thumbnails/bcda62da6b6942298dbbb6d6b884e8ab/e5e456d3475d4bcb95bb8fc52123d633.jpeg",
+   "rejected": []
   },
   "Hyundai|Tiburon": {
    "make": "Hyundai",
@@ -7397,7 +8191,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b9622ed6ec3c4bc9abb196693764548c",
+   "thumb": "https://media.sketchfab.com/models/b9622ed6ec3c4bc9abb196693764548c/thumbnails/e9831f6ed1ea4d5b812d123c0bdc95a5/512ae5a741a74634b41c97592a8cdc4f.jpeg",
+   "rejected": []
   },
   "Hyundai|Tucson": {
    "make": "Hyundai",
@@ -7443,7 +8241,11 @@
      "likes": 9,
      "score": 96
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e239ad27c5854f4189fe467ffb1ec303",
+   "thumb": "https://media.sketchfab.com/models/e239ad27c5854f4189fe467ffb1ec303/thumbnails/513a0c1ad93741b68dace3c077d5b146/15bf225a677b4cd1a7d03c65d02d4639.jpeg",
+   "rejected": []
   },
   "Hyundai|Veloster N": {
    "make": "Hyundai",
@@ -7475,7 +8277,11 @@
      "likes": 1,
      "score": 84.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "646c7c199c4b413dabe38be27533835a",
+   "thumb": "https://media.sketchfab.com/models/646c7c199c4b413dabe38be27533835a/thumbnails/b433d76a0f3c42a783f1352dc1c310d5/5e42a091d7344512b6fe53d010489fec.jpeg",
+   "rejected": []
   },
   "Hyundai|Veloster": {
    "make": "Hyundai",
@@ -7518,7 +8324,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "274079ecb1b84307897656c09ee3376a",
+   "thumb": "https://media.sketchfab.com/models/274079ecb1b84307897656c09ee3376a/thumbnails/56cb5ec1de6340e8b5d514fd7e197a4f/7c9a5fa42cf148aa8c6d2fb92d0c20b0.jpeg",
+   "rejected": []
   },
   "Hyundai|Venue": {
    "make": "Hyundai",
@@ -7539,6 +8349,12 @@
      "likes": 1,
      "score": 84.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Hyundai Venue 2025: only 1 materials"
    ]
   },
   "Hyundai|Veracruz": {
@@ -7571,7 +8387,11 @@
      "likes": 1,
      "score": 84.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "82876de1b064450cb8f033a2d3e90758",
+   "thumb": "https://media.sketchfab.com/models/82876de1b064450cb8f033a2d3e90758/thumbnails/0badfc40330c4ce69478221e93a886c0/72a0e9d2ca334dbba48c0457ed5c4e6f.jpeg",
+   "rejected": []
   },
   "Infiniti|EX35 or QX50": {
    "make": "Infiniti",
@@ -7621,7 +8441,11 @@
      "likes": 8,
      "score": 80.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f2e715be06494226865510aac31f716b",
+   "thumb": "https://media.sketchfab.com/models/f2e715be06494226865510aac31f716b/thumbnails/5915b09a958844189be151dd73f710ec/781a3647428c4888a0a8b2cc8d3f6fb4.jpeg",
+   "rejected": []
   },
   "Infiniti|G37": {
    "make": "Infiniti",
@@ -7642,7 +8466,11 @@
      "likes": 5,
      "score": 94.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c57e55b2ea8441638a6ab952eb521c94",
+   "thumb": "https://media.sketchfab.com/models/c57e55b2ea8441638a6ab952eb521c94/thumbnails/286e094b700447629ec95d0913d49718/10d772154f8f4695aab02e27453b5a92.jpeg",
+   "rejected": []
   },
   "Infiniti|JX35 or QX60": {
    "make": "Infiniti",
@@ -7712,7 +8540,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e91aeee80d1b4dd2b385ca2b951ca5e2",
+   "thumb": "https://media.sketchfab.com/models/e91aeee80d1b4dd2b385ca2b951ca5e2/thumbnails/1eafa05989954459a107b1f7564e041f/e717abf744414071b2d4fd36c7c1b0a7.jpeg",
+   "rejected": []
   },
   "Infiniti|Q50 Red": {
    "make": "Infiniti",
@@ -7733,7 +8565,11 @@
      "likes": 64,
      "score": 100.87748013985713
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e91aeee80d1b4dd2b385ca2b951ca5e2",
+   "thumb": "https://media.sketchfab.com/models/e91aeee80d1b4dd2b385ca2b951ca5e2/thumbnails/1eafa05989954459a107b1f7564e041f/e717abf744414071b2d4fd36c7c1b0a7.jpeg",
+   "rejected": []
   },
   "Infiniti|Q60": {
    "make": "Infiniti",
@@ -7776,6 +8612,14 @@
      "likes": 20,
      "score": 90.93331576840352
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Infiniti Q60 Widebody kit: name",
+    "2017 Infiniti Q60 Custom: 26k tris",
+    "infiniti q60 project black s s: 32k tris"
    ]
   },
   "Infiniti|QX30": {
@@ -7797,6 +8641,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Infiniti Qx30: only 1 materials"
    ]
   },
   "Infiniti|QX50": {
@@ -7829,7 +8679,11 @@
      "likes": 7,
      "score": 88.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e7d888afb93d4e3ebc242d0e6d7d539b",
+   "thumb": "https://media.sketchfab.com/models/e7d888afb93d4e3ebc242d0e6d7d539b/thumbnails/d9db6b35f08c447c9234d18af80db977/42d20b30e0994b24943841dab9b5ebeb.jpeg",
+   "rejected": []
   },
   "Infiniti|QX55": {
    "make": "Infiniti",
@@ -7850,6 +8704,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Infiniti Qx55 2024: only 1 materials"
    ]
   },
   "Infiniti|QX56 or QX80": {
@@ -7891,6 +8751,12 @@
      "likes": 4,
      "score": 94.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": "549270e0b4c9484f8976f229d75581e2",
+   "thumb": "https://media.sketchfab.com/models/549270e0b4c9484f8976f229d75581e2/thumbnails/62d205c44b534e5a80f300783659432a/21669df077a24988a7c3f74c17412818.jpeg",
+   "rejected": [
+    "2022 Infiniti QX60 3D model: only 1 materials"
    ]
   },
   "Infiniti|QX70": {
@@ -7932,6 +8798,13 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Infiniti QX80: 1456k tris",
+    "Infiniti Qx80 2025: only 1 materials"
    ]
   },
   "Isuzu|Trooper": {
@@ -7982,6 +8855,13 @@
      "likes": 2,
      "score": 85.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Jaguar F- Pace: only 3 materials",
+    "jaguar f-pace: only 1 materials"
    ]
   },
   "Jaguar|F-Type": {
@@ -8025,7 +8905,11 @@
      "likes": 50,
      "score": 93.24542105658762
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b338091497c64d31bef9bd7de49ade81",
+   "thumb": "https://media.sketchfab.com/models/b338091497c64d31bef9bd7de49ade81/thumbnails/a67486448d1c43688e1954fc6e37ba55/e64a95f12f9441ee9684344428f502fe.jpeg",
+   "rejected": []
   },
   "Jaguar|XE": {
    "make": "Jaguar",
@@ -8068,7 +8952,11 @@
      "likes": 10,
      "score": 89.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "d767313ba6cc4e5fb6101ec72e2374da",
+   "thumb": "https://media.sketchfab.com/models/d767313ba6cc4e5fb6101ec72e2374da/thumbnails/081409216e39477c97270a22ca86085e/f38400175dd24546a6cbace6fdda994a.jpeg",
+   "rejected": []
   },
   "Jaguar|XF": {
    "make": "Jaguar",
@@ -8111,7 +8999,11 @@
      "likes": 5,
      "score": 94.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "36e8b609ab42489aaead26c208ef4360",
+   "thumb": "https://media.sketchfab.com/models/36e8b609ab42489aaead26c208ef4360/thumbnails/7c0d5ac9a5c142f1889eaf1850f65607/5ec442fa4ec24c68a7617c194e4638da.jpeg",
+   "rejected": []
   },
   "Jaguar|XJ-Series": {
    "make": "Jaguar",
@@ -8132,7 +9024,11 @@
      "likes": 31,
      "score": 49.03089986991944
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6d4ca2cabcee4c6f9980a5b019b01448",
+   "thumb": "https://media.sketchfab.com/models/6d4ca2cabcee4c6f9980a5b019b01448/thumbnails/1ac30e5de46b41c7a2d5e648bdb728e5/6d23ba7f061f4fa581c33c90d840003e.jpeg",
+   "rejected": []
   },
   "Jaguar|XK": {
    "make": "Jaguar",
@@ -8175,6 +9071,12 @@
      "likes": 7,
      "score": 80.41853992195166
     }
+   ],
+   "vetted": true,
+   "pick": "bd247bb819a24175b16eaad804bd6422",
+   "thumb": "https://media.sketchfab.com/thumbnails/4c57687b657445e1b46c83b35e494ad4/448.jpg",
+   "rejected": [
+    "2010 Jaguar XK Coupe: only 1 materials"
    ]
   },
   "Jaguar|XK R": {
@@ -8229,7 +9131,11 @@
      "likes": 32,
      "score": 99.11108363926732
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f8024595e11c48119877c9c7cc554abc",
+   "thumb": "https://media.sketchfab.com/models/f8024595e11c48119877c9c7cc554abc/thumbnails/0e83b1704cf346698b36f8b4d3956562/c523919d85a44c3fb37ce72d2d53fecd.jpeg",
+   "rejected": []
   },
   "Jeep|Commander": {
    "make": "Jeep",
@@ -8272,6 +9178,14 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned Jeep Commander (200: only 1 materials",
+    "2006 Jeep Commander Photoscan: name",
+    "Jeep Commander 2022: only 1 materials"
    ]
   },
   "Jeep|Compass": {
@@ -8316,7 +9230,11 @@
      "likes": 5,
      "score": 94.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7181289a07794a6ead28ffd56bfbbc1d",
+   "thumb": "https://media.sketchfab.com/models/7181289a07794a6ead28ffd56bfbbc1d/thumbnails/9d2ae6c1f7384855ad4f15bfdb805ccf/51ebd344f932462a8a64133086b12996.jpeg",
+   "rejected": []
   },
   "Jeep|Gladitor": {
    "make": "Jeep",
@@ -8372,7 +9290,11 @@
      "likes": 32,
      "score": 99.11108363926732
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f8024595e11c48119877c9c7cc554abc",
+   "thumb": "https://media.sketchfab.com/models/f8024595e11c48119877c9c7cc554abc/thumbnails/0e83b1704cf346698b36f8b4d3956562/c523919d85a44c3fb37ce72d2d53fecd.jpeg",
+   "rejected": []
   },
   "Jeep|Grand Cherokee L": {
    "make": "Jeep",
@@ -8394,6 +9316,12 @@
      "likes": 27,
      "score": 91.68294818805332
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2013 Jeep Grand Cherokee SRT8: 16k tris"
    ]
   },
   "Jeep|Grand Wagoneer Series 2": {
@@ -8435,6 +9363,13 @@
      "likes": 6,
      "score": 80.07058824008554
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "3D Scanned Jeep Liberty (2005): only 1 materials",
+    "Jeep Liberty MK2 2008-2012: 34k tris"
    ]
   },
   "Jeep|Patriot": {
@@ -8487,7 +9422,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "13c4d0fbbfb542c0b0614459d2f12324",
+   "thumb": "https://media.sketchfab.com/models/13c4d0fbbfb542c0b0614459d2f12324/thumbnails/980f04dc3dc64e3eb069642ec8b24f6d/e3a0b9daf8bc4071a30a9d8c63a1e4c9.jpeg",
+   "rejected": []
   },
   "Jeep|Wrangler": {
    "make": "Jeep",
@@ -8532,6 +9471,13 @@
      "likes": 17,
      "score": 97.53163503061984
     }
+   ],
+   "vetted": true,
+   "pick": "dc023a0dd83b4a7a8dc902f860794ae1",
+   "thumb": "https://media.sketchfab.com/models/dc023a0dd83b4a7a8dc902f860794ae1/thumbnails/d48fa19d9b6f45a7a7a151e87aaa1f16/aa4f14fa98174c1f9d535e048e0e512b.jpeg",
+   "rejected": [
+    "Day 48: Jeep Wrangler: name",
+    "Day 111: Jeep Wrangler: name"
    ]
   },
   "Jeep|Wrangler Rubicon": {
@@ -8575,7 +9521,11 @@
      "likes": 7,
      "score": 95.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9eb49e4fea464c0f9d4258c2a6d8cfad",
+   "thumb": "https://media.sketchfab.com/models/9eb49e4fea464c0f9d4258c2a6d8cfad/thumbnails/5b39af8a795f42fea1d82375b0d4c20c/5cb63f79293a4e229c1f3adfa3c42a5a.jpeg",
+   "rejected": []
   },
   "Jeep|Wrangler Unlimited": {
    "make": "Jeep",
@@ -8618,7 +9568,11 @@
      "likes": 5,
      "score": 87.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "320589e1478e45449c556a5991bbe3c3",
+   "thumb": "https://media.sketchfab.com/models/320589e1478e45449c556a5991bbe3c3/thumbnails/7a04ce84ce1e4f548d6ddfa6dfaac53d/632eab5844cf47048234b31ebc8029f2.jpeg",
+   "rejected": []
   },
   "Jeep|Wrangler Unlimited Rubicon X": {
    "make": "Jeep",
@@ -8679,7 +9633,11 @@
      "likes": 5,
      "score": 57.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "320589e1478e45449c556a5991bbe3c3",
+   "thumb": "https://media.sketchfab.com/models/320589e1478e45449c556a5991bbe3c3/thumbnails/7a04ce84ce1e4f548d6ddfa6dfaac53d/632eab5844cf47048234b31ebc8029f2.jpeg",
+   "rejected": []
   },
   "Kia|Cadenza": {
    "make": "Kia",
@@ -8700,7 +9658,11 @@
      "likes": 11,
      "score": 89.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bd18e66bcc2d4940a2f1bb8585f8d8a3",
+   "thumb": "https://media.sketchfab.com/models/bd18e66bcc2d4940a2f1bb8585f8d8a3/thumbnails/1516bdc36ac14ba6966fa217db0dcd87/6012ec2f468b4d77b572c0da4cd8be7e.jpeg",
+   "rejected": []
   },
   "Kia|Carnival": {
    "make": "Kia",
@@ -8743,7 +9705,11 @@
      "likes": 14,
      "score": 97.05654755433409
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "855c464351f244cbaafa8269a5d472df",
+   "thumb": "https://media.sketchfab.com/models/855c464351f244cbaafa8269a5d472df/thumbnails/50fe07b07dca43fbbed65f9a9c564757/abcdc8ceb4d24a05965d1911ce863756.jpeg",
+   "rejected": []
   },
   "Kia|Carnival LXS": {
    "make": "Kia",
@@ -8795,7 +9761,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "44d11e83ef40492bb4bc3d9fbc41e5e0",
+   "thumb": "https://media.sketchfab.com/models/44d11e83ef40492bb4bc3d9fbc41e5e0/thumbnails/5bc7c897444942ee8690c2e34fc12b94/c30f70e713a24eb1b41262680cb009ce.jpeg",
+   "rejected": []
   },
   "Kia|Forte": {
    "make": "Kia",
@@ -8838,6 +9808,14 @@
      "likes": 1,
      "score": 84.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "KIA-Forte-Koup Widebody scale : name",
+    "Kia Forte: only 1 materials",
+    "Kia Forte Hatch 2019: only 1 materials"
    ]
   },
   "Kia|Forte5": {
@@ -8888,7 +9866,11 @@
      "likes": 0,
      "score": 83
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "cb1b8e7c551347a993adcc6e2cc3b960",
+   "thumb": "https://media.sketchfab.com/models/cb1b8e7c551347a993adcc6e2cc3b960/thumbnails/8341237597874771a9c602e172ad3187/9630793ac7774ea0a43d08c1977e882f.jpeg",
+   "rejected": []
   },
   "Kia|K5": {
    "make": "Kia",
@@ -8931,7 +9913,11 @@
      "likes": 22,
      "score": 98.17036701610556
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6fc788c08348419d92588f2f541c5b50",
+   "thumb": "https://media.sketchfab.com/models/6fc788c08348419d92588f2f541c5b50/thumbnails/b0540f300b5d45f5b9c4996453974487/5adb676bdaaf4391977dfb209b06b40c.jpeg",
+   "rejected": []
   },
   "Kia|K900": {
    "make": "Kia",
@@ -8983,6 +9969,12 @@
      "likes": 5,
      "score": 94.66890750230186
     }
+   ],
+   "vetted": true,
+   "pick": "b2a0d0ad41f74638bd7452a522c1f103",
+   "thumb": "https://media.sketchfab.com/models/b2a0d0ad41f74638bd7452a522c1f103/thumbnails/7b0e905a1f7a49f59b9f8030bb09951b/c1ff8d45ba544795b90db64def14cb9f.jpeg",
+   "rejected": [
+    "2021 Kia Niro FE Eco Hybrid: only 4 materials"
    ]
   },
   "Kia|Niro EV": {
@@ -9035,7 +10027,11 @@
      "likes": 22,
      "score": 98.17036701610556
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6fc788c08348419d92588f2f541c5b50",
+   "thumb": "https://media.sketchfab.com/models/6fc788c08348419d92588f2f541c5b50/thumbnails/b0540f300b5d45f5b9c4996453974487/5adb676bdaaf4391977dfb209b06b40c.jpeg",
+   "rejected": []
   },
   "Kia|Rio": {
    "make": "Kia",
@@ -9078,7 +10074,11 @@
      "likes": 0,
      "score": 90
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "82803d9c4afb4cf2867ef364d31e6528",
+   "thumb": "https://media.sketchfab.com/models/82803d9c4afb4cf2867ef364d31e6528/thumbnails/926668181c244fce8dc62f78f1fe74f3/8a8077db58084c039573194a2a72bb83.jpeg",
+   "rejected": []
   },
   "Kia|Rio5": {
    "make": "Kia",
@@ -9148,7 +10148,11 @@
      "likes": 11,
      "score": 89.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7b57354723d945cd864cda2cf0f5447d",
+   "thumb": "https://media.sketchfab.com/models/7b57354723d945cd864cda2cf0f5447d/thumbnails/05107c911ef04a7ea3e4e4342f11ac92/2d2a71e2245e463d81fc1852e59e13ba.jpeg",
+   "rejected": []
   },
   "Kia|Sorento": {
    "make": "Kia",
@@ -9191,7 +10195,11 @@
      "likes": 1,
      "score": 84.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "340ded1d34c149a095b3281a1232494a",
+   "thumb": "https://media.sketchfab.com/models/340ded1d34c149a095b3281a1232494a/thumbnails/a080d965b3da4d46b13439776b878d3b/0605f7a760914d0b899b4707f1db95c5.jpeg",
+   "rejected": []
   },
   "Kia|Sorento SX": {
    "make": "Kia",
@@ -9212,7 +10220,11 @@
      "likes": 18,
      "score": 67.67252160571698
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "340ded1d34c149a095b3281a1232494a",
+   "thumb": "https://media.sketchfab.com/models/340ded1d34c149a095b3281a1232494a/thumbnails/a080d965b3da4d46b13439776b878d3b/0605f7a760914d0b899b4707f1db95c5.jpeg",
+   "rejected": []
   },
   "Kia|Sorento SX Prestige X-Line": {
    "make": "Kia",
@@ -9264,6 +10276,12 @@
      "likes": 2,
      "score": 92.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": "95f6b0ec50654c7099db3a34d2ce516f",
+   "thumb": "https://media.sketchfab.com/models/95f6b0ec50654c7099db3a34d2ce516f/thumbnails/95590375b4f24186a542749c191fcb36/640.jpeg",
+   "rejected": [
+    "KIA soul 2018: only 1 materials"
    ]
   },
   "Kia|Soul EV": {
@@ -9285,7 +10303,11 @@
      "likes": 6,
      "score": 88.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bb8a52faa37d4458ad24f8d6275084c1",
+   "thumb": "https://media.sketchfab.com/models/bb8a52faa37d4458ad24f8d6275084c1/thumbnails/4aa5011fd30b44129c20a76b8aa20aba/57c4f9661c454312ab0375e2907a7cff.jpeg",
+   "rejected": []
   },
   "Kia|Soul GT-Line": {
    "make": "Kia",
@@ -9306,6 +10328,12 @@
      "likes": 2,
      "score": 92.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2022 Kia Soul GT-Line: only 4 materials"
    ]
   },
   "Kia|Spectra5": {
@@ -9358,7 +10386,11 @@
      "likes": 38,
      "score": 99.54638764215899
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "98a84407998a4bc6b4dee912b289f15b",
+   "thumb": "https://media.sketchfab.com/models/98a84407998a4bc6b4dee912b289f15b/thumbnails/ef2f95210e7b4610b6396c27c18750f5/b882276a13b34f0c9a84b1f4815ef4eb.jpeg",
+   "rejected": []
   },
   "Kia|Stinger": {
    "make": "Kia",
@@ -9401,7 +10433,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b1493e68069f4b869743de7a4220a4f4",
+   "thumb": "https://media.sketchfab.com/models/b1493e68069f4b869743de7a4220a4f4/thumbnails/979e073319ac460993771642912aed9d/af9fd88b00c84bdaa89d5fc2b51f747e.jpeg",
+   "rejected": []
   },
   "Kia|Telluride": {
    "make": "Kia",
@@ -9423,6 +10459,12 @@
      "likes": 5,
      "score": 94.66890750230186
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Kia Telluride 2025: only 1 materials"
    ]
   },
   "Lamborghini|Huracan": {
@@ -9456,7 +10498,11 @@
      "likes": 436,
      "score": 78
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1d3809ea5a6749d9864ec4c32511d716",
+   "thumb": "https://media.sketchfab.com/models/1d3809ea5a6749d9864ec4c32511d716/thumbnails/fbee3db0fca545a8afb1852b75807408/872fe6753cab44e0bd47c209ae985f74.jpeg",
+   "rejected": []
   },
   "Land Rover|Defender 110": {
    "make": "Land Rover",
@@ -9499,7 +10545,11 @@
      "likes": 90,
      "score": 101.75424835392656
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5773ec04488b46148816b5f7a9f3f44f",
+   "thumb": "https://media.sketchfab.com/models/5773ec04488b46148816b5f7a9f3f44f/thumbnails/1e4608e83aad47089908144bb2d89e18/e19a0e1089a84141ad90e8b02a8e4345.jpeg",
+   "rejected": []
   },
   "Land Rover|Defender 130": {
    "make": "Land Rover",
@@ -9531,6 +10581,13 @@
      "likes": 23,
      "score": 60.28126745026964
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Land- Rover Defender 130 Doubl: 1448k tris",
+    "LowPoly_Land Rover Defender 11: name"
    ]
   },
   "Land Rover|Defender 90": {
@@ -9574,7 +10631,11 @@
      "likes": 40,
      "score": 92.67670314031841
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bc82786447b14f4fb8f4af0851d1b276",
+   "thumb": "https://media.sketchfab.com/models/bc82786447b14f4fb8f4af0851d1b276/thumbnails/2e59c71847f7497ab198d81eb78f3bae/ad718bb185d2428c8562ce2bcbe7fddf.jpeg",
+   "rejected": []
   },
   "Land Rover|Discovery": {
    "make": "Land Rover",
@@ -9618,6 +10679,13 @@
      "likes": 23,
      "score": 98.28126745026964
     }
+   ],
+   "vetted": true,
+   "pick": "48d256ab61c748d2ae1757ad39897353",
+   "thumb": "https://media.sketchfab.com/models/48d256ab61c748d2ae1757ad39897353/thumbnails/12527a8152e740639a954b78546def4b/2347fcf46639454e82838186331a43c3.jpeg",
+   "rejected": [
+    "Landrover Discovery Sport (201: only 1 materials",
+    "Land Rover Discovery 4: only 1 materials"
    ]
   },
   "Land Rover|Discovery R-Dynamic HSE": {
@@ -9659,7 +10727,11 @@
      "likes": 5,
      "score": 86.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e2a4803b352d4c048c6b95cc65a46821",
+   "thumb": "https://media.sketchfab.com/models/e2a4803b352d4c048c6b95cc65a46821/thumbnails/3ddd6c84e30a4a0ca99539ed90e1022d/af577d82002f486da24e1ef79fd8ddc3.jpeg",
+   "rejected": []
   },
   "Land Rover|LR4": {
    "make": "Land Rover",
@@ -9700,7 +10772,11 @@
      "likes": 27,
      "score": 91.68294818805332
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "034600db0cc94d64a7f3ccb19c7799fa",
+   "thumb": "https://media.sketchfab.com/models/034600db0cc94d64a7f3ccb19c7799fa/thumbnails/7679db459c6c45cbaaf84ade01f253da/7a33f841bb284913b7d430970666b93b.jpeg",
+   "rejected": []
   },
   "Land Rover|Range Rover LWB Supercharged": {
    "make": "Land Rover",
@@ -9752,7 +10828,11 @@
      "likes": 59,
      "score": 100.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dd8455bdfa3247feb906145fa2abca03",
+   "thumb": "https://media.sketchfab.com/models/dd8455bdfa3247feb906145fa2abca03/thumbnails/57ccbd21cda84db0af64a47b2676f848/c7f9b5ba77ba40c79aa32e7513bc69a9.jpeg",
+   "rejected": []
   },
   "Land Rover|Range Rover HSE": {
    "make": "Land Rover",
@@ -9804,7 +10884,11 @@
      "likes": 122,
      "score": 94.53943066863638
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dd8455bdfa3247feb906145fa2abca03",
+   "thumb": "https://media.sketchfab.com/models/dd8455bdfa3247feb906145fa2abca03/thumbnails/57ccbd21cda84db0af64a47b2676f848/c7f9b5ba77ba40c79aa32e7513bc69a9.jpeg",
+   "rejected": []
   },
   "Land Rover|Range Rover Velar": {
    "make": "Land Rover",
@@ -9837,6 +10921,13 @@
      "likes": 6,
      "score": 88.07058824008554
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Land Rover Range Rover Velar: 26k tris",
+    "Land Rover Range Rover Velar R: 17k tris"
    ]
   },
   "Lexus|CT CT200h": {
@@ -9867,7 +10958,11 @@
      "likes": 80,
      "score": 101.4509101132719
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a89d18432d5047549c4e8b9a66cb2d7d",
+   "thumb": "https://media.sketchfab.com/models/a89d18432d5047549c4e8b9a66cb2d7d/thumbnails/7af6cde20dcd45b7804145a29fbc4f6a/b2a3ffd20d1e4bffaed6b86383c5cb6c.jpeg",
+   "rejected": []
   },
   "Lexus|GX460": {
    "make": "Lexus",
@@ -9899,6 +10994,13 @@
      "likes": 2,
      "score": 65.86272752831798
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2011 M GX460 V12 (UK): 1225k tris",
+    "2011 M GX460 V12 (EU): 1225k tris"
    ]
   },
   "Lexus|IS 200t": {
@@ -9920,6 +11022,12 @@
      "likes": 1,
      "score": 54.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Lexus IS - Driving School 2017: 35k tris"
    ]
   },
   "Lexus|IS 300": {
@@ -9963,6 +11071,14 @@
      "likes": 18,
      "score": 60.67252160571697
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Lexus IS 300 F Sport 2018: only 1 materials",
+    "Lexus IS 300 F Sport 2018: only 1 materials",
+    "Lexus SC 300/400: 23k tris"
    ]
   },
   "Lexus|570": {
@@ -9984,7 +11100,11 @@
      "likes": 13,
      "score": 96.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "605997db34c445898e4e92c8f4524378",
+   "thumb": "https://media.sketchfab.com/models/605997db34c445898e4e92c8f4524378/thumbnails/b0658102b7eb4109862a91c8d4291940/16bffd15dac74238bbce9b2bb7cc89cd.jpeg",
+   "rejected": []
   },
   "Lexus|LX570": {
    "make": "Lexus",
@@ -10027,7 +11147,11 @@
      "likes": 7,
      "score": 88.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5fd55243ce26447fa5a1fb8c15efbd1a",
+   "thumb": "https://media.sketchfab.com/models/5fd55243ce26447fa5a1fb8c15efbd1a/thumbnails/057ee2c913474a989a0cc51324dcbf99/4dfa40311ec64152af85479a013c3b42.jpeg",
+   "rejected": []
   },
   "Lexus|LX600": {
    "make": "Lexus",
@@ -10070,6 +11194,14 @@
      "likes": 1,
      "score": 84.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2026 Lexus lx600: 1255k tris",
+    "2026 Lexus lx600: 1255k tris",
+    "2026 Lexus lx600: 1255k tris"
    ]
   },
   "Lexus|NX": {
@@ -10149,7 +11281,11 @@
      "likes": 28,
      "score": 91.77438798739374
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2cb8265d1ce84bc4a3145ce641c1435f",
+   "thumb": "https://media.sketchfab.com/models/2cb8265d1ce84bc4a3145ce641c1435f/thumbnails/a12476280aba4e799f35357b5d599b2d/57b21efeebe24180a0d602ac07499045.jpeg",
+   "rejected": []
   },
   "Lexus|RX 350": {
    "make": "Lexus",
@@ -10181,7 +11317,11 @@
      "likes": 12,
      "score": 88.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6b9a1994b2dd445c8248270c81eead6b",
+   "thumb": "https://media.sketchfab.com/models/6b9a1994b2dd445c8248270c81eead6b/thumbnails/55963620d1754c5fb2a23edbe7afcdb7/0b7abde73a534287ae3ec8cf808641f6.jpeg",
+   "rejected": []
   },
   "Lexus|RX 350L": {
    "make": "Lexus",
@@ -10240,7 +11380,11 @@
      "likes": 12,
      "score": 88.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6b9a1994b2dd445c8248270c81eead6b",
+   "thumb": "https://media.sketchfab.com/models/6b9a1994b2dd445c8248270c81eead6b/thumbnails/55963620d1754c5fb2a23edbe7afcdb7/0b7abde73a534287ae3ec8cf808641f6.jpeg",
+   "rejected": []
   },
   "Lexus|RZ 450e": {
    "make": "Lexus",
@@ -10319,7 +11463,11 @@
      "likes": 54,
      "score": 100.44217613696546
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "09587fee473d4b07ac7f10d2a65b47c4",
+   "thumb": "https://media.sketchfab.com/models/09587fee473d4b07ac7f10d2a65b47c4/thumbnails/6a46ae081ce84b2ba360344662e83339/894f651bb7844b18b04856ee93d018d9.jpeg",
+   "rejected": []
   },
   "Lincoln|Corsair": {
    "make": "Lincoln",
@@ -10394,6 +11542,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Lincoln Nautilus 2021: only 1 materials"
    ]
   },
   "Lincoln|Nautilus Reserve": {
@@ -10446,7 +11600,11 @@
      "likes": 12,
      "score": 89.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1da79a33e49d4d2eabc5b5cbac578adf",
+   "thumb": "https://media.sketchfab.com/models/1da79a33e49d4d2eabc5b5cbac578adf/thumbnails/671b580f40dc445cb2368713e21eb360/9b8fd714eb0c451484b66e3d47a536e2.jpeg",
+   "rejected": []
   },
   "Lincoln|Navigator L": {
    "make": "Lincoln",
@@ -10498,7 +11656,11 @@
      "likes": 43,
      "score": 91.86071605891712
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dc0f315d8a604358945d10b34fc3ee79",
+   "thumb": "https://media.sketchfab.com/thumbnails/4c57687b657445e1b46c83b35e494ad4/448.jpg",
+   "rejected": []
   },
   "Lucid|Air Dream": {
    "make": "Lucid",
@@ -10519,6 +11681,12 @@
      "likes": 16,
      "score": 90.38269352826964
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "lucid air dream edition perfor: 1383k tris"
    ]
   },
   "Maserati|Ghibli": {
@@ -10551,6 +11719,12 @@
      "likes": 24,
      "score": 83.38764005203222
     }
+   ],
+   "vetted": true,
+   "pick": "2844caa6781048e3b2fae25074e3ff12",
+   "thumb": "https://media.sketchfab.com/models/2844caa6781048e3b2fae25074e3ff12/thumbnails/0a865140183f482696eefcaeeae69863/4e8a3272ba2849769bdfd06b079bfae0.jpeg",
+   "rejected": [
+    "Maserati-ghibli-hybrid: 1422k tris"
    ]
   },
   "Maserati|GranTurismo": {
@@ -10594,7 +11768,11 @@
      "likes": 26,
      "score": 91.58818258495393
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c4aa1cf6461048e3b75a77ff027f90c6",
+   "thumb": "https://media.sketchfab.com/models/c4aa1cf6461048e3b75a77ff027f90c6/thumbnails/5b426c320b4f436b96aec09ffec5a8f9/ee7079ffb52c44ecb5ee4ea77b6dfd6e.jpeg",
+   "rejected": []
   },
   "Maserati|Levante": {
    "make": "Maserati",
@@ -10626,7 +11804,11 @@
      "likes": 19,
      "score": 90.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dcde0ff5438644c9bb3a081f4596d772",
+   "thumb": "https://media.sketchfab.com/models/dcde0ff5438644c9bb3a081f4596d772/thumbnails/8b7ca4038816423da86e27ab90a70f44/b2b1fcff7cff4a2fa6c50fcc82258f10.jpeg",
+   "rejected": []
   },
   "Mazda|3": {
    "make": "Mazda",
@@ -10658,7 +11840,11 @@
      "likes": 35,
      "score": 91.33781500460373
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0811f0d3785243a5ad05bd1b84457273",
+   "thumb": "https://media.sketchfab.com/models/0811f0d3785243a5ad05bd1b84457273/thumbnails/ddb74971b36f4ee281eaac916091d47a/e0408bd789c64a2697e3b39ee02fd097.jpeg",
+   "rejected": []
   },
   "Mazda|CX-30": {
    "make": "Mazda",
@@ -10679,6 +11865,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Mazda CX-30: only 1 materials"
    ]
   },
   "Mazda|CX-5": {
@@ -10712,7 +11904,11 @@
      "likes": 33,
      "score": 99.18887350225353
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ea176c6ebe814be3b06641bf038f8642",
+   "thumb": "https://media.sketchfab.com/models/ea176c6ebe814be3b06641bf038f8642/thumbnails/26fed72e05cf4e2a8ba2ac7799e3154d/2c0ece9634594889a26fd4273fd8a1cc.jpeg",
+   "rejected": []
   },
   "Mazda|CX-50 2.5": {
    "make": "Mazda",
@@ -10753,7 +11949,11 @@
      "likes": 5,
      "score": 86.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0941c4e2a80d4c4fa0fe37bdbd2f8225",
+   "thumb": "https://media.sketchfab.com/models/0941c4e2a80d4c4fa0fe37bdbd2f8225/thumbnails/e620e2e2d444488da75bdb89eca351b6/5b414139c9a547af8d3a382019da6912.jpeg",
+   "rejected": []
   },
   "Mazda|CX-9": {
    "make": "Mazda",
@@ -10774,6 +11974,12 @@
      "likes": 1,
      "score": 76.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2009 Mazda CX-9: only 1 materials"
    ]
   },
   "Mazda|CX-90": {
@@ -10845,6 +12051,12 @@
      "likes": 8,
      "score": 88.72545505663595
     }
+   ],
+   "vetted": true,
+   "pick": "d8428c1bd568436bba3e7d70c8356d45",
+   "thumb": "https://media.sketchfab.com/models/d8428c1bd568436bba3e7d70c8356d45/thumbnails/814a9725c3b74ad2aa156f60d4125489/b300e2def41943709d4f44c6dcddecc9.jpeg",
+   "rejected": [
+    "Mazda MPV (LV): 1265k tris"
    ]
   },
   "Mazda|MX-5 Miata": {
@@ -10888,7 +12100,11 @@
      "likes": 16,
      "score": 97.38269352826964
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e074e29ccc3847dca74ed5e9cb92d3e7",
+   "thumb": "https://media.sketchfab.com/models/e074e29ccc3847dca74ed5e9cb92d3e7/thumbnails/57c4b2793273485599689f3062c07e9e/4e2df99c037a45a4ba9b073ad0a4b324.jpeg",
+   "rejected": []
   },
   "Mazda|MX-5 Miata RF": {
    "make": "Mazda",
@@ -10940,7 +12156,11 @@
      "likes": 23,
      "score": 91.28126745026964
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0741fd5bec5e4c6cb1cf2774763d1601",
+   "thumb": "https://media.sketchfab.com/models/0741fd5bec5e4c6cb1cf2774763d1601/thumbnails/c594ba23ef8645a9a51cbab6cd7512bd/5addb63d0e5c44fba7273cb03cfec320.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|A Class A220": {
    "make": "Mercedes-Benz",
@@ -10961,6 +12181,12 @@
      "likes": 0,
      "score": 53
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Mercedes- Benz-A220: only 1 materials"
    ]
   },
   "Mercedes-Benz|AMG GT": {
@@ -11004,7 +12230,11 @@
      "likes": 88,
      "score": 94.69634003986948
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "661dcab94455463784651a3ebc63cfb9",
+   "thumb": "https://media.sketchfab.com/models/661dcab94455463784651a3ebc63cfb9/thumbnails/826fa75bb8f04a8396a98941b1b53756/366db08de7ee4ab9a55a1c48f5353291.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|AMG GT 63": {
    "make": "Mercedes-Benz",
@@ -11036,7 +12266,11 @@
      "likes": 4,
      "score": 74.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1bac25a7f21a4297ba2392dca814fd7e",
+   "thumb": "https://media.sketchfab.com/models/1bac25a7f21a4297ba2392dca814fd7e/thumbnails/aed44d4bb7b447f9b9081e666a80f68b/1022bc5b801a43fda1e7811d56e4c8fd.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|B Class": {
    "make": "Mercedes-Benz",
@@ -11079,7 +12313,11 @@
      "likes": 0,
      "score": 83
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "39334c10593d4e8eae047b00c46e1802",
+   "thumb": "https://media.sketchfab.com/models/39334c10593d4e8eae047b00c46e1802/thumbnails/f70b2b82aebd4c1c9705264ea4bddd1c/e7d99536a00341219f1140bc63dff8cd.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|C Class C300": {
    "make": "Mercedes-Benz",
@@ -11132,7 +12370,11 @@
      "likes": 17,
      "score": 97.53163503061984
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "19d59344b7554e6ab614a6cc02e7ad0a",
+   "thumb": "https://media.sketchfab.com/models/19d59344b7554e6ab614a6cc02e7ad0a/thumbnails/9d96f141c6b9402c9dc52144657ac53e/485dd2f8819a44ea8c1eeebf0261652a.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|CLA Class CLA250": {
    "make": "Mercedes-Benz",
@@ -11211,7 +12453,11 @@
      "likes": 42,
      "score": 99.80081073347752
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "119c5e10733142b197aa53b86f6aeb04",
+   "thumb": "https://media.sketchfab.com/models/119c5e10733142b197aa53b86f6aeb04/thumbnails/d9de78b7990947ad889753f6c767beee/52c5fcc3448a4fdfa2446016c92c5bf7.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|E Class E350": {
    "make": "Mercedes-Benz",
@@ -11232,7 +12478,11 @@
      "likes": 4,
      "score": 57.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "31bb8343c58b450187b37435ba8e68ec",
+   "thumb": "https://media.sketchfab.com/models/31bb8343c58b450187b37435ba8e68ec/thumbnails/820065075ca0458793931a795ed9dd8e/0f9d0617ff4143b88a0c15c24e229456.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|E Class E450": {
    "make": "Mercedes-Benz",
@@ -11329,7 +12579,11 @@
      "likes": 21,
      "score": 98.05453608493323
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "136ecd58732b4f88b0bcd3cb74a71e54",
+   "thumb": "https://media.sketchfab.com/models/136ecd58732b4f88b0bcd3cb74a71e54/thumbnails/a4ccbbfffd9c441eb45839b7cd49569b/ef4fdc6083b0481e907c00012b6fe198.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|G Class G63 AMG": {
    "make": "Mercedes-Benz",
@@ -11361,7 +12615,11 @@
      "likes": 9,
      "score": 96
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "fa70ea228e5749c2b4951a895385b055",
+   "thumb": "https://media.sketchfab.com/models/fa70ea228e5749c2b4951a895385b055/thumbnails/f4f3beafc995488eb3fb0a60fd41d7fd/9a19fb43703a445388b43d4eb8cfc015.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|GL Class GL450": {
    "make": "Mercedes-Benz",
@@ -11528,7 +12786,11 @@
      "likes": 2,
      "score": 77.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e229a4e696e1400bb06fedb3dbbc44a3",
+   "thumb": "https://media.sketchfab.com/models/e229a4e696e1400bb06fedb3dbbc44a3/thumbnails/1606eaea762d43bb92312b660b49669b/7d20892fe2e34060b25f9dab4137e5cd.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz|M Class ML350": {
    "make": "Mercedes-Benz",
@@ -11591,7 +12853,11 @@
      "likes": 5,
      "score": 86.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a2e03aaa1c654dcd8352cd7e80c654f1",
+   "thumb": "https://media.sketchfab.com/models/a2e03aaa1c654dcd8352cd7e80c654f1/thumbnails/63e4ffa8e6164780b0030994f594bffd/ac289a1d98f4493cb917c9fb56bf4655.jpeg",
+   "rejected": []
   },
   "Mercedes-Benz| Class S550": {
    "make": "Mercedes-Benz",
@@ -11648,7 +12914,11 @@
      "likes": 26,
      "score": 91.58818258495393
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "be7dcb20be7a46fcb2d4f9f384c81cb8",
+   "thumb": "https://media.sketchfab.com/models/be7dcb20be7a46fcb2d4f9f384c81cb8/thumbnails/ec3f0dfb459b40bc85e8956e41f998b5/4fb69ebca10e4875a51a3754add74689.jpeg",
+   "rejected": []
   },
   "Mercury|Mountaineer": {
    "make": "Mercury",
@@ -11700,7 +12970,11 @@
      "likes": 13,
      "score": 89.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dd1175d3aa534a25a51c043f13d1e38a",
+   "thumb": "https://media.sketchfab.com/models/dd1175d3aa534a25a51c043f13d1e38a/thumbnails/8bfa9b519b3c47b9b91f6cb8e094733b/0f8840b0d3c147e4ae5151d6d8ce41d4.jpeg",
+   "rejected": []
   },
   "Mini|Cooper Clubman": {
    "make": "Mini",
@@ -11743,7 +13017,11 @@
      "likes": 13,
      "score": 89.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "dd1175d3aa534a25a51c043f13d1e38a",
+   "thumb": "https://media.sketchfab.com/models/dd1175d3aa534a25a51c043f13d1e38a/thumbnails/8bfa9b519b3c47b9b91f6cb8e094733b/0f8840b0d3c147e4ae5151d6d8ce41d4.jpeg",
+   "rejected": []
   },
   "Mini|Cooper": {
    "make": "Mini",
@@ -11788,7 +13066,11 @@
      "likes": 113,
      "score": 102.34142910801884
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2baca439d2494e02b99596014b49ebd3",
+   "thumb": "https://media.sketchfab.com/models/2baca439d2494e02b99596014b49ebd3/thumbnails/144f3afe5c87478eaf77f3e3b9f886fd/cc181122f8e04fc7a85347c0efff7bcd.jpeg",
+   "rejected": []
   },
   "Mini|Countryman Cooper": {
    "make": "Mini",
@@ -11810,7 +13092,11 @@
      "likes": 40,
      "score": 99.67670314031841
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2b3e8afed5d64ffea7d91f477636ef30",
+   "thumb": "https://media.sketchfab.com/models/2b3e8afed5d64ffea7d91f477636ef30/thumbnails/10b3e461ba21416c90562d5d29f194b2/4cb8018b57a14728a3c2313057cb7c91.jpeg",
+   "rejected": []
   },
   "Mini|Hardtop": {
    "make": "Mini",
@@ -11853,7 +13139,11 @@
      "likes": 12,
      "score": 89.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b2bd98e80f0f463bb2aa377e36fca3ff",
+   "thumb": "https://media.sketchfab.com/models/b2bd98e80f0f463bb2aa377e36fca3ff/thumbnails/86fc3a0267cd469fa8637970482a30cc/8069541dcd014a6eaae2cc1bc920fdc4.jpeg",
+   "rejected": []
   },
   "Mini|Hardtop Cooper": {
    "make": "Mini",
@@ -11897,7 +13187,11 @@
      "likes": 12,
      "score": 89.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b2bd98e80f0f463bb2aa377e36fca3ff",
+   "thumb": "https://media.sketchfab.com/models/b2bd98e80f0f463bb2aa377e36fca3ff/thumbnails/86fc3a0267cd469fa8637970482a30cc/8069541dcd014a6eaae2cc1bc920fdc4.jpeg",
+   "rejected": []
   },
   "Mitsubishi|Eclipse Cross": {
    "make": "Mitsubishi",
@@ -11929,7 +13223,11 @@
      "likes": 5,
      "score": 87.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6dbaa348dbe84df991f1890559a2f16b",
+   "thumb": "https://media.sketchfab.com/models/6dbaa348dbe84df991f1890559a2f16b/thumbnails/6190a5403572457bb83513568e35d1e0/62bae45dd0e44875822ade973a58fbac.jpeg",
+   "rejected": []
   },
   "Mitsubishi|Eclipse": {
    "make": "Mitsubishi",
@@ -11972,6 +13270,12 @@
      "likes": 9,
      "score": 96
     }
+   ],
+   "vetted": true,
+   "pick": "ab4b38f8e57e44b7b8a27d292cc4d8e6",
+   "thumb": "https://media.sketchfab.com/models/ab4b38f8e57e44b7b8a27d292cc4d8e6/thumbnails/b6fce0952dac4021a93b77ac761e6730/ffbe46d5e94b44ce83fe43611eea31eb.jpeg",
+   "rejected": [
+    "Mitsubishi Eclipse From F&F: name"
    ]
   },
   "Mitsubishi|Lancer": {
@@ -12015,7 +13319,11 @@
      "likes": 189,
      "score": 96.67252160571698
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c3d5dcd8ff724bc88c46760d92fc5188",
+   "thumb": "https://media.sketchfab.com/models/c3d5dcd8ff724bc88c46760d92fc5188/thumbnails/b27a87c524c941bb85619a05c281d5f9/8395080bcb984a009b5f70b20be91c5e.jpeg",
+   "rejected": []
   },
   "Mitsubishi|Lancer Evolution": {
    "make": "Mitsubishi",
@@ -12058,7 +13366,11 @@
      "likes": 152,
      "score": 96.10814858490559
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c3d5dcd8ff724bc88c46760d92fc5188",
+   "thumb": "https://media.sketchfab.com/models/c3d5dcd8ff724bc88c46760d92fc5188/thumbnails/b27a87c524c941bb85619a05c281d5f9/8395080bcb984a009b5f70b20be91c5e.jpeg",
+   "rejected": []
   },
   "Mitsubishi|Lancer Sportback": {
    "make": "Mitsubishi",
@@ -12079,7 +13391,11 @@
      "likes": 16,
      "score": 90.38269352826964
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ae78fd479abc44f6bceb6e393abe0f8d",
+   "thumb": "https://media.sketchfab.com/models/ae78fd479abc44f6bceb6e393abe0f8d/thumbnails/b07e1720b1b64896ade6943f73037ec7/91c82505991f4f2cac469fe78d966a03.jpeg",
+   "rejected": []
   },
   "Mitsubishi|Mirage": {
    "make": "Mitsubishi",
@@ -12123,6 +13439,13 @@
      "likes": 10,
      "score": 89.24835611094935
     }
+   ],
+   "vetted": true,
+   "pick": "3f4c1208b20b4dc282ab5d706e7576a0",
+   "thumb": "https://media.sketchfab.com/models/3f4c1208b20b4dc282ab5d706e7576a0/thumbnails/8dc4c1faa3eb4f23a0a6ef81826b85b5/a119790460fd416dbc2eb6208f5a90f9.jpeg",
+   "rejected": [
+    "Mitsubishi Mirage Sedan 2024: only 1 materials",
+    "Mitsubishi Mirage 2018: only 1 materials"
    ]
   },
   "Mitsubishi|Mirage G4": {
@@ -12144,6 +13467,12 @@
      "likes": 2,
      "score": 62.862727528317976
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Mitsubishi Mirage Sedan 2024: only 1 materials"
    ]
   },
   "Mitsubishi|Montero": {
@@ -12176,6 +13505,12 @@
      "likes": 0,
      "score": 90
     }
+   ],
+   "vetted": true,
+   "pick": "ba368bcb1b10450a8ed0b476b4dc0d05",
+   "thumb": "https://media.sketchfab.com/thumbnails/4c57687b657445e1b46c83b35e494ad4/448.jpg",
+   "rejected": [
+    "Mitsubishi Montero: 31k tris"
    ]
   },
   "Mitsubishi|Outlander": {
@@ -12209,6 +13544,13 @@
      "likes": 5,
      "score": 87.66890750230186
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Mitsubishi Outlander 2022: only 1 materials",
+    "Photoscanned Mitsubishi Outlan: name"
    ]
   },
   "Mitsubishi|Outlander GT": {
@@ -12270,7 +13612,11 @@
      "likes": 48,
      "score": 93.14117648017108
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7cb5041decfc41e68e02666f9058ea78",
+   "thumb": "https://media.sketchfab.com/models/7cb5041decfc41e68e02666f9058ea78/thumbnails/4783398fdfc646ec863abd37aa1f25af/b90b4746d9004dbd90297eb19e46b182.jpeg",
+   "rejected": []
   },
   "Nissan|ARIYA": {
    "make": "Nissan",
@@ -12313,7 +13659,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "414019b3a89a45fe914b977e48925f39",
+   "thumb": "https://media.sketchfab.com/models/414019b3a89a45fe914b977e48925f39/thumbnails/67d230dbc30f4ece8b993efdf58c2380/06a6c2daf8014010ac247fa473bb480d.jpeg",
+   "rejected": []
   },
   "Nissan|Altima": {
    "make": "Nissan",
@@ -12356,7 +13706,11 @@
      "likes": 67,
      "score": 93.99505347623742
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "19d86d24eb0e407bb0920ad6f348b636",
+   "thumb": "https://media.sketchfab.com/models/19d86d24eb0e407bb0920ad6f348b636/thumbnails/20ba777f1de04e33bf47d83abe9c724e/9e7e0dbe468f49328a310f7d5038bb6b.jpeg",
+   "rejected": []
   },
   "Nissan|Armada": {
    "make": "Nissan",
@@ -12377,6 +13731,12 @@
      "likes": 0,
      "score": 90
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Nissan Armada 2010: only 1 materials"
    ]
   },
   "Nissan|Cube": {
@@ -12409,7 +13769,11 @@
      "likes": 0,
      "score": 83
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2a3cdfee96a24bcab5e7df975ecdffe9",
+   "thumb": "https://media.sketchfab.com/models/2a3cdfee96a24bcab5e7df975ecdffe9/thumbnails/64061926c0d441aa90b85cf56dd931c9/2a929829301e49e399f2550e28d3b6eb.jpeg",
+   "rejected": []
   },
   "Nissan|Frontier": {
    "make": "Nissan",
@@ -12452,7 +13816,11 @@
      "likes": 1,
      "score": 91.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "144b72c190b54463a29e0fe0075824fa",
+   "thumb": "https://media.sketchfab.com/models/144b72c190b54463a29e0fe0075824fa/thumbnails/dbdc85897752412f960cd6f64be9fd29/480cd69a020d4a759bd320243db211c0.jpeg",
+   "rejected": []
   },
   "Nissan|Frontier King": {
    "make": "Nissan",
@@ -12504,7 +13872,11 @@
      "likes": 316,
      "score": 105
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ff8fb2251dfa4bb9979e7022c5a6666c",
+   "thumb": "https://media.sketchfab.com/models/ff8fb2251dfa4bb9979e7022c5a6666c/thumbnails/5d94951eea044d9b92596e176378a968/e658a0287f0a47f383058b7ce79678ad.jpeg",
+   "rejected": []
   },
   "Nissan|Juke RS": {
    "make": "Nissan",
@@ -12556,7 +13928,11 @@
      "likes": 7,
      "score": 95.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "62cb9919523947caa4cdef27da902d04",
+   "thumb": "https://media.sketchfab.com/models/62cb9919523947caa4cdef27da902d04/thumbnails/c7e5d71580d34261a1cb2c4e82bc57a3/c7c32eabb8104202a2afde017457650f.jpeg",
+   "rejected": []
   },
   "Nissan|Kicks": {
    "make": "Nissan",
@@ -12588,7 +13964,11 @@
      "likes": 0,
      "score": 83
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8714bd49a382438590d81a8c484fd14d",
+   "thumb": "https://media.sketchfab.com/thumbnails/4c57687b657445e1b46c83b35e494ad4/448.jpg",
+   "rejected": []
   },
   "Nissan|LEAF": {
    "make": "Nissan",
@@ -12631,6 +14011,12 @@
      "likes": 5,
      "score": 94.66890750230186
     }
+   ],
+   "vetted": true,
+   "pick": "377369b51ded49fda2cb02fd66186d23",
+   "thumb": "https://media.sketchfab.com/models/377369b51ded49fda2cb02fd66186d23/thumbnails/33dc6bfb29134fe2bdc8d587b4c8dc99/5beef0ca80ef4553b8e2e16dd0832f1a.jpeg",
+   "rejected": [
+    "Nissan Leaf 2018: only 1 materials"
    ]
   },
   "Nissan|Maxima": {
@@ -12674,7 +14060,11 @@
      "likes": 6,
      "score": 87.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "d2e77a954c934ac497ed0459bf3ac32a",
+   "thumb": "https://media.sketchfab.com/models/d2e77a954c934ac497ed0459bf3ac32a/thumbnails/471cad7d3ff4400888174136285da603/867e0f849bfe4a4bbbc4f0d03e3859ee.jpeg",
+   "rejected": []
   },
   "Nissan|Murano": {
    "make": "Nissan",
@@ -12717,6 +14107,12 @@
      "likes": 0,
      "score": 83
     }
+   ],
+   "vetted": true,
+   "pick": "bcefb9288f824519aea4d6ad48d756ce",
+   "thumb": "https://media.sketchfab.com/models/bcefb9288f824519aea4d6ad48d756ce/thumbnails/5042dee271384b3db7d5c68c5f7fbaa8/f9ab195715454172bb296d31724ba431.jpeg",
+   "rejected": [
+    "Nissan Murano: 1211k tris"
    ]
   },
   "Nissan|NV 1500": {
@@ -12747,6 +14143,12 @@
      "likes": 13,
      "score": 76.87676821406943
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "NV 2500 High Roof Cargo Area v: only 1 materials"
    ]
   },
   "Nissan|NV200": {
@@ -12790,7 +14192,11 @@
      "likes": 11,
      "score": 89.47508747628575
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1cd12df9e6824aba943ca7932c15d6a2",
+   "thumb": "https://media.sketchfab.com/models/1cd12df9e6824aba943ca7932c15d6a2/thumbnails/d5ec3684094646d3943e1fcd7f5c4ef6/5cbcf62f58634ab88622ed62a8685d2c.jpeg",
+   "rejected": []
   },
   "Nissan|Pathfinder": {
    "make": "Nissan",
@@ -12833,7 +14239,11 @@
      "likes": 16,
      "score": 90.38269352826964
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e78c0a34db26456ca55a0b8007973c99",
+   "thumb": "https://media.sketchfab.com/models/e78c0a34db26456ca55a0b8007973c99/thumbnails/fc56b21bebd74aefa6a924573753701f/76024e24469c4b80bcb00bed27a791e1.jpeg",
+   "rejected": []
   },
   "Nissan|Pathfinder Rock Creek": {
    "make": "Nissan",
@@ -12905,7 +14315,11 @@
      "likes": 2,
      "score": 92.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "48fa53c7743745949b9cb518b7b67579",
+   "thumb": "https://media.sketchfab.com/models/48fa53c7743745949b9cb518b7b67579/thumbnails/d7c84b6b8e9545b7aa189b1a5187ab03/e6e7bd6fe99b48d69e2f366c302a445f.jpeg",
+   "rejected": []
   },
   "Nissan|Sentra": {
    "make": "Nissan",
@@ -12948,7 +14362,11 @@
      "likes": 10,
      "score": 96.24835611094935
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "4e261bd2d93a438ebdabf8cc6b41cf58",
+   "thumb": "https://media.sketchfab.com/models/4e261bd2d93a438ebdabf8cc6b41cf58/thumbnails/89044dadaad94e1d9a58d09b5d86f61f/7e98dba894d5487c978b5fca37fd2c05.jpeg",
+   "rejected": []
   },
   "Nissan|Titan": {
    "make": "Nissan",
@@ -12991,7 +14409,11 @@
      "likes": 52,
      "score": 100.34565521760473
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "52ea187672834f3e86f23529a9b2b285",
+   "thumb": "https://media.sketchfab.com/models/52ea187672834f3e86f23529a9b2b285/thumbnails/2f5b7ce2fc4b4740ac1c4e537c98a215/9b9cd0f76c5b47c09e566684825e5894.jpeg",
+   "rejected": []
   },
   "Nissan|Titan XD": {
    "make": "Nissan",
@@ -13034,7 +14456,11 @@
      "likes": 4,
      "score": 87.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7a91490017dd40e7991ac3c85755ca42",
+   "thumb": "https://media.sketchfab.com/models/7a91490017dd40e7991ac3c85755ca42/thumbnails/80e302ae4b934eafa814f32a427f997d/a2a4f3fdea984136b6e2acfe1fad281d.jpeg",
+   "rejected": []
   },
   "Nissan|Versa": {
    "make": "Nissan",
@@ -13077,6 +14503,12 @@
      "likes": 4,
      "score": 87.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": "8e7d1348172d42b385075dfc3a971bd7",
+   "thumb": "https://media.sketchfab.com/models/8e7d1348172d42b385075dfc3a971bd7/thumbnails/662986f0a048411e892c772509ed95ff/1c31f00e9c03460e9b8e20fb1331833d.jpeg",
+   "rejected": [
+    "[FREE] Nissan Versa 1.8 SL 201: 32k tris"
    ]
   },
   "Nissan|Versa Note": {
@@ -13098,7 +14530,11 @@
      "likes": 6,
      "score": 88.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8e7d1348172d42b385075dfc3a971bd7",
+   "thumb": "https://media.sketchfab.com/models/8e7d1348172d42b385075dfc3a971bd7/thumbnails/662986f0a048411e892c772509ed95ff/1c31f00e9c03460e9b8e20fb1331833d.jpeg",
+   "rejected": []
   },
   "Nissan|Xterra": {
    "make": "Nissan",
@@ -13130,6 +14566,13 @@
      "likes": 0,
      "score": 82
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Photoscanned Nissan Xterra: name",
+    "Nissan-Xterra 2007: only 1 materials"
    ]
   },
   "Nissan|Z": {
@@ -13171,7 +14614,11 @@
      "likes": 8,
      "score": 88.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a890e77f0fed4441a90901e87c4faf91",
+   "thumb": "https://media.sketchfab.com/models/a890e77f0fed4441a90901e87c4faf91/thumbnails/2ff93697fd45420ab18ebd632af431a0/f2e67025a0424c0d863be61d89a6fba6.jpeg",
+   "rejected": []
   },
   "Polestar|Polestar 2": {
    "make": "Polestar",
@@ -13214,7 +14661,11 @@
      "likes": 25,
      "score": 91.4898400878249
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a3fe1afd93bd41cd9b221278deebd585",
+   "thumb": "https://media.sketchfab.com/models/a3fe1afd93bd41cd9b221278deebd585/thumbnails/0dc7de76534a4822bebea5f5cc12b383/3a56d86b9e534a33a3b14c9c7959db20.jpeg",
+   "rejected": []
   },
   "Pontiac|G6": {
    "make": "Pontiac",
@@ -13235,7 +14686,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e1f87d7735354f9c9d9bda3a442767c3",
+   "thumb": "https://media.sketchfab.com/models/e1f87d7735354f9c9d9bda3a442767c3/thumbnails/a1b9a8a3b53c4e3aaeed8d52a769ddb4/da93f14dec244aebbea25633b9ffc581.jpeg",
+   "rejected": []
   },
   "Pontiac|G8": {
    "make": "Pontiac",
@@ -13278,7 +14733,11 @@
      "likes": 19,
      "score": 97.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a8327bb493a34cc182cf01af44716a6c",
+   "thumb": "https://media.sketchfab.com/models/a8327bb493a34cc182cf01af44716a6c/thumbnails/55ae0fea0ae543ee98597f2a490afb1a/8900bad3746a4439900334724aee712a.jpeg",
+   "rejected": []
   },
   "Pontiac|GTO": {
    "make": "Pontiac",
@@ -13321,7 +14780,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b6d970816b484b6db07b7a89bde4922d",
+   "thumb": "https://media.sketchfab.com/models/b6d970816b484b6db07b7a89bde4922d/thumbnails/d2c0816feaa54d51b1df3c7901dce6c4/64dab2376b4340ed8b515999002c863e.jpeg",
+   "rejected": []
   },
   "Pontiac|Grand Prix": {
    "make": "Pontiac",
@@ -13353,6 +14816,13 @@
      "likes": 3,
      "score": 86.61235994796778
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Photoscanned Pontiac Grand Pri: name",
+    "Pontiac Grand Prix Racecar: only 1 materials"
    ]
   },
   "Pontiac|Sunfire": {
@@ -13374,7 +14844,11 @@
      "likes": 20,
      "score": 90.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f741c98fe96741e99c25046d4bdfbc9a",
+   "thumb": "https://media.sketchfab.com/models/f741c98fe96741e99c25046d4bdfbc9a/thumbnails/2d7af83a25354d82881008405ac04333/1927b5465ebb4f09af7496a03f3382cd.jpeg",
+   "rejected": []
   },
   "Pontiac|Torrent": {
    "make": "Pontiac",
@@ -13395,6 +14869,12 @@
      "likes": 4,
      "score": 94.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Photoscanned Pontiac Torrent: name"
    ]
   },
   "Porsche|718 Cayman": {
@@ -13438,7 +14918,11 @@
      "likes": 25,
      "score": 98.4898400878249
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
+   "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
+   "rejected": []
   },
   "Porsche|718 GT4": {
    "make": "Porsche",
@@ -13481,7 +14965,11 @@
      "likes": 25,
      "score": 98.4898400878249
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
+   "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
+   "rejected": []
   },
   "Porsche|718": {
    "make": "Porsche",
@@ -13524,7 +15012,11 @@
      "likes": 33,
      "score": 99.18887350225353
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
+   "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
+   "rejected": []
   },
   "Porsche|911 Carrera": {
    "make": "Porsche",
@@ -13567,7 +15059,11 @@
      "likes": 455,
      "score": 75
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "4cef7c1e22ab40fd937507eae9a62cd8",
+   "thumb": "https://media.sketchfab.com/models/4cef7c1e22ab40fd937507eae9a62cd8/thumbnails/5c473b3babd64271a10c0d588a0ec030/c44dbb0b539a4607ad089c7723759b55.jpeg",
+   "rejected": []
   },
   "Porsche|911 GT3": {
    "make": "Porsche",
@@ -13610,7 +15106,11 @@
      "likes": 184,
      "score": 96.60303037041808
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "78d5c47ab2554c2592b7e499179a0792",
+   "thumb": "https://media.sketchfab.com/models/78d5c47ab2554c2592b7e499179a0792/thumbnails/3f10c49b7b0746e8ba59c1917f364088/8f39771af6d044bc9dada2e73c7f4480.jpeg",
+   "rejected": []
   },
   "Porsche|Boxster": {
    "make": "Porsche",
@@ -13654,7 +15154,11 @@
      "likes": 39,
      "score": 92.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1a87f610bb854c6395ed8b03ba8e1965",
+   "thumb": "https://media.sketchfab.com/models/1a87f610bb854c6395ed8b03ba8e1965/thumbnails/c7fcb9057f5f47029892380120c66dcd/e8725216e9be48798cd901d441b59173.jpeg",
+   "rejected": []
   },
   "Porsche|Cayenne": {
    "make": "Porsche",
@@ -13698,7 +15202,11 @@
      "likes": 9,
      "score": 96
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "3f3fa4493ecc4826823f0cb27f638908",
+   "thumb": "https://media.sketchfab.com/models/3f3fa4493ecc4826823f0cb27f638908/thumbnails/92dbf28dfa244575a6008022f0280b37/8c00b1446df34b6e8a9867027ebfd760.jpeg",
+   "rejected": []
   },
   "Porsche|Cayman": {
    "make": "Porsche",
@@ -13741,7 +15249,11 @@
      "likes": 82,
      "score": 101.51446855425644
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
+   "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
+   "rejected": []
   },
   "Porsche|Macan": {
    "make": "Porsche",
@@ -13784,7 +15296,11 @@
      "likes": 20,
      "score": 97.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5d57f6dcabe7473f91b160595a3eb0cc",
+   "thumb": "https://media.sketchfab.com/models/5d57f6dcabe7473f91b160595a3eb0cc/thumbnails/5e7060408c2f42bd81e8e55606286357/cda7fd864913472ab4e988f75ea655bc.jpeg",
+   "rejected": []
   },
   "Porsche|Panamera": {
    "make": "Porsche",
@@ -13827,7 +15343,11 @@
      "likes": 17,
      "score": 97.53163503061984
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e3223ce627e54f8eb4ae7520b0e6c49a",
+   "thumb": "https://media.sketchfab.com/models/e3223ce627e54f8eb4ae7520b0e6c49a/thumbnails/ca21d8c5d963469cac9b8ebd190509e5/f4dad7263adf47b79775da39ba6a68f5.jpeg",
+   "rejected": []
   },
   "Porsche|Taycan": {
    "make": "Porsche",
@@ -13870,7 +15390,11 @@
      "likes": 21,
      "score": 98.05453608493323
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "cd97c516c0eb411789e7bb2bcd28622b",
+   "thumb": "https://media.sketchfab.com/models/cd97c516c0eb411789e7bb2bcd28622b/thumbnails/83f882b621d54775a05fd3d2cd4976c4/eb7870b9a0144b559f02ca9c4644c99e.jpeg",
+   "rejected": []
   },
   "Ram|1500 Rebel": {
    "make": "Ram",
@@ -13902,7 +15426,11 @@
      "likes": 0,
      "score": 83
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "4fc5add24b7841bca1740d29902db740",
+   "thumb": "https://media.sketchfab.com/models/4fc5add24b7841bca1740d29902db740/thumbnails/f1d77e9dbb914f2fbc5e8c00fe6a483a/337c538be2fc48d7a2543eec475b0b2c.jpeg",
+   "rejected": []
   },
   "Ram|1500 Warlock": {
    "make": "Ram",
@@ -13954,7 +15482,11 @@
      "likes": 24,
      "score": 98.38764005203222
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5b3898052ca64641ab1857a638551039",
+   "thumb": "https://media.sketchfab.com/models/5b3898052ca64641ab1857a638551039/thumbnails/6338137cc717430bb591c3a1ffa739cc/5c20d7e329ae45b7a106a7ffec688b91.jpeg",
+   "rejected": []
   },
   "Ram|2500": {
    "make": "Ram",
@@ -13997,7 +15529,11 @@
      "likes": 6,
      "score": 95.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6f9760ab25704d3794a1e259b4d12643",
+   "thumb": "https://media.sketchfab.com/models/6f9760ab25704d3794a1e259b4d12643/thumbnails/92e75d74ca02472488373c301614df1f/574956b281bd4778ae89a940a05662d6.jpeg",
+   "rejected": []
   },
   "Ram|3500": {
    "make": "Ram",
@@ -14040,7 +15576,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "40604d4eb4f3454685e66a77e447f23e",
+   "thumb": "https://media.sketchfab.com/models/40604d4eb4f3454685e66a77e447f23e/thumbnails/b56493b944a147948f0db92d3e18d6be/b5257443518e45cc9457fb37729da3e9.jpeg",
+   "rejected": []
   },
   "Ram|Promaster": {
    "make": "Ram",
@@ -14100,6 +15640,13 @@
      "likes": 0,
      "score": 73
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Rivian R1T Front Divider Stora: name",
+    "Rivian R1T Charging Pad Scan: name"
    ]
   },
   "Rolls-Royce|Ghost": {
@@ -14143,7 +15690,11 @@
      "likes": 577,
      "score": 98
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1f614e803fc24946b83bdc2dd9926d62",
+   "thumb": "https://media.sketchfab.com/models/1f614e803fc24946b83bdc2dd9926d62/thumbnails/19474817edd34c158aace121de8198f0/eb834b57b31a404e9af4ec4858d186b6.jpeg",
+   "rejected": []
   },
   "Rolls-Royce|Phantom": {
    "make": "Rolls-Royce",
@@ -14186,7 +15737,11 @@
      "likes": 15,
      "score": 97.22471989593555
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1a2f117c8f1b4324b5a5dd70d38d396b",
+   "thumb": "https://media.sketchfab.com/models/1a2f117c8f1b4324b5a5dd70d38d396b/thumbnails/2aaeda3e76a244cd944412011f8b8917/88df40bcf34e47a898bc8c11db94d031.jpeg",
+   "rejected": []
   },
   "Saturn|Sky": {
    "make": "Saturn",
@@ -14238,6 +15793,13 @@
      "likes": 3,
      "score": 93.61235994796778
     }
+   ],
+   "vetted": true,
+   "pick": "3a68c66a5e3a451cb78f90fef59becc7",
+   "thumb": "https://media.sketchfab.com/models/3a68c66a5e3a451cb78f90fef59becc7/thumbnails/b14ae6059cb14c079700d0518a691a12/720x405.jpeg",
+   "rejected": [
+    "Scion 2016 FR-S: only 1 materials",
+    "Scion-FR-S Tuning 2013 for 3D-: only 1 materials"
    ]
   },
   "Scion|iQ": {
@@ -14290,7 +15852,11 @@
      "likes": 33,
      "score": 92.18887350225353
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "7b9e83779f864d2d9918a082a8d805fc",
+   "thumb": "https://media.sketchfab.com/models/7b9e83779f864d2d9918a082a8d805fc/thumbnails/81e39e7a080d43439a5d494571f5494e/940705054a794363a1afb9bd9e46481c.jpeg",
+   "rejected": []
   },
   "Scion|xB": {
    "make": "Scion",
@@ -14333,7 +15899,11 @@
      "likes": 13,
      "score": 89.87676821406943
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e1feb0d54f734e4d99276baf5e9c9a0c",
+   "thumb": "https://media.sketchfab.com/models/e1feb0d54f734e4d99276baf5e9c9a0c/thumbnails/89880e9e0c4d47928efa093b5038f86d/5db73d351f514445b652287c6a44be5c.jpeg",
+   "rejected": []
   },
   "Scion|xD": {
    "make": "Scion",
@@ -14386,7 +15956,11 @@
      "likes": 4,
      "score": 94.19382002601611
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5e456d65c1e9404184193712099e5641",
+   "thumb": "https://media.sketchfab.com/models/5e456d65c1e9404184193712099e5641/thumbnails/581ea94d51ec430585b76ae1715081e8/7448660184a24bffa348a8ec55902679.jpeg",
+   "rejected": []
   },
   "Subaru|Ascent": {
    "make": "Subaru",
@@ -14429,7 +16003,11 @@
      "likes": 0,
      "score": 83
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "256ca39ab09846b7a24027fd00d94a20",
+   "thumb": "https://media.sketchfab.com/models/256ca39ab09846b7a24027fd00d94a20/thumbnails/279a2d2e96da429fa55aa795e5829ea3/18e31321cb2f42e793c2d6a6440496b5.jpeg",
+   "rejected": []
   },
   "Subaru|BRZ": {
    "make": "Subaru",
@@ -14472,7 +16050,11 @@
      "likes": 69,
      "score": 101.07058824008554
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8fecd93279644ada9111c5bfa2226327",
+   "thumb": "https://media.sketchfab.com/models/8fecd93279644ada9111c5bfa2226327/thumbnails/7416c2e1b14742c59e494f96d2d26506/4afe0bc908784808969a97acb43b07d1.jpeg",
+   "rejected": []
   },
   "Subaru|Crosstrek": {
    "make": "Subaru",
@@ -14515,6 +16097,12 @@
      "likes": 1,
      "score": 84.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": "c8ce56a9cb0343b9b578d43b985d8a9f",
+   "thumb": "https://media.sketchfab.com/models/c8ce56a9cb0343b9b578d43b985d8a9f/thumbnails/71be65b63c1047fd992f4b49376fc235/c91893660baf40418bcebca02cc72e6f.jpeg",
+   "rejected": [
+    "Photoscanned Subaru Crosstrek : name"
    ]
   },
   "Subaru|Forester": {
@@ -14559,7 +16147,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "611ae23685c14134b5a4f3decde248e9",
+   "thumb": "https://media.sketchfab.com/models/611ae23685c14134b5a4f3decde248e9/thumbnails/03629212aac84d319610c0539d03c470/3eb86d488eed41589a0a5f383f31e0d2.jpeg",
+   "rejected": []
   },
   "Subaru|Forester 2.0 XT": {
    "make": "Subaru",
@@ -14629,7 +16221,11 @@
      "likes": 50,
      "score": 93.24542105658762
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "457f01e7e8d14b088e3f092c1be9e75c",
+   "thumb": "https://media.sketchfab.com/models/457f01e7e8d14b088e3f092c1be9e75c/thumbnails/df31d9cf92984350babcda25b47887f2/4cc6692c6c1a4fd3af27f1f017645c7d.jpeg",
+   "rejected": []
   },
   "Subaru|Legacy": {
    "make": "Subaru",
@@ -14672,7 +16268,11 @@
      "likes": 19,
      "score": 97.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "c0ffde08f5e04cca9dffb449a5eef759",
+   "thumb": "https://media.sketchfab.com/models/c0ffde08f5e04cca9dffb449a5eef759/thumbnails/8765e0ac8d554651beb6cf5431d27681/0589c6455cdf4ea7938dd7b684d879ff.jpeg",
+   "rejected": []
   },
   "Subaru|Legacy 2.5i": {
    "make": "Subaru",
@@ -14724,7 +16324,11 @@
      "likes": 7,
      "score": 95.41853992195166
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a44abee6689e429881209fc6299f505c",
+   "thumb": "https://media.sketchfab.com/models/a44abee6689e429881209fc6299f505c/thumbnails/c2ee12a6b4b844458fe90cf78812cf33/ea1df32491664a358302e4a8bc59646f.jpeg",
+   "rejected": []
   },
   "Subaru|Outback 2.5i": {
    "make": "Subaru",
@@ -14783,7 +16387,11 @@
      "likes": 116,
      "score": 94.40911517047697
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "589f5dc710844ee191e1a96809c67a62",
+   "thumb": "https://media.sketchfab.com/models/589f5dc710844ee191e1a96809c67a62/thumbnails/c89b24dbb01f4463b343a286884a0111/20e3ef1918ad4720a9cf4d813a7300eb.jpeg",
+   "rejected": []
   },
   "Subaru|WRX STi": {
    "make": "Subaru",
@@ -14815,7 +16423,11 @@
      "likes": 116,
      "score": 94.40911517047697
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "457f01e7e8d14b088e3f092c1be9e75c",
+   "thumb": "https://media.sketchfab.com/models/457f01e7e8d14b088e3f092c1be9e75c/thumbnails/df31d9cf92984350babcda25b47887f2/4cc6692c6c1a4fd3af27f1f017645c7d.jpeg",
+   "rejected": []
   },
   "Subaru|XV Crosstrek": {
    "make": "Subaru",
@@ -14836,6 +16448,12 @@
      "likes": 6,
      "score": 95.07058824008554
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Photoscanned Subaru Crosstrek : name"
    ]
   },
   "Suzuki|XL-7": {
@@ -14888,7 +16506,11 @@
      "likes": 137,
      "score": 102.83927451840742
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8950fc178e254c9198b2a8555ef1590a",
+   "thumb": "https://media.sketchfab.com/models/8950fc178e254c9198b2a8555ef1590a/thumbnails/c461f3c1143e4e219fcb9b513ec0c190/c1b310501cdb40009d7d5c44e75ec582.jpeg",
+   "rejected": []
   },
   "Tesla|Model 3": {
    "make": "Tesla",
@@ -14931,7 +16553,11 @@
      "likes": 50,
      "score": 100.24542105658762
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5ef9b845aaf44203b6d04e2c677e444f",
+   "thumb": "https://media.sketchfab.com/models/5ef9b845aaf44203b6d04e2c677e444f/thumbnails/72337e58a8b84719bf95468bd7cedd7a/9585939332744d42b8128753140b3654.jpeg",
+   "rejected": []
   },
   "Tesla|Model": {
    "make": "Tesla",
@@ -14974,7 +16600,11 @@
      "likes": 95,
      "score": 101.89362739823741
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5ef9b845aaf44203b6d04e2c677e444f",
+   "thumb": "https://media.sketchfab.com/models/5ef9b845aaf44203b6d04e2c677e444f/thumbnails/72337e58a8b84719bf95468bd7cedd7a/9585939332744d42b8128753140b3654.jpeg",
+   "rejected": []
   },
   "Tesla|Model X": {
    "make": "Tesla",
@@ -15017,7 +16647,11 @@
      "likes": 26,
      "score": 98.58818258495393
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5af35a4772f240039a6e58c58998555b",
+   "thumb": "https://media.sketchfab.com/models/5af35a4772f240039a6e58c58998555b/thumbnails/48362006bace4f3db86c9114f238b00b/b8e53360dd3a4cadb79fbcb52385899b.jpeg",
+   "rejected": []
   },
   "Tesla|Model Y": {
    "make": "Tesla",
@@ -15060,7 +16694,11 @@
      "likes": 3,
      "score": 93.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "59e2ead369984b1a85c800ff6cf6789d",
+   "thumb": "https://media.sketchfab.com/models/59e2ead369984b1a85c800ff6cf6789d/thumbnails/c081fe94974a47368798c942a231718c/7dff85835f6644c9a68f582562e513d7.jpeg",
+   "rejected": []
   },
   "Tesla|Roadster": {
    "make": "Tesla",
@@ -15103,7 +16741,11 @@
      "likes": 55,
      "score": 100.4891281620372
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "1fbf29e297bd4a17ac39a00a378441d8",
+   "thumb": "https://media.sketchfab.com/models/1fbf29e297bd4a17ac39a00a378441d8/thumbnails/be070f1a52e34204b2c52b8d6bd02a2a/ac53fe79e4a24697afaa9b3417cb1cfa.jpeg",
+   "rejected": []
   },
   "Toyota|4Runner": {
    "make": "Toyota",
@@ -15146,6 +16788,12 @@
      "likes": 19,
      "score": 97.80617997398389
     }
+   ],
+   "vetted": true,
+   "pick": "ba1216e61c974d0195143edaaab274fd",
+   "thumb": "https://media.sketchfab.com/models/ba1216e61c974d0195143edaaab274fd/thumbnails/55dd88ddc0614dbfb06260e2ac87e2af/3a9315dc6a494cd9827da96760692580.jpeg",
+   "rejected": [
+    "Day 57: Toyota 4runner: name"
    ]
   },
   "Toyota|4Runner SR5": {
@@ -15167,6 +16815,12 @@
      "likes": 5,
      "score": 79.66890750230186
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2004 Toyota 4Runner SR5 Photos: name"
    ]
   },
   "Toyota|4Runner TRD": {
@@ -15188,6 +16842,12 @@
      "likes": 37,
      "score": 69.47870157970087
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Day 57: Toyota 4runner: name"
    ]
   },
   "Toyota|4Runner Trail": {
@@ -15240,7 +16900,11 @@
      "likes": 24,
      "score": 91.38764005203222
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "27a7c524abec49059f9542a0a04ffad9",
+   "thumb": "https://media.sketchfab.com/models/27a7c524abec49059f9542a0a04ffad9/thumbnails/711e26aa69fb418e9c0e10b75a22b379/7e49ca4cb88c40a5a9e4d62b9dff9977.jpeg",
+   "rejected": []
   },
   "Toyota|Avalon": {
    "make": "Toyota",
@@ -15283,7 +16947,11 @@
      "likes": 2,
      "score": 92.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bcc4bdc7882b420d8aab2cd8d6ce2dd0",
+   "thumb": "https://media.sketchfab.com/models/bcc4bdc7882b420d8aab2cd8d6ce2dd0/thumbnails/c6a7ee45882b4275a6d80c95b371d541/ea7aef9b10ef435aa692ebf5f1d09c42.jpeg",
+   "rejected": []
   },
   "Toyota|C-HR": {
    "make": "Toyota",
@@ -15315,7 +16983,11 @@
      "likes": 8,
      "score": 95.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "bc9bf0f48e174e918a5187dd1de019f8",
+   "thumb": "https://media.sketchfab.com/models/bc9bf0f48e174e918a5187dd1de019f8/thumbnails/af40beeca1194320a3683a5e5fb64c6a/45658cbb8c9641c69219851187e2f8bd.jpeg",
+   "rejected": []
   },
   "Toyota|Camry": {
    "make": "Toyota",
@@ -15358,7 +17030,11 @@
      "likes": 57,
      "score": 93.58056796137762
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "236a5a6e2fa6420fbdf641f4800cd544",
+   "thumb": "https://media.sketchfab.com/models/236a5a6e2fa6420fbdf641f4800cd544/thumbnails/75d7bbaa445f4d0a9034233880b81c93/71509cf6b3e84801a388e3029c7a7212.jpeg",
+   "rejected": []
   },
   "Toyota|Camry Solara": {
    "make": "Toyota",
@@ -15410,7 +17086,11 @@
      "likes": 26,
      "score": 83.58818258495393
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "61dd3dc3c803421f9006102571ce3ffa",
+   "thumb": "https://media.sketchfab.com/models/61dd3dc3c803421f9006102571ce3ffa/thumbnails/370f6528a6da4d49b0ee4487b32812a5/5db8e29131e84e94b6ed88cb8cfcba85.jpeg",
+   "rejected": []
   },
   "Toyota|Corolla": {
    "make": "Toyota",
@@ -15453,7 +17133,11 @@
      "likes": 81,
      "score": 101.4828831143023
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "66dcbaf822ae47468655a604a83af703",
+   "thumb": "https://media.sketchfab.com/models/66dcbaf822ae47468655a604a83af703/thumbnails/8fa3636a3b824e108f3c77189f782429/8df8f72e9202489ea2a63eaf878c1547.jpeg",
+   "rejected": []
   },
   "Toyota|Corolla Cross": {
    "make": "Toyota",
@@ -15496,7 +17180,11 @@
      "likes": 2,
      "score": 92.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "cc503d26ea694dce85e7d0f1491b0e30",
+   "thumb": "https://media.sketchfab.com/models/cc503d26ea694dce85e7d0f1491b0e30/thumbnails/ce8dd85dd1d24227910c27d971c568c3/ce7e660bf1cd4d1e81d52dbc4e1aab50.jpeg",
+   "rejected": []
   },
   "Toyota|Crown": {
    "make": "Toyota",
@@ -15539,7 +17227,11 @@
      "likes": 90,
      "score": 101.75424835392656
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a0feb719f9c34f42ac79932331277a07",
+   "thumb": "https://media.sketchfab.com/models/a0feb719f9c34f42ac79932331277a07/thumbnails/59cb09cfd7dc47c9b0d4d8c11e006299/79577b36000e4845ad1616f624bc3ab8.jpeg",
+   "rejected": []
   },
   "Toyota|FJ Cruiser": {
    "make": "Toyota",
@@ -15582,6 +17274,13 @@
      "likes": 49,
      "score": 62.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": "a4e58b09ce48444ca6164834c310880d",
+   "thumb": "https://media.sketchfab.com/models/a4e58b09ce48444ca6164834c310880d/thumbnails/bf7cb5bb6e3f46d48005187a7be2149c/19892b0db45148fc9b1519a33fe91869.jpeg",
+   "rejected": [
+    "2008 Toyota FJ Cruiser Photosc: name",
+    "Toyota Land Cruiser FJ 2026: only 1 materials"
    ]
   },
   "Toyota|GR Corolla": {
@@ -15625,7 +17324,11 @@
      "likes": 12,
      "score": 96.68366011384101
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "204283fa663d4ccea7f3bdfd1ba6680e",
+   "thumb": "https://media.sketchfab.com/models/204283fa663d4ccea7f3bdfd1ba6680e/thumbnails/7d65b5b573d34b178545c4455f3152c5/4a6038be9d464982a1592595cbb07ec0.jpeg",
+   "rejected": []
   },
   "Toyota|GR Supra": {
    "make": "Toyota",
@@ -15668,6 +17371,12 @@
      "likes": 702,
      "score": 98
     }
+   ],
+   "vetted": true,
+   "pick": "f18d905dd7174b3b86960407f0f1adb9",
+   "thumb": "https://media.sketchfab.com/models/f18d905dd7174b3b86960407f0f1adb9/thumbnails/2f15f1dc1b374f77a7a76d1114a752f7/9a469865360b4fe79bb40532c48f1b05.jpeg",
+   "rejected": [
+    "Toyota GR Supra Widebody: name"
    ]
   },
   "Toyota|Grand Highlander": {
@@ -15720,7 +17429,11 @@
      "likes": 8,
      "score": 95.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "ff144d062f244a3ebfae71bc2a41564b",
+   "thumb": "https://media.sketchfab.com/models/ff144d062f244a3ebfae71bc2a41564b/thumbnails/864eab1333124504bd76be5dc5387960/fac5abd2b4934662a05a88b092f3d8f1.jpeg",
+   "rejected": []
   },
   "Toyota|Land Cruiser": {
    "make": "Toyota",
@@ -15763,7 +17476,11 @@
      "likes": 52,
      "score": 100.34565521760473
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "374e85a6e18743429f6d9c0e7bbffb3c",
+   "thumb": "https://media.sketchfab.com/models/374e85a6e18743429f6d9c0e7bbffb3c/thumbnails/d0e50ee243b24ec4ad0c04b06a9d9411/ebfb943c1d0043e1b841ccb56e31deca.jpeg",
+   "rejected": []
   },
   "Toyota|Matrix": {
    "make": "Toyota",
@@ -15816,7 +17533,11 @@
      "likes": 23,
      "score": 98.28126745026964
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "90e9f77205014ecc8e3e08dd27dc4d52",
+   "thumb": "https://media.sketchfab.com/models/90e9f77205014ecc8e3e08dd27dc4d52/thumbnails/272edd17b50841ecae9f4aa7a3e48c8a/af160ff51d4b40c88481cdaa9da6f83b.jpeg",
+   "rejected": []
   },
   "Toyota|Prius C Four": {
    "make": "Toyota",
@@ -15864,6 +17585,12 @@
      "likes": 11,
      "score": 89.47508747628575
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "2012 Toyota Prius V: 1456k tris"
    ]
   },
   "Toyota|RAV4": {
@@ -15907,7 +17634,11 @@
      "likes": 19,
      "score": 97.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "34645485dd284ac1b473b52f8a74da6b",
+   "thumb": "https://media.sketchfab.com/models/34645485dd284ac1b473b52f8a74da6b/thumbnails/ee68ab9742334196b8d456ad4d9e640e/dacd223170ea4b95b8d9aacc72b016ae.jpeg",
+   "rejected": []
   },
   "Toyota|Sequoia": {
    "make": "Toyota",
@@ -15950,7 +17681,11 @@
      "likes": 29,
      "score": 91.86272752831798
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f550638bb82b4493af0dfc9f082f8433",
+   "thumb": "https://media.sketchfab.com/models/f550638bb82b4493af0dfc9f082f8433/thumbnails/db14da97ec3744c1aef70f28e64f22da/c5d658d1c1344ccf95a038b75846da72.jpeg",
+   "rejected": []
   },
   "Toyota|Sienna": {
    "make": "Toyota",
@@ -15993,7 +17728,11 @@
      "likes": 9,
      "score": 96
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "33fd5ed6b6df45ee979a726d553d9fcf",
+   "thumb": "https://media.sketchfab.com/models/33fd5ed6b6df45ee979a726d553d9fcf/thumbnails/d645db9f310f496cac68984acb26c1c5/784631162c844334a43aea6ced07d257.jpeg",
+   "rejected": []
   },
   "Toyota|Tacoma": {
    "make": "Toyota",
@@ -16036,7 +17775,11 @@
      "likes": 16,
      "score": 90.38269352826964
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "8bb91f037ec64151ba72279c50ce5c20",
+   "thumb": "https://media.sketchfab.com/models/8bb91f037ec64151ba72279c50ce5c20/thumbnails/991c19fb82a3450dafc8bc2e627bbb21/e61f1055dbaf447bab033ff5564250f2.jpeg",
+   "rejected": []
   },
   "Toyota|Tacoma PreRunner": {
    "make": "Toyota",
@@ -16075,6 +17818,12 @@
      "likes": 16,
      "score": 90.38269352826964
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Toyota Tacoma TRD: 26k tris"
    ]
   },
   "Toyota|Tundra": {
@@ -16118,7 +17867,11 @@
      "likes": 22,
      "score": 98.17036701610556
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6a1e7fe7db92404e906dad8ac9739406",
+   "thumb": "https://media.sketchfab.com/models/6a1e7fe7db92404e906dad8ac9739406/thumbnails/91eb27701b6741419cf5b5dbcce2a80c/e418a3ec42ee4164aff79204fa542484.jpeg",
+   "rejected": []
   },
   "Toyota|Venza": {
    "make": "Toyota",
@@ -16170,6 +17923,13 @@
      "likes": 12,
      "score": 96.68366011384101
     }
+   ],
+   "vetted": true,
+   "pick": "1b6dd834e8184851887ddeab1e83bc28",
+   "thumb": "https://media.sketchfab.com/models/1b6dd834e8184851887ddeab1e83bc28/thumbnails/308c7ef3c6b642b9bd7e8c9408faf366/7e3bfce9529b43989238292afb0ce2b3.jpeg",
+   "rejected": [
+    "Toyota GR Yaris Rally WRC | ww: name",
+    "2023 Toyota GRMN Yaris: only 1 materials"
    ]
   },
   "Toyota|bZ4X": {
@@ -16191,7 +17951,11 @@
      "likes": 21,
      "score": 91.05453608493323
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "6cb01379a1674e0ab08a4cc45fb75b04",
+   "thumb": "https://media.sketchfab.com/models/6cb01379a1674e0ab08a4cc45fb75b04/thumbnails/030362aab6e2455ab10eaaf08ba6d133/0981162b740a40938bbf3c4283da67c9.jpeg",
+   "rejected": []
   },
   "Volkswagen|Arteon": {
    "make": "Volkswagen",
@@ -16234,6 +17998,12 @@
      "likes": 4,
      "score": 87.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": "9597f8d94e4c423697c5655fc9e34a38",
+   "thumb": "https://media.sketchfab.com/models/9597f8d94e4c423697c5655fc9e34a38/thumbnails/51938b9da98a47abacd3518d6c818873/c485a559f923454186c55ff35ddfe32d.jpeg",
+   "rejected": [
+    "2023 Volkswagen Arteon R- Line: only 1 materials"
    ]
   },
   "Volkswagen|Atlas": {
@@ -16266,7 +18036,11 @@
      "likes": 3,
      "score": 73.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0c173d6a50f643a9ab271f7bcd93e488",
+   "thumb": "https://media.sketchfab.com/models/0c173d6a50f643a9ab271f7bcd93e488/thumbnails/967235147b864060b7dc0976e416530f/75161cb1d80d42ff9d9137cb89e18c2e.jpeg",
+   "rejected": []
   },
   "Volkswagen|Atlas Cross": {
    "make": "Volkswagen",
@@ -16299,7 +18073,11 @@
      "likes": 3,
      "score": 73.61235994796778
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "0c173d6a50f643a9ab271f7bcd93e488",
+   "thumb": "https://media.sketchfab.com/models/0c173d6a50f643a9ab271f7bcd93e488/thumbnails/967235147b864060b7dc0976e416530f/75161cb1d80d42ff9d9137cb89e18c2e.jpeg",
+   "rejected": []
   },
   "Volkswagen|Beetle": {
    "make": "Volkswagen",
@@ -16342,6 +18120,12 @@
      "likes": 129,
      "score": 95.68366011384103
     }
+   ],
+   "vetted": true,
+   "pick": "83276f21bd9c41e196c474350b43efb0",
+   "thumb": "https://media.sketchfab.com/models/83276f21bd9c41e196c474350b43efb0/thumbnails/248167a884d54a839118b6e06aa6b457/578306b51d8f4256b9585ce15c5b2fdf.jpeg",
+   "rejected": [
+    "Volkswagen Beetle: only 1 materials"
    ]
   },
   "Volkswagen|CC": {
@@ -16374,7 +18158,11 @@
      "likes": 8,
      "score": 80.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "9655958045b6483f9c049a9bf8c1f98a",
+   "thumb": "https://media.sketchfab.com/models/9655958045b6483f9c049a9bf8c1f98a/thumbnails/d84c33632b1b4a7888d5a29c88b36946/aa293804f0e6470595dc4f4c1bc1f2fa.jpeg",
+   "rejected": []
   },
   "Volkswagen|Eos": {
    "make": "Volkswagen",
@@ -16426,7 +18214,11 @@
      "likes": 66,
      "score": 100.95644881620495
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "99f15d552f834685b1597cdc7336d70f",
+   "thumb": "https://media.sketchfab.com/models/99f15d552f834685b1597cdc7336d70f/thumbnails/2d34936d03f74a759486e3d4d70874ae/49156ddef2194853b8c9327c525455d0.jpeg",
+   "rejected": []
   },
   "Volkswagen|GTi": {
    "make": "Volkswagen",
@@ -16469,7 +18261,11 @@
      "likes": 66,
      "score": 100.95644881620495
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "99f15d552f834685b1597cdc7336d70f",
+   "thumb": "https://media.sketchfab.com/models/99f15d552f834685b1597cdc7336d70f/thumbnails/2d34936d03f74a759486e3d4d70874ae/49156ddef2194853b8c9327c525455d0.jpeg",
+   "rejected": []
   },
   "Volkswagen|Golf": {
    "make": "Volkswagen",
@@ -16514,7 +18310,11 @@
      "likes": 101,
      "score": 82.0516010305715
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "191d4905f1274cee8539a39a0a672fd9",
+   "thumb": "https://media.sketchfab.com/models/191d4905f1274cee8539a39a0a672fd9/thumbnails/e7c048fda9f540dfbb1e371cffb53299/d921cc08bdc74ddb80f791ba8679a8ef.jpeg",
+   "rejected": []
   },
   "Volkswagen|Golf Alltrac": {
    "make": "Volkswagen",
@@ -16535,6 +18335,12 @@
      "likes": 9,
      "score": 66
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Photoscanned Volkswagen Golf A: name"
    ]
   },
   "Volkswagen|Golf GTi": {
@@ -16578,7 +18384,11 @@
      "likes": 36,
      "score": 84.40921034440197
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e87d7c0f8937481db236529beb5ecab7",
+   "thumb": "https://media.sketchfab.com/models/e87d7c0f8937481db236529beb5ecab7/thumbnails/e95c02f70b1a4bb8ba2207fdccf64910/e5c4701850ca43ea93a3f51d164937c1.jpeg",
+   "rejected": []
   },
   "Volkswagen|Golf SportWagen": {
    "make": "Volkswagen",
@@ -16619,7 +18429,11 @@
      "likes": 5,
      "score": 94.66890750230186
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "502c1a0c911b4dfbaae57a7b25ec890f",
+   "thumb": "https://media.sketchfab.com/models/502c1a0c911b4dfbaae57a7b25ec890f/thumbnails/a49e79f25a404eb385402edb10e0fc16/155c5e0a38b048fbb9b79bd996fc3b7e.jpeg",
+   "rejected": []
   },
   "Volkswagen|Jetta": {
    "make": "Volkswagen",
@@ -16662,7 +18476,11 @@
      "likes": 19,
      "score": 90.80617997398389
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "e18823e169c54c1a8974045a042ca5ba",
+   "thumb": "https://media.sketchfab.com/models/e18823e169c54c1a8974045a042ca5ba/thumbnails/97e2fa57beba43a19cfa679405b0cf1a/26ddfc4ef67547bf90391c63ff26f10a.jpeg",
+   "rejected": []
   },
   "Volkswagen|Jetta SportWagen": {
    "make": "Volkswagen",
@@ -16714,7 +18532,11 @@
      "likes": 20,
      "score": 97.93331576840352
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "f946c79a2e534137a5ffd30aa0173566",
+   "thumb": "https://media.sketchfab.com/models/f946c79a2e534137a5ffd30aa0173566/thumbnails/bbaf065b01064b8e9cc7eeaff7cc5b89/1798db5b18d5466fba2d8a0a9321f974.jpeg",
+   "rejected": []
   },
   "Volkswagen|Taos": {
    "make": "Volkswagen",
@@ -16769,6 +18591,13 @@
      "likes": 7,
      "score": 95.41853992195166
     }
+   ],
+   "vetted": true,
+   "pick": "6886e629076d468e81060a8ae089755c",
+   "thumb": "https://media.sketchfab.com/models/6886e629076d468e81060a8ae089755c/thumbnails/dc85cd81d57b4644996f8fd653983500/a99d76f094e64f1d93f579c8bf17ad3e.jpeg",
+   "rejected": [
+    "Volkswagen Tiguan 2020: only 4 materials",
+    "2023 Volkswagen Tiguan Allspac: only 1 materials"
    ]
   },
   "Volkswagen|Touareg": {
@@ -16812,7 +18641,11 @@
      "likes": 9,
      "score": 89
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "2b7f06f6756e45c1855a1f40babb3b73",
+   "thumb": "https://media.sketchfab.com/models/2b7f06f6756e45c1855a1f40babb3b73/thumbnails/dab6078a74394577a5026c731b30a4f5/1bec648c73cb49cc9dfb23cf043b95d0.jpeg",
+   "rejected": []
   },
   "Volvo|S60 Cross Country": {
    "make": "Volvo",
@@ -16842,7 +18675,11 @@
      "likes": 8,
      "score": 65.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "345df71c1d584992b809c15d64e1a790",
+   "thumb": "https://media.sketchfab.com/models/345df71c1d584992b809c15d64e1a790/thumbnails/8e37eeadb1fe43678bf83e6f8a6320e9/ce0d62e7e6c64e31840113b2d6568d7a.jpeg",
+   "rejected": []
   },
   "Volvo|S80 T6": {
    "make": "Volvo",
@@ -16883,7 +18720,11 @@
      "likes": 8,
      "score": 95.72545505663595
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "5c178cf6696a4a02a0f550db7934d127",
+   "thumb": "https://media.sketchfab.com/models/5c178cf6696a4a02a0f550db7934d127/thumbnails/829d32ba03da4349ba07e11ebdcc09d5/1b7300e9331c4247be4c2f2123ee0f3e.jpeg",
+   "rejected": []
   },
   "Volvo|V60": {
    "make": "Volvo",
@@ -16926,7 +18767,11 @@
      "likes": 9,
      "score": 96
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "b613351dacbc4e68bcb4002af62370f9",
+   "thumb": "https://media.sketchfab.com/models/b613351dacbc4e68bcb4002af62370f9/thumbnails/5e7a0844d57b4393aaa4d904b6f532cf/eec951040a6d4453967fca758c0384a4.jpeg",
+   "rejected": []
   },
   "Volvo|V90 Cross Country": {
    "make": "Volvo",
@@ -16947,7 +18792,11 @@
      "likes": 15,
      "score": 90.22471989593555
     }
-   ]
+   ],
+   "vetted": true,
+   "pick": "a24d61f118604e7abf19a3532d6690a3",
+   "thumb": "https://media.sketchfab.com/models/a24d61f118604e7abf19a3532d6690a3/thumbnails/e4073e47aba84cd7b92b49093adb2efb/42da739dad8a445997c1d43e395811df.jpeg",
+   "rejected": []
   },
   "Volvo|X60 T6": {
    "make": "Volvo",
@@ -16977,6 +18826,12 @@
      "likes": 11,
      "score": 89.47508747628575
     }
+   ],
+   "vetted": true,
+   "pick": null,
+   "thumb": null,
+   "rejected": [
+    "Volvo XC40 Recharge 2020: 1451k tris"
    ]
   },
   "Volvo|XC60 T5": {
@@ -17047,6 +18902,12 @@
      "likes": 4,
      "score": 94.19382002601611
     }
+   ],
+   "vetted": true,
+   "pick": "8135a6c9c9344079bfaefc9d747e2ceb",
+   "thumb": "https://media.sketchfab.com/models/8135a6c9c9344079bfaefc9d747e2ceb/thumbnails/9441c64e93db4747915851a6c501a142/2df1af64c5c542619b9429224ded15a2.jpeg",
+   "rejected": [
+    "Photoscanned Volvo XC90: name"
    ]
   }
  }
