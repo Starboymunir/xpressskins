@@ -2,144 +2,110 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap, ShoppingBag, User } from "lucide-react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { driveImg, portfolioImages } from "@/data/assets";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/collections", label: "Shop" },
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/pricing", label: "Get a Quote" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/projects", label: "Active Projects" },
-  { href: "/contact", label: "Contact" },
+const LINKS = [
+  { href: "/", label: "Home", jp: "家", img: 11 },
+  { href: "/#build", label: "Price your wrap", jp: "見積", img: 59 },
+  { href: "/portfolio", label: "Portfolio", jp: "作品", img: 2 },
+  { href: "/projects", label: "Live builds", jp: "製作中", img: 44 },
+  { href: "/how-it-works", label: "How it works", jp: "流れ", img: 41 },
+  { href: "/contact", label: "Contact", jp: "連絡", img: 13 },
 ];
 
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hover, setHover] = useState(0);
+  const path = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const f = () => setScrolled(window.scrollY > 40);
+    f(); window.addEventListener("scroll", f, { passive: true });
+    return () => window.removeEventListener("scroll", f);
   }, []);
+  useEffect(() => { setOpen(false); }, [path]);
+  useEffect(() => { document.documentElement.style.overflow = open ? "hidden" : ""; }, [open]);
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "glass-strong shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="group flex items-center gap-2">
-            <Image
-              src="/New Xpressskins Logo cut only2 Large.png"
-              alt="Xpress Skins"
-              width={160}
-              height={48}
-              className="h-10 w-auto brightness-0 invert transition-all duration-300 group-hover:brightness-100 group-hover:invert-0 group-hover:drop-shadow-[0_0_12px_rgba(255,26,108,0.5)]"
-              priority
-            />
+    <>
+      <motion.header
+        initial={{ y: -80 }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.2, ease: EASE }}
+        className={`fixed inset-x-0 top-0 z-[80] transition-colors duration-500 ${scrolled && !open ? "bg-[#050507]/70 backdrop-blur-xl" : ""}`}
+      >
+        <div className={`mx-auto flex h-[72px] max-w-[1600px] items-center justify-between px-5 transition-all lg:px-10 ${scrolled && !open ? "" : ""}`}>
+          <Link href="/" className="relative z-[90] flex items-center gap-3" aria-label="Xpress Skins home">
+            <Image src="/New Xpressskins Logo cut only2 Large.png" alt="Xpress Skins" width={150} height={36} className="h-7 w-auto brightness-0 invert" priority />
           </Link>
 
-          {/* Desktop Links */}
-          <div className="hidden items-center gap-1 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group relative px-4 py-2 text-[13px] font-medium text-muted-light transition-colors duration-300 hover:text-white"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent to-accent2 transition-all duration-300 group-hover:w-3/4" />
-              </Link>
-            ))}
-            <Link href="/pricing" className="btn-primary ml-4 !px-5 !py-2.5 !text-[13px]">
-              <ShoppingBag size={14} />
-              <span>Shop Now</span>
-            </Link>
-            <Link
-              href="/portal"
-              className="ml-2 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-muted-light transition-colors hover:border-accent/30 hover:text-white"
-              title="My Account"
+          <div className="relative z-[90] flex items-center gap-3">
+            <Link href="/#build" className="btn-pill btn-pill-light hidden !py-2.5 !text-[11px] md:inline-flex"><span className="btn-pill-txt">Price my wrap</span></Link>
+            <button
+              onClick={() => setOpen(!open)}
+              className="group flex h-11 items-center gap-3 rounded-full border border-white/15 px-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:border-white/40"
+              aria-expanded={open}
             >
-              <User size={16} />
-            </Link>
+              <span className="hidden sm:inline">{open ? "Close" : "Menu"}</span>
+              <span className="relative h-3 w-5">
+                <span className={`absolute left-0 top-0 h-[1.5px] w-5 bg-white transition-transform duration-300 ${open ? "translate-y-[5px] rotate-45" : ""}`} />
+                <span className={`absolute left-0 top-[5px] h-[1.5px] w-5 bg-white transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+                <span className={`absolute left-0 top-[10px] h-[1.5px] w-5 bg-white transition-transform duration-300 ${open ? "-translate-y-[5px] -rotate-45" : ""}`} />
+              </span>
+            </button>
           </div>
-
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white transition-colors hover:border-accent/30 lg:hidden"
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
-      </div>
+      </motion.header>
 
-      {/* Mobile Menu */}
+      {/* full-screen menu */}
       <AnimatePresence>
-        {isOpen && (
+        {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden glass-strong lg:hidden"
+            className="fixed inset-0 z-[70] bg-[#050507]"
+            initial={{ clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }} exit={{ clipPath: "inset(0 0 100% 0)" }}
+            transition={{ duration: 0.8, ease: EASE }}
           >
-            <div className="space-y-1 px-5 py-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-muted-light transition-colors hover:bg-white/[0.03] hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
+            <div className="absolute inset-0 hidden lg:block">
+              <AnimatePresence mode="wait">
+                <motion.div key={hover} className="absolute inset-y-0 right-0 w-[46%]" initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.7, ease: EASE }}>
+                  <Image src={driveImg(portfolioImages[LINKS[hover].img].id)} alt="" fill className="object-cover opacity-70" sizes="50vw" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#050507] via-transparent to-transparent" />
                 </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
-                className="pt-3"
-              >
-                <Link
-                  href="/pricing"
-                  onClick={() => setIsOpen(false)}
-                  className="btn-primary w-full"
-                >
-                  <Zap size={16} />
-                  <span>Start Your Build</span>
-                </Link>
-                <Link
-                  href="/portal"
-                  onClick={() => setIsOpen(false)}
-                  className="mt-2 flex items-center justify-center gap-2 w-full rounded-xl border border-white/10 px-4 py-3 text-sm font-medium text-muted-light transition-colors hover:bg-white/[0.03] hover:text-white"
-                >
-                  <User size={16} />
-                  <span>My Account</span>
-                </Link>
-              </motion.div>
+              </AnimatePresence>
             </div>
+            <nav className="relative flex h-full flex-col justify-center px-6 lg:px-10">
+              <ul className="space-y-1">
+                {LINKS.map((l, i) => (
+                  <li key={l.href} className="overflow-hidden">
+                    <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} transition={{ duration: 0.8, delay: 0.15 + i * 0.06, ease: EASE }}>
+                      <Link
+                        href={l.href}
+                        onMouseEnter={() => setHover(i)}
+                        onClick={() => setOpen(false)}
+                        className="group flex items-baseline gap-5 py-1"
+                      >
+                        <span className="t-label w-8 text-white/35">0{i + 1}</span>
+                        <span className="t-display text-[clamp(2.4rem,7vw,6rem)] leading-[0.95] text-white/85 transition-colors group-hover:text-white">{l.label}</span>
+                        <span className="t-jp hidden text-xl text-[var(--mag)] opacity-0 transition-opacity group-hover:opacity-100 md:inline">{l.jp}</span>
+                      </Link>
+                    </motion.div>
+                  </li>
+                ))}
+              </ul>
+              <motion.div className="mt-10 flex flex-wrap gap-x-10 gap-y-3 t-label text-white/45" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+                <a href="https://www.instagram.com/xpressskins/" target="_blank" rel="noreferrer" className="hover:text-white">Instagram</a>
+                <a href="https://www.youtube.com/@XpressSkins" target="_blank" rel="noreferrer" className="hover:text-white">YouTube</a>
+                <Link href="/portal" className="hover:text-white">Customer portal</Link>
+                <span>Houston, TX</span>
+              </motion.div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 }

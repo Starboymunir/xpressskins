@@ -1,155 +1,58 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
-import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, ArrowUp } from "lucide-react";
 
-const footerLinks = [
-  {
-    title: "Services",
-    links: [
-      { label: "Custom Itasha Wraps", href: "/pricing" },
-      { label: "Semi-Custom Designs", href: "/pricing" },
-      { label: "Pre-Made Designs", href: "/portfolio" },
-      { label: "Professional Install", href: "/how-it-works" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "How It Works", href: "/how-it-works" },
-      { label: "Portfolio", href: "/portfolio" },
-      { label: "Active Projects", href: "/projects" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Refund Policy", href: "#" },
-    ],
-  },
-];
-
-const socials = [
-  { label: "Facebook", href: "https://www.facebook.com/xpressskins2018/" },
-  { label: "Instagram", href: "https://www.instagram.com/xpressskins/" },
-  { label: "YouTube", href: "https://www.youtube.com/@XpressSkins" },
-  { label: "TikTok", href: "#" },
-  { label: "X", href: "https://x.com/XpressSkins" },
+const COLS = [
+  { title: "Build", links: [["Price your wrap", "/#build"], ["How it works", "/how-it-works"], ["Live builds", "/projects"], ["Customer portal", "/portal"]] },
+  { title: "Studio", links: [["Portfolio", "/portfolio"], ["Contact", "/contact"], ["Instagram", "https://www.instagram.com/xpressskins/"], ["YouTube", "https://www.youtube.com/@XpressSkins"]] },
+  { title: "Legal", links: [["Privacy", "#"], ["Terms", "#"], ["Refunds", "#"]] },
 ];
 
 export function Footer() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const tick = () => setTime(new Date().toLocaleTimeString("en-US", { timeZone: "America/Chicago", hour: "2-digit", minute: "2-digit" }));
+    tick(); const id = setInterval(tick, 15000); return () => clearInterval(id);
+  }, []);
   return (
-    <footer className="relative overflow-hidden bg-surface-0">
-      {/* Top accent line */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
-
-      {/* Subtle bg orb */}
-      <div className="pointer-events-none absolute bottom-0 left-[20%] h-96 w-96 rounded-full bg-accent/[0.03] blur-[150px]" />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-        {/* Main grid */}
-        <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-20">
-          {/* Brand */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="group mb-5 inline-block">
-              <Image
-                src="/New Xpressskins Logo cut only2 Large.png"
-                alt="Xpress Skins"
-                width={180}
-                height={54}
-                className="h-12 w-auto brightness-0 invert transition-all duration-300 group-hover:brightness-100 group-hover:invert-0"
-              />
-            </Link>
-            <p className="mb-7 max-w-sm text-sm leading-relaxed text-muted">
-              Founded in 2020, Xpress Skins Inc. is a creative movement
-              dedicated to inspiring self-expression through custom anime vehicle
-              wraps. Turn what you love into art on wheels.
-            </p>
-            <div className="space-y-3 text-sm">
-              <a
-                href="tel:+13463177987"
-                className="group flex items-center gap-3 text-muted transition-colors hover:text-accent"
-              >
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] transition-colors group-hover:border-accent/20">
-                  <Phone size={13} />
-                </div>
-                (346) 317-7987
-              </a>
-              <a
-                href="mailto:info@xpressskins.com"
-                className="group flex items-center gap-3 text-muted transition-colors hover:text-accent"
-              >
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] transition-colors group-hover:border-accent/20">
-                  <Mail size={13} />
-                </div>
-                info@xpressskins.com
-              </a>
-              <div className="flex items-center gap-3 text-muted">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/5 bg-white/[0.02]">
-                  <MapPin size={13} />
-                </div>
-                1804 W Sam Houston Pkwy N, Houston, TX 77043
-              </div>
+    <footer className="relative overflow-hidden border-t border-white/[0.06] bg-[#050507] text-white">
+      <div className="mx-auto max-w-[1600px] px-5 pt-20 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
+          <div>
+            <p className="t-label text-white/40">Xpress Skins Inc.</p>
+            <p className="t-display mt-4 max-w-sm text-3xl leading-tight">Custom itasha wraps.<br /><span className="t-serif text-[var(--mag)]">Houston, shipped anywhere.</span></p>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 t-label text-white/45">
+              <span>Houston · {time} CT</span>
+              <span>Est. 2020</span>
+              <a href="mailto:hello@xpressskins.com" className="hover:text-white">hello@xpressskins.com</a>
             </div>
           </div>
-
-          {/* Link groups */}
-          {footerLinks.map((group) => (
-            <div key={group.title} className="lg:col-span-2">
-              <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-white">
-                {group.title}
-              </h4>
-              <ul className="space-y-3">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="group inline-flex items-center gap-1 text-sm text-muted transition-colors duration-300 hover:text-white"
-                    >
-                      {link.label}
-                      <ArrowUpRight
-                        size={10}
-                        className="translate-x-0.5 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-40"
-                      />
+          {COLS.map((c) => (
+            <div key={c.title}>
+              <p className="t-label text-white/40">{c.title}</p>
+              <ul className="mt-5 space-y-3">
+                {c.links.map(([label, href]) => (
+                  <li key={label}>
+                    <Link href={href} className="group inline-flex items-center gap-1 text-[15px] text-white/75 transition-colors hover:text-white">
+                      {label}<ArrowUpRight size={13} className="opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-
-          {/* Socials */}
-          <div className="lg:col-span-2">
-            <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-white">
-              Follow Us
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-lg border border-white/5 bg-white/[0.02] px-3 py-1.5 text-xs font-medium text-muted transition-all duration-300 hover:border-accent/20 hover:bg-accent/[0.06] hover:text-white"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/[0.04] py-6 md:flex-row">
-          <span className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Xpress Skins Inc. All rights reserved.
-          </span>
-          <span className="text-xs text-muted/50">
-            Designed with passion in Houston, TX
-          </span>
+        <div className="mt-16 flex items-center justify-between border-t border-white/[0.06] py-5 t-label text-white/35">
+          <span>© {new Date().getFullYear()} Xpress Skins Inc. All wraps original.</span>
+          <a href="#top" className="flex items-center gap-2 hover:text-white">Top <ArrowUp size={12} /></a>
         </div>
+      </div>
+      {/* giant wordmark clipped at the bottom */}
+      <div aria-hidden className="pointer-events-none select-none overflow-hidden">
+        <p className="t-display -mb-[0.22em] whitespace-nowrap text-center text-[18vw] leading-none tracking-[-0.04em] text-white/[0.05]">XPRESS SKINS</p>
       </div>
     </footer>
   );

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { BuilderOrFallback, builderMetadata } from "@/builder/BuilderOrFallback";
+import { getActiveProjects } from "@/lib/data";
+import type { Project } from "@/lib/types";
 import Default from "./Default";
 
 export const revalidate = 30;
@@ -11,5 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  return <BuilderOrFallback slug={SLUG} fallback={<Default />} />;
+  let projects: Project[] = [];
+  try { projects = await getActiveProjects(); } catch { projects = []; }
+  return <BuilderOrFallback slug={SLUG} fallback={<Default projects={projects} />} />;
 }
