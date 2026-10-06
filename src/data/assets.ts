@@ -111,6 +111,14 @@ export const videoAssets = [
   { id: '1YNN18qPScM2O9wx3uSVq8pogeTepLYAm', title: 'Quick Build Timelapse', category: 'Process' },
 ];
 
+/** Self-hosted, browser-safe copies of the first six showcase videos (H.264, 720p, 30s cuts).
+ *  The Drive originals are HEVC .MOV files that Drive's embedded player and most browsers cannot play. */
+export const localVideos = videoAssets.slice(0, 6).map((v, i) => ({
+  ...v,
+  src: `/videos/build-${i + 1}.mp4`,
+  poster: `/videos/build-${i + 1}.jpg`,
+}));
+
 // ─── ALL VIDEO IDS (complete 87) ──────────────────────────────────────────────
 export const allVideoIds = [
   '1YNN18qPScM2O9wx3uSVq8pogeTepLYAm', '1QzWL_geqek24cnTjKWW8lFSvDWrx5Rya',

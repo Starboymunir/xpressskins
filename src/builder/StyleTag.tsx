@@ -30,7 +30,8 @@ export function StyledWrapper({
   extraClassName?: string;
 } & React.HTMLAttributes<HTMLElement>) {
   // Tag is dynamic; cast to any inevitable due to JSX intrinsic union.
-  const Component = Tag as unknown as React.ElementType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Component = Tag as unknown as React.ComponentType<any>;
   return (
     <>
       <StyleTag css={css} />

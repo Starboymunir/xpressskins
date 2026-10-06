@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Eye, Filter, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { driveImg, driveVideo, allImages, videoAssets } from "@/data/assets";
+import { driveImg, allImages, localVideos } from "@/data/assets";
 import { Play } from "lucide-react";
 
 const categories = ["All", "Full Wrap", "Partial Wrap"];
@@ -65,22 +65,10 @@ export default function PortfolioPage() {
               Watch Our Builds
             </h2>
           </AnimatedSection>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {videoAssets.slice(0, 6).map((video, i) => (
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+            {localVideos.map((video, i) => (
               <AnimatedSection key={video.id} delay={i * 0.08}>
-                <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/[0.06] bg-surface-1">
-                  <iframe
-                    src={driveVideo(video.id)}
-                    title={video.title}
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    className="h-full w-full border-0"
-                  />
-                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-accent/80">{video.category}</span>
-                    <h3 className="text-sm font-bold text-white">{video.title}</h3>
-                  </div>
-                </div>
+                <VideoCard video={video} />
               </AnimatedSection>
             ))}
           </div>
@@ -236,5 +224,42 @@ export default function PortfolioPage() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+function VideoCard({ video }: { video: { id: string; title: string; category: string; src: string; poster: string } }) {
+  const [playing, setPlaying] = useState(false);
+  const ref = useRef<HTMLVideoElement>(null);
+  return (
+    <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/[0.06] bg-surface-1" data-cursor={playing ? undefined : "play"}>
+      <video
+        ref={ref}
+        src={video.src}
+        poster={video.poster}
+        preload="metadata"
+        playsInline
+        controls={playing}
+        muted={!playing}
+        loop={!playing}
+        onMouseEnter={() => { if (!playing) ref.current?.play().catch(() => {}); }}
+        onMouseLeave={() => { if (!playing && ref.current) { ref.current.pause(); ref.current.currentTime = 0; } }}
+        className="h-full w-full object-cover"
+      />
+      {!playing && (
+        <button
+          onClick={() => { setPlaying(true); const v = ref.current; if (v) { v.muted = false; v.currentTime = 0; v.play().catch(() => {}); } }}
+          className="absolute inset-0 flex items-center justify-center"
+          aria-label={`Play ${video.title}`}
+        >
+          <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/40 bg-white/10 backdrop-blur transition-transform group-hover:scale-110"><Play size={18} className="ml-0.5 fill-white text-white" /></span>
+        </button>
+      )}
+      {!playing && (
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 to-transparent p-3">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-accent/80">{video.category}</span>
+          <h3 className="text-sm font-bold text-white">{video.title}</h3>
+        </div>
+      )}
+    </div>
   );
 }
