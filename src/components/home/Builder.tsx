@@ -8,7 +8,15 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Check, RotateCw, Pause } from "lucide-react";
 import { vehicleDatabase, panelDefinitions, designTiers, finishOptions, installOptions, calculatePrice } from "@/data/vehicles";
 import { Rise, SplitLines } from "@/components/fx/Motion";
-import { LIVERIES, PAINTS, type Coverage, type FinishId, type ViewId } from "./CarViewer";
+import { LIVERIES, PAINTS, type Coverage, type FinishId, type ViewId } from "./studioData";
+import { resolveCar } from "@/lib/carIndex";
+
+const BODY_LABEL: Record<string, string> = { sedan: "Sedan", coupe: "Coupe", sports: "Sports car", hatchback: "Hatchback", wagon: "Wagon", suv: "SUV", truck: "Pickup truck", van: "Van" };
+const FINISH_NOTE: Record<string, string> = {
+  gloss: "Mirror clearcoat. Sharp reflections slide across every panel.",
+  satin: "Soft sheen. Highlights bloom wide instead of reflecting sharply.",
+  matte: "Flat and velvety. Almost no reflection, colour reads deeper.",
+};
 
 const CarViewer = dynamic(() => import("./CarViewer"), { ssr: false, loading: () => <div className="absolute inset-0 grid place-items-center t-label text-white/50">Loading 3D studio</div> });
 
@@ -51,6 +59,7 @@ export function Builder() {
   const price = useTransform(spring, (v) => `$${Math.round(v).toLocaleString()}`);
   useEffect(() => { mv.set(quote.total); }, [quote.total, mv]);
 
+  const car = useMemo(() => resolveCar(make, model, vehicle?.trim), [make, model, vehicle]);
   const art = LIVERIES.find((l) => l.id === livery) ?? LIVERIES[0];
   const href = `/pricing?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}&panels=${cov.panels.join(",")}&tier=${tier.id}&finish=${finish.id}&install=${install.id}&paint=${encodeURIComponent(paint)}&art=${art.id}`;
 
@@ -69,7 +78,7 @@ export function Builder() {
           {/* ── 3D stage ── */}
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-[#07070a] sm:aspect-[4/3]" data-cursor="drag" onPointerDown={() => { setView("free"); setSpin(false); }}>
-              <CarViewer color={paint} livery={livery} coverage={cov.id} finish={finish.id as FinishId} view={view} autoRotate={spin} />
+              <CarViewer modelUrl={car.url} body={car.body} color={paint} livery={livery} coverage={cov.id} finish={finish.id as FinishId} view={view} autoRotate={spin} />
 
               {/* top chrome */}
               <div className="pointer-events-none absolute left-4 top-4 flex flex-wrap gap-2 sm:left-6 sm:top-6">
@@ -102,7 +111,11 @@ export function Builder() {
                 </div>
               </div>
             </div>
-            <p className="mt-3 t-label text-white/35">Preview body is a generic sports coupe (3D model by vicent091036 via Sketchfab). Your quote and artwork are laid out on your exact {make} {model}.</p>
+            <p className="mt-3 t-label text-white/35">
+              {car.exact
+                ? <>Showing a 3D {make} {model}{car.model ? <> · model by {car.model.author}, {car.model.license}</> : null}.</>
+                : <>{BODY_LABEL[car.body]} · showing the closest body we have{car.model ? <> ({car.model.name} by {car.model.author})</> : <> (sports coupe by vicent091036)</>}. Your quote and artwork are laid out on your exact {make} {model}.</>}
+            </p>
             <div className="mt-5 grid grid-cols-3 gap-px overflow-hidden rounded-xl border hairline bg-white/[0.06] t-label">
               {[["25%", "to start the art"], ["25%", "when you approve"], ["50%", "to print & ship"]].map(([a, b]) => (
                 <div key={b} className="bg-[#0a0a0e] p-4"><p className="t-display text-2xl text-white">{a}</p><p className="mt-1 text-white/45">{b}</p></div>
@@ -194,6 +207,7 @@ export function Builder() {
                     <button key={f.id} onClick={() => setFinish(f)} className={`flex-1 rounded-full border px-3 py-3 t-label transition-colors ${f.id === finish.id ? "border-white bg-white text-[#050507]" : "border-white/15 text-white/70 hover:border-white/40"}`}>{f.label.replace("High ", "")}</button>
                   ))}
                 </div>
+                <p className="mt-3 text-[12px] leading-relaxed text-white/45">{FINISH_NOTE[finish.id]}</p>
               </Step>
               <Step n="07" title="Install">
                 <select className="sel" value={install.id} onChange={(e) => setInstall(installOptions.find((i) => i.id === e.target.value) ?? installOptions[0])}>

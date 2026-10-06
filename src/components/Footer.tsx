@@ -7,7 +7,7 @@ import { ArrowUpRight, ArrowUp } from "lucide-react";
 const COLS = [
   { title: "Build", links: [["Price your wrap", "/#build"], ["How it works", "/how-it-works"], ["Live builds", "/projects"], ["Customer portal", "/portal"]] },
   { title: "Studio", links: [["Portfolio", "/portfolio"], ["Contact", "/contact"], ["Instagram", "https://www.instagram.com/xpressskins/"], ["YouTube", "https://www.youtube.com/@XpressSkins"]] },
-  { title: "Legal", links: [["Privacy", "#"], ["Terms", "#"], ["Refunds", "#"]] },
+  { title: "Legal", links: [["Privacy", "#"], ["Terms", "#"], ["Refunds", "#"], ["3D credits", "/credits"]] },
 ];
 
 export function Footer() {
