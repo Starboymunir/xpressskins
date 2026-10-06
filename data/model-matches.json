@@ -1311,10 +1311,10 @@
      "score": 78.86272752831798
     }
    ],
-   "vetted": true,
-   "pick": "206871e20a3d4ba3a10ae077d351f577",
    "thumb": "https://media.sketchfab.com/models/206871e20a3d4ba3a10ae077d351f577/thumbnails/eb7c5cdad4b746129a3e47530e471804/f5680efa61c14405b2e5cd683a37fcac.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "206871e20a3d4ba3a10ae077d351f577"
   },
   "Audi|RS5": {
    "make": "Audi",
@@ -2827,10 +2827,10 @@
      "score": 92.97654699008945
     }
    ],
-   "vetted": true,
-   "pick": "b0bd4892203c4a159fa8813ab0b46806",
    "thumb": "https://media.sketchfab.com/models/b0bd4892203c4a159fa8813ab0b46806/thumbnails/196dd41b59d242ec9d7146da42949e81/e000b6545c174938a403d502eb0f38a3.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "b0bd4892203c4a159fa8813ab0b46806"
   },
   "BMW|i3": {
    "make": "BMW",
@@ -3033,10 +3033,10 @@
      "score": 95.89531467593228
     }
    ],
-   "vetted": true,
-   "pick": "2bb8aff1bbc54e9c9e59557f0484162d",
    "thumb": "https://media.sketchfab.com/models/2bb8aff1bbc54e9c9e59557f0484162d/thumbnails/1c437952da404b769cfa6ea2c8203f76/103e3aedd0d141718d15aa22427c3dcf.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "2bb8aff1bbc54e9c9e59557f0484162d"
   },
   "Buick|Century": {
    "make": "Buick",
@@ -5804,10 +5804,10 @@
      "score": 93.63711551571171
     }
    ],
-   "vetted": true,
-   "pick": "7999c3aec2fc4973a5668603e1d288ae",
    "thumb": "https://media.sketchfab.com/models/7999c3aec2fc4973a5668603e1d288ae/thumbnails/907f358de4e74e2bb5521ac87d4ab239/a4f03daed7f74d8fb1d237683b89c9d2.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "7999c3aec2fc4973a5668603e1d288ae"
   },
   "Ford|Mustang Mach-E": {
    "make": "Ford",
@@ -9867,10 +9867,10 @@
      "score": 83
     }
    ],
-   "vetted": true,
-   "pick": "cb1b8e7c551347a993adcc6e2cc3b960",
    "thumb": "https://media.sketchfab.com/models/cb1b8e7c551347a993adcc6e2cc3b960/thumbnails/8341237597874771a9c602e172ad3187/9630793ac7774ea0a43d08c1977e882f.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "cb1b8e7c551347a993adcc6e2cc3b960"
   },
   "Kia|K5": {
    "make": "Kia",
@@ -12231,10 +12231,10 @@
      "score": 94.69634003986948
     }
    ],
-   "vetted": true,
-   "pick": "661dcab94455463784651a3ebc63cfb9",
    "thumb": "https://media.sketchfab.com/models/661dcab94455463784651a3ebc63cfb9/thumbnails/826fa75bb8f04a8396a98941b1b53756/366db08de7ee4ab9a55a1c48f5353291.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "661dcab94455463784651a3ebc63cfb9"
   },
   "Mercedes-Benz|AMG GT 63": {
    "make": "Mercedes-Benz",
@@ -12267,10 +12267,10 @@
      "score": 74.19382002601611
     }
    ],
-   "vetted": true,
-   "pick": "1bac25a7f21a4297ba2392dca814fd7e",
    "thumb": "https://media.sketchfab.com/models/1bac25a7f21a4297ba2392dca814fd7e/thumbnails/aed44d4bb7b447f9b9081e666a80f68b/1022bc5b801a43fda1e7811d56e4c8fd.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "1bac25a7f21a4297ba2392dca814fd7e"
   },
   "Mercedes-Benz|B Class": {
    "make": "Mercedes-Benz",
@@ -13506,12 +13506,12 @@
      "score": 90
     }
    ],
-   "vetted": true,
-   "pick": "ba368bcb1b10450a8ed0b476b4dc0d05",
    "thumb": "https://media.sketchfab.com/thumbnails/4c57687b657445e1b46c83b35e494ad4/448.jpg",
    "rejected": [
     "Mitsubishi Montero: 31k tris"
-   ]
+   ],
+   "vetted": true,
+   "pick": "ba368bcb1b10450a8ed0b476b4dc0d05"
   },
   "Mitsubishi|Outlander": {
    "make": "Mitsubishi",
@@ -13873,10 +13873,10 @@
      "score": 105
     }
    ],
-   "vetted": true,
-   "pick": "ff8fb2251dfa4bb9979e7022c5a6666c",
    "thumb": "https://media.sketchfab.com/models/ff8fb2251dfa4bb9979e7022c5a6666c/thumbnails/5d94951eea044d9b92596e176378a968/e658a0287f0a47f383058b7ce79678ad.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "ff8fb2251dfa4bb9979e7022c5a6666c"
   },
   "Nissan|Juke RS": {
    "make": "Nissan",
@@ -14919,10 +14919,10 @@
      "score": 98.4898400878249
     }
    ],
-   "vetted": true,
-   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
    "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298"
   },
   "Porsche|718 GT4": {
    "make": "Porsche",
@@ -14966,10 +14966,10 @@
      "score": 98.4898400878249
     }
    ],
-   "vetted": true,
-   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
    "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298"
   },
   "Porsche|718": {
    "make": "Porsche",
@@ -15013,10 +15013,10 @@
      "score": 99.18887350225353
     }
    ],
-   "vetted": true,
-   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
    "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298"
   },
   "Porsche|911 Carrera": {
    "make": "Porsche",
@@ -15107,10 +15107,10 @@
      "score": 96.60303037041808
     }
    ],
-   "vetted": true,
-   "pick": "78d5c47ab2554c2592b7e499179a0792",
    "thumb": "https://media.sketchfab.com/models/78d5c47ab2554c2592b7e499179a0792/thumbnails/3f10c49b7b0746e8ba59c1917f364088/8f39771af6d044bc9dada2e73c7f4480.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "78d5c47ab2554c2592b7e499179a0792"
   },
   "Porsche|Boxster": {
    "make": "Porsche",
@@ -15203,10 +15203,10 @@
      "score": 96
     }
    ],
-   "vetted": true,
-   "pick": "3f3fa4493ecc4826823f0cb27f638908",
    "thumb": "https://media.sketchfab.com/models/3f3fa4493ecc4826823f0cb27f638908/thumbnails/92dbf28dfa244575a6008022f0280b37/8c00b1446df34b6e8a9867027ebfd760.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "3f3fa4493ecc4826823f0cb27f638908"
   },
   "Porsche|Cayman": {
    "make": "Porsche",
@@ -15250,10 +15250,10 @@
      "score": 101.51446855425644
     }
    ],
-   "vetted": true,
-   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298",
    "thumb": "https://media.sketchfab.com/models/0b210ff1ee3e4f75acf3fd31e6b1b298/thumbnails/0771fca0595945d2846498a9e7dcb213/df5f59d0ee0a4cf18620294969c671be.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "0b210ff1ee3e4f75acf3fd31e6b1b298"
   },
   "Porsche|Macan": {
    "make": "Porsche",
@@ -16901,10 +16901,10 @@
      "score": 91.38764005203222
     }
    ],
-   "vetted": true,
-   "pick": "27a7c524abec49059f9542a0a04ffad9",
    "thumb": "https://media.sketchfab.com/models/27a7c524abec49059f9542a0a04ffad9/thumbnails/711e26aa69fb418e9c0e10b75a22b379/7e49ca4cb88c40a5a9e4d62b9dff9977.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "27a7c524abec49059f9542a0a04ffad9"
   },
   "Toyota|Avalon": {
    "make": "Toyota",
@@ -17087,10 +17087,10 @@
      "score": 83.58818258495393
     }
    ],
-   "vetted": true,
-   "pick": "61dd3dc3c803421f9006102571ce3ffa",
    "thumb": "https://media.sketchfab.com/models/61dd3dc3c803421f9006102571ce3ffa/thumbnails/370f6528a6da4d49b0ee4487b32812a5/5db8e29131e84e94b6ed88cb8cfcba85.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "61dd3dc3c803421f9006102571ce3ffa"
   },
   "Toyota|Corolla": {
    "make": "Toyota",
@@ -17134,10 +17134,10 @@
      "score": 101.4828831143023
     }
    ],
-   "vetted": true,
-   "pick": "66dcbaf822ae47468655a604a83af703",
    "thumb": "https://media.sketchfab.com/models/66dcbaf822ae47468655a604a83af703/thumbnails/8fa3636a3b824e108f3c77189f782429/8df8f72e9202489ea2a63eaf878c1547.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "66dcbaf822ae47468655a604a83af703"
   },
   "Toyota|Corolla Cross": {
    "make": "Toyota",
@@ -18215,10 +18215,10 @@
      "score": 100.95644881620495
     }
    ],
-   "vetted": true,
-   "pick": "99f15d552f834685b1597cdc7336d70f",
    "thumb": "https://media.sketchfab.com/models/99f15d552f834685b1597cdc7336d70f/thumbnails/2d34936d03f74a759486e3d4d70874ae/49156ddef2194853b8c9327c525455d0.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "99f15d552f834685b1597cdc7336d70f"
   },
   "Volkswagen|GTi": {
    "make": "Volkswagen",
@@ -18262,10 +18262,10 @@
      "score": 100.95644881620495
     }
    ],
-   "vetted": true,
-   "pick": "99f15d552f834685b1597cdc7336d70f",
    "thumb": "https://media.sketchfab.com/models/99f15d552f834685b1597cdc7336d70f/thumbnails/2d34936d03f74a759486e3d4d70874ae/49156ddef2194853b8c9327c525455d0.jpeg",
-   "rejected": []
+   "rejected": [],
+   "vetted": true,
+   "pick": "99f15d552f834685b1597cdc7336d70f"
   },
   "Volkswagen|Golf": {
    "make": "Volkswagen",

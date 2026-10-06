@@ -15,7 +15,7 @@ const env = fs.existsSync(path.join(ROOT, ".env.local")) ? fs.readFileSync(path.
 const TOKEN = process.env.SKETCHFAB_TOKEN || env.match(/^SKETCHFAB_TOKEN=(.+)$/m)?.[1]?.trim();
 const AUTH = TOKEN ? { Authorization: `Token ${TOKEN}` } : {};
 
-const BAD_NAME = /photo ?scan|\bscan\b|\bday ?\d+\b|sketch|sculpt|F&F|furious|\bice\b|nascar|wreck|crash|rally|drift|widebody|police|taxi|low ?poly|game ?ready ?low|wip\b|test\b/i;
+const BAD_NAME = /race ?car|racing|\blivery\b|time ?attack|\bgt3 ?r\b|\bcup ?car\b|super ?gt|\bdtm\b|photo ?scan|\bscan\b|\bday ?\d+\b|sketch|sculpt|F&F|furious|\bice\b|nascar|wreck|crash|rally|drift|widebody|police|taxi|low ?poly|game ?ready ?low|wip\b|test\b/i;
 
 async function details(uid) {
   for (let attempt = 0; attempt < 8; attempt++) {

@@ -78,7 +78,7 @@ export function Builder() {
           {/* ── 3D stage ── */}
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-[#07070a] sm:aspect-[4/3]" data-cursor="drag" onPointerDown={() => { setView("free"); setSpin(false); }}>
-              <CarViewer modelUrl={car.url} body={car.body} color={paint} livery={livery} coverage={cov.id} finish={finish.id as FinishId} view={view} autoRotate={spin} />
+              <CarViewer modelUrl={car.url} body={car.body} config={car.model?.config} color={paint} livery={livery} coverage={cov.id} finish={finish.id as FinishId} view={view} autoRotate={spin} />
 
               {/* top chrome */}
               <div className="pointer-events-none absolute left-4 top-4 flex flex-wrap gap-2 sm:left-6 sm:top-6">

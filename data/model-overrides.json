@@ -1,0 +1,18 @@
+{
+ "Toyota|GR Supra": null,
+ "uid:8bb91f037ec64151ba72279c50ce5c20": {
+  "paint": [
+   "Mat_rancher..012"
+  ],
+  "frontSign": -1,
+  "note": "Tacoma: grey body panels are the paint; nose was reversed"
+ },
+ "uid:33fd5ed6b6df45ee979a726d553d9fcf": {
+  "frontSign": -1,
+  "note": "Sienna: nose was reversed"
+ },
+ "uid:f550638bb82b4493af0dfc9f082f8433": {
+  "usable": false,
+  "note": "Sequoia: file stored with a broken orientation; use nearest SUV"
+ }
+}

@@ -20,6 +20,8 @@ const limitArg = process.argv.indexOf("--limit");
 const LIMIT = limitArg > 0 ? +process.argv[limitArg + 1] : Infinity;
 const MATCHES = JSON.parse(fs.readFileSync(path.join(ROOT, "data/model-matches.json"), "utf8")).queries;
 const OUTDIR = path.join(ROOT, "public/models/cars");
+const OV_FILE = path.join(ROOT, "data/model-overrides.json");
+const OVERRIDES = fs.existsSync(OV_FILE) ? JSON.parse(fs.readFileSync(OV_FILE, "utf8")) : {};
 const MANIFEST = path.join(ROOT, "src/data/carModels.json");
 fs.mkdirSync(OUTDIR, { recursive: true });
 const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : { models: {}, groups: {} };
@@ -53,7 +55,10 @@ for (const [key, q] of order) {
   if (done >= LIMIT) break;
   // skip movie cars, old generations and race/wreck versions when a cleaner candidate exists
   const UNSUITABLE = /photo ?scan|\bscan\b|F&F|fast ?(and|&) ?furious|furious|\bice\b|'[5-9]\d\b|\b19[5-9]\d\b|nascar|wreck|crash|rally|drift|widebody|police|taxi/i;
-  const pick = q.candidates.find((c) => c.uid === q.pick);
+  // data/model-overrides.json: { "Make|Model": "<sketchfab uid>" | null } replaces or skips a pick after review
+  const ov = OVERRIDES[key];
+  if (ov === null) continue;
+  const pick = ov ? { uid: ov, name: key, author: "", url: `https://sketchfab.com/3d-models/${ov}`, license: "CC Attribution", ...q.candidates.find((c) => c.uid === ov) } : q.candidates.find((c) => c.uid === q.pick);
   if (!pick) continue;
   manifest.groups[key] = { make: q.make, base: q.base, body: q.body, models: q.models, uid: pick.uid };
   if (manifest.models[pick.uid]?.file) { done++; continue; }
@@ -67,7 +72,7 @@ for (const [key, q] of order) {
     const tmp = path.join(os.tmpdir(), `${pick.uid}.glb`);
     fs.writeFileSync(tmp, Buffer.from(await (await retryFetch(glb, {}, key)).arrayBuffer()));
     const out = path.join(OUTDIR, `${pick.uid}.glb`);
-    execFileSync(process.execPath, [GT_CLI, "optimize", tmp, out, "--compress", "draco", "--texture-compress", "webp", "--texture-size", "2048", "--simplify", "false"], { stdio: "ignore" });
+    execFileSync(process.execPath, [GT_CLI, "optimize", tmp, out, "--compress", "draco", "--texture-compress", "webp", "--texture-size", "2048", "--simplify", "false", "--palette", "false", "--join", "false", "--flatten", "false"], { stdio: "ignore" });
     fs.rmSync(tmp, { force: true });
     manifest.models[pick.uid] = { file: `/models/cars/${pick.uid}.glb`, name: pick.name, author: pick.author, authorUrl: pick.authorUrl, url: pick.url, license: pick.license, bytes: fs.statSync(out).size };
     console.log(`✓ ${key.padEnd(36)} ${(fs.statSync(out).size / 1e6).toFixed(1)} MB  "${pick.name}" by ${pick.author}`);

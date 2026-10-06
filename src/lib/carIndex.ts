@@ -1,7 +1,8 @@
 import manifest from "@/data/carModels.json";
 import { FALLBACK_MODEL, type BodyKind } from "@/components/home/studioData";
 
-type ModelInfo = { file?: string; name: string; author: string; authorUrl?: string; url: string; license: string; error?: string };
+type ModelInfo = { file?: string; name: string; author: string; authorUrl?: string; url: string; license: string; error?: string; config?: { paint: string[]; frontSign: number; longAxis: string; usable?: boolean; upsideDown?: boolean } };
+const ok = (m?: ModelInfo) => !!m?.file && m.config?.usable !== false;
 type Group = { make: string; base: string; body: BodyKind; models: string[]; uid: string };
 const M = manifest as unknown as { models: Record<string, ModelInfo>; groups: Record<string, Group> };
 
@@ -24,7 +25,7 @@ export function bodyType(model: string, trim = ""): BodyKind {
 }
 
 const byVehicle = new Map<string, string>(); // "Make|Model" -> uid
-for (const g of Object.values(M.groups)) for (const model of g.models) if (M.models[g.uid]?.file) byVehicle.set(`${g.make}|${model}`, g.uid);
+for (const g of Object.values(M.groups)) for (const model of g.models) if (ok(M.models[g.uid])) byVehicle.set(`${g.make}|${model}`, g.uid);
 
 const NEAR: Record<BodyKind, BodyKind[]> = {
   sedan: ["sedan", "coupe", "hatchback", "wagon", "sports"], coupe: ["coupe", "sports", "sedan"], sports: ["sports", "coupe", "sedan"],
@@ -38,12 +39,12 @@ export function resolveCar(make: string, model: string, trim = ""): Resolved {
   const uid = byVehicle.get(`${make}|${model}`);
   if (uid) return { url: M.models[uid].file!, body, exact: true, model: M.models[uid] };
   for (const b of NEAR[body]) {
-    const g = Object.values(M.groups).find((x) => x.body === b && M.models[x.uid]?.file);
+    const g = Object.values(M.groups).find((x) => x.body === b && ok(M.models[x.uid]));
     if (g) return { url: M.models[g.uid].file!, body, exact: false, model: M.models[g.uid] };
   }
   return { url: FALLBACK_MODEL, body, exact: false };
 }
 
 export function credits() {
-  return Object.values(M.models).filter((m) => m.file);
+  return Object.values(M.models).filter((m) => ok(m));
 }

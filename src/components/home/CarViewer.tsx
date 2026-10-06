@@ -17,6 +17,8 @@ const LENGTH: Record<BodyKind, number> = { sports: 4.55, coupe: 4.6, sedan: 4.75
 interface SceneProps {
   modelUrl: string;
   body: BodyKind;
+  /** offline analysis from scripts/analyze-models.mjs */
+  config?: { paint: string[]; frontSign: number; longAxis: string; upsideDown?: boolean };
   color: string;
   livery: string;
   coverage: Coverage;
@@ -95,7 +97,7 @@ function surfaceArea(g: THREE.BufferGeometry) {
 }
 
 /* ── any glTF car → oriented, scaled, grounded, with paint swapped ── */
-function Car({ modelUrl, body, color, livery, coverage, finish }: Omit<SceneProps, "view" | "autoRotate">) {
+function Car({ modelUrl, body, config, color, livery, coverage, finish }: Omit<SceneProps, "view" | "autoRotate">) {
   const { scene: src } = useGLTF(modelUrl, true);
   const art = useTexture(LIVERIES.find((l) => l.id === livery)?.src ?? LIVERIES[0].src);
   const { material, uniforms } = useBodyMaterial();
@@ -113,9 +115,9 @@ function Car({ modelUrl, body, color, livery, coverage, finish }: Omit<SceneProp
         e.area += surfaceArea(mesh.geometry); e.meshes.push(mesh); byMat.set(mat, e);
       }
     }
-    let paint = [...byMat.keys()].filter((m) => PAINT_NAME.test(m.name) && !NOT_PAINT.test(m.name));
+    let paint = config?.paint.length ? [...byMat.keys()].filter((m) => config.paint.includes(m.name)) : [...byMat.keys()].filter((m) => PAINT_NAME.test(m.name) && !NOT_PAINT.test(m.name));
     if (modelUrl === FALLBACK_MODEL) paint = [...byMat.keys()].filter((m) => m.name === "Body_Color");
-    if (!paint.length) {
+    if (!paint.length && !config) {
       const ranked = [...byMat.entries()].filter(([m]) => !NOT_PAINT.test(m.name) && !(m as THREE.MeshStandardMaterial).transparent).sort((a, b) => b[1].area - a[1].area);
       if (ranked[0]) paint = [ranked[0][0]];
     }
@@ -128,12 +130,48 @@ function Car({ modelUrl, body, color, livery, coverage, finish }: Omit<SceneProp
         mesh.material = new THREE.MeshPhysicalMaterial({ color: 0x0a0f14, metalness: 0, roughness: 0.02, transparent: true, opacity: 0.55, clearcoat: 1, envMapIntensity: 2 });
       } else if (std !== material && /chrome/i.test(std.name)) { std.metalness = 1; std.roughness = 0.08; }
     }
+    // nose point in file coordinates, from the offline analysis
+    const box0 = new THREE.Box3().setFromObject(scene);
+    const nose = box0.getCenter(new THREE.Vector3());
+    if (config) { const ax = config.longAxis as "x" | "y" | "z"; nose[ax] = config.frontSign < 0 ? box0.min[ax] : box0.max[ax]; }
     // 2. orient: longest horizontal axis → z
     let box = new THREE.Box3().setFromObject(scene);
     const size = box.getSize(new THREE.Vector3());
     if (size.y > size.z && size.y > size.x) scene.rotation.x = -Math.PI / 2; // Z-up exports
     scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size);
     if (size.x > size.z) { scene.rotation.y += Math.PI / 2; scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size); }
+    // 2a. upside-down files: the tyres must sit below the middle of the car
+    {
+      const tyres = new THREE.Box3();
+      scene.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh && /tire|tyre|wheel|rim|rubber|pneu/i.test(`${m.name} ${([] as THREE.Material[]).concat(m.material).map((x) => x.name).join(" ")}`)) tyres.expandByObject(m); });
+      if (config?.upsideDown || (!tyres.isEmpty() && tyres.getCenter(new THREE.Vector3()).y > box.getCenter(new THREE.Vector3()).y)) {
+        scene.rotateOnWorldAxis(new THREE.Vector3(0, 0, 1), Math.PI);
+        scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size);
+      }
+    }
+    // 2b. nose: our cameras expect the front of the car at -z (as the reference coupe).
+    if (config) {
+      const w = nose.clone().applyMatrix4(scene.matrixWorld);
+      if (w.z > box.getCenter(new THREE.Vector3()).z) { scene.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), Math.PI); scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size); }
+    } else {
+    //     Compare where front-ish parts (head lights, grille, front bumper) sit against rear-ish parts.
+    const FRONT = /head ?light|headlamp|head|grill|grille|front|fr|bumper_?f|f_?bumper|hood|bonnet|windshield|license_?plate_?f/i;
+    const REAR = /tail ?light|taillamp|tail|brake ?light|rear|rr|bumper_?r|r_?bumper|trunk|boot|exhaust|muffler|tailgate|license_?plate_?r/i;
+    let fz = 0, fn = 0, rz = 0, rn = 0;
+    const tmp = new THREE.Box3(), ctr = new THREE.Vector3();
+    scene.traverse((o) => {
+      const m = o as THREE.Mesh;
+      if (!m.isMesh) return;
+      const label = `${m.name} ${([] as THREE.Material[]).concat(m.material).map((x) => x.name).join(" ")} ${m.parent?.name ?? ""}`;
+      const isF = FRONT.test(label), isR = REAR.test(label);
+      if (isF === isR) return;
+      tmp.setFromObject(m).getCenter(ctr);
+      if (isF) { fz += ctr.z; fn++; } else { rz += ctr.z; rn++; }
+    });
+    if (fn && rn && fz / fn > rz / rn) { scene.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), Math.PI); scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size); }
+    else if (fn && !rn && fz / fn > box.getCenter(new THREE.Vector3()).z) { scene.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), Math.PI); scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size); }
+    else if (rn && !fn && rz / rn < box.getCenter(new THREE.Vector3()).z) { scene.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), Math.PI); scene.updateMatrixWorld(true); box = new THREE.Box3().setFromObject(scene); box.getSize(size); }
+    }
     // 3. scale to a real length and ground it
     const s = LENGTH[body] / size.z;
     scene.scale.multiplyScalar(s);
@@ -148,7 +186,7 @@ function Car({ modelUrl, body, color, livery, coverage, finish }: Omit<SceneProp
     if (pb.isEmpty()) pb.setFromObject(scene);
     uniforms.uMin.value.copy(pb.min); uniforms.uSize.value.copy(pb.getSize(new THREE.Vector3()));
     return scene;
-  }, [src, modelUrl, body, material, uniforms]);
+  }, [src, modelUrl, body, config, material, uniforms]);
 
   useEffect(() => { art.colorSpace = THREE.SRGBColorSpace; art.anisotropy = 8; uniforms.uArt.value = art; }, [art, uniforms]);
   useEffect(() => { uniforms.uColor.value.set(color); }, [color, uniforms]);
@@ -235,7 +273,7 @@ export default function CarViewer(props: SceneProps) {
         <color attach="background" args={["#060608"]} />
         <fog attach="fog" args={["#060608", 16 * k, 36 * k]} />
         <Suspense fallback={null}>
-          <Car key={props.modelUrl} modelUrl={props.modelUrl} body={props.body} color={props.color} livery={props.livery} coverage={props.coverage} finish={props.finish} />
+          <Car key={props.modelUrl} modelUrl={props.modelUrl} body={props.body} config={props.config} color={props.color} livery={props.livery} coverage={props.coverage} finish={props.finish} />
           <Floor />
           <ContactShadows position={[0, 0.001, 0]} opacity={0.9} scale={16 * k} blur={2.4} far={3} resolution={1024} />
           {/* dark showroom: bright softboxes on black, so gloss shows crisp light bands and matte shows none */}
