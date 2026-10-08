@@ -46,6 +46,8 @@ function useBodyMaterial() {
       uSide: { value: 1 }, uTop: { value: 1 }, uHalf: { value: 0 }, uEnds: { value: 1 },
       uMin: { value: new THREE.Vector3(-1, 0, -2) },
       uSize: { value: new THREE.Vector3(2, 1.3, 4.6) },
+      uArtAspect: { value: 1376 / 768 },
+      uFlake: { value: 1 },
     }),
     [],
   );
@@ -59,7 +61,9 @@ function useBodyMaterial() {
       shader.fragmentShader = shader.fragmentShader
         .replace("#include <common>", `#include <common>
 varying vec3 vWPos; varying vec3 vWNrm;
-uniform sampler2D uArt; uniform vec3 uColor; uniform float uSide; uniform float uTop; uniform float uHalf; uniform float uEnds; uniform vec3 uMin; uniform vec3 uSize;`)
+uniform sampler2D uArt; uniform vec3 uColor; uniform float uSide; uniform float uTop; uniform float uHalf; uniform float uEnds; uniform vec3 uMin; uniform vec3 uSize; uniform float uArtAspect; uniform float uFlake;
+float xsWrapMask = 0.0;
+float xsHash(vec3 p){ p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }`)
         .replace("#include <color_fragment>", `#include <color_fragment>
 {
   vec3 n = normalize(vWNrm);
@@ -67,17 +71,34 @@ uniform sampler2D uArt; uniform vec3 uColor; uniform float uSide; uniform float 
   float sideW = smoothstep(0.30, 0.62, abs(n.x));
   float topW  = smoothstep(0.30, 0.62, n.y);
   float endW  = smoothstep(0.30, 0.62, abs(n.z)) * (1.0 - topW);
+  // keep the artwork's real proportions: it spans the car's length, and its height follows
+  // the image ratio (centred a little low so the character sits on the doors, not the roof)
+  float artH = uSize.z / uArtAspect;
   float u = n.x > 0.0 ? 1.0 - p.z : p.z;
-  vec3 sideCol = texture2D(uArt, vec2(clamp(u, 0.0, 1.0), clamp(p.y * 1.1, 0.0, 1.0))).rgb;
-  vec3 topCol  = texture2D(uArt, vec2(clamp(1.0 - p.z, 0.0, 1.0), clamp(p.x, 0.0, 1.0))).rgb;
-  vec3 endCol  = texture2D(uArt, vec2(clamp(n.z > 0.0 ? p.x : 1.0 - p.x, 0.0, 1.0), clamp(p.y * 1.1, 0.0, 1.0))).rgb;
+  float v = 0.5 + ((vWPos.y - uMin.y) - uSize.y * 0.42) / artH;
+  vec3 sideCol = texture2D(uArt, vec2(clamp(u, 0.0, 1.0), clamp(v, 0.0, 1.0))).rgb;
+  float vt = 0.5 + ((vWPos.x - uMin.x) - uSize.x * 0.5) / artH;
+  vec3 topCol  = texture2D(uArt, vec2(clamp(1.0 - p.z, 0.0, 1.0), clamp(vt, 0.0, 1.0))).rgb;
+  float ue = 0.5 + ((vWPos.x - uMin.x) - uSize.x * 0.5) / (artH * uArtAspect) * (n.z > 0.0 ? 1.0 : -1.0);
+  vec3 endCol  = texture2D(uArt, vec2(clamp(ue, 0.0, 1.0), clamp(v, 0.0, 1.0))).rgb;
   float halfMask = uHalf > 0.5 ? step(p.x, 0.5) : 1.0;
   float m = max(max(sideW * uSide * halfMask, topW * uTop), endW * uEnds);
   vec3 wrap = (sideCol * sideW + topCol * topW + endCol * endW) / (sideW + topW + endW + 1e-4);
   diffuseColor.rgb = mix(uColor, wrap, m);
+  xsWrapMask = m;
+}`)
+        .replace("#include <roughnessmap_fragment>", `#include <roughnessmap_fragment>
+{
+  float flake = xsHash(floor(vWPos * 900.0));
+  roughnessFactor = clamp(roughnessFactor + (flake - 0.5) * 0.12 * uFlake * (1.0 - xsWrapMask), 0.02, 1.0);
+}`)
+        .replace("#include <normal_fragment_maps>", `#include <normal_fragment_maps>
+{
+  vec3 fl = vec3(xsHash(floor(vWPos * 900.0) + 1.3), xsHash(floor(vWPos * 900.0) + 7.1), xsHash(floor(vWPos * 900.0) + 3.7)) - 0.5;
+  normal = normalize(normal + fl * 0.09 * uFlake * (1.0 - xsWrapMask));
 }`);
     };
-    m.customProgramCacheKey = () => "xs-livery-world";
+    m.customProgramCacheKey = () => "xs-livery-world-v2";
     return m;
   }, [uniforms]);
   return { material, uniforms };
@@ -188,7 +209,11 @@ function Car({ modelUrl, body, config, color, livery, coverage, finish }: Omit<S
     return scene;
   }, [src, modelUrl, body, config, material, uniforms]);
 
-  useEffect(() => { art.colorSpace = THREE.SRGBColorSpace; art.anisotropy = 8; uniforms.uArt.value = art; }, [art, uniforms]);
+  useEffect(() => {
+    art.colorSpace = THREE.SRGBColorSpace; art.anisotropy = 16; uniforms.uArt.value = art;
+    const img = art.image as { width?: number; height?: number } | undefined;
+    if (img?.width && img?.height) uniforms.uArtAspect.value = img.width / img.height;
+  }, [art, uniforms]);
   useEffect(() => { uniforms.uColor.value.set(color); }, [color, uniforms]);
   useEffect(() => {
     uniforms.uSide.value = coverage === "hood" ? 0 : 1;
@@ -198,9 +223,10 @@ function Car({ modelUrl, body, config, color, livery, coverage, finish }: Omit<S
   }, [coverage, uniforms]);
   useEffect(() => {
     const f = FINISH[finish];
+    uniforms.uFlake.value = finish === "gloss" ? 1 : finish === "satin" ? 0.6 : 0;
     Object.assign(material, { roughness: f.roughness, metalness: f.metalness, clearcoat: f.clearcoat, clearcoatRoughness: f.clearcoatRoughness, envMapIntensity: f.envMapIntensity, sheen: f.sheen });
     material.needsUpdate = true;
-  }, [finish, material]);
+  }, [finish, material, uniforms]);
 
   return <primitive object={root} />;
 }
@@ -241,9 +267,42 @@ function CameraRig({ view, controls, body }: { view: ViewId; controls: React.Ref
 function Floor() {
   return (
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.005, 0]} receiveShadow>
-      <planeGeometry args={[60, 60]} />
-      <MeshReflectorMaterial blur={[300, 90]} resolution={1024} mixBlur={1} mixStrength={28} roughness={0.85} depthScale={1.2} minDepthThreshold={0.4} maxDepthThreshold={1.4} color="#050506" metalness={0.6} mirror={0.6} />
+      <planeGeometry args={[80, 80]} />
+      {/* polished concrete: sharp near the tyres, softening with distance */}
+      <MeshReflectorMaterial blur={[180, 60]} resolution={1024} mixBlur={0.8} mixStrength={40} roughness={0.72} depthScale={1.4} minDepthThreshold={0.35} maxDepthThreshold={1.5} color="#0b0b0e" metalness={0.5} mirror={0.75} />
     </mesh>
+  );
+}
+
+/* ── the showroom: curved backdrop + ceiling light panels you can see in the paint and floor ── */
+function Showroom({ k }: { k: number }) {
+  const cyc = useMemo(() => {
+    // a quarter-pipe "infinity cove" behind and around the car
+    const g = new THREE.CylinderGeometry(11 * k, 11 * k, 10, 160, 1, true);
+    return g;
+  }, [k]);
+  return (
+    <group>
+      <mesh geometry={cyc} position={[0, 5, 0]} rotation={[0, Math.PI, 0]} receiveShadow>
+        <meshStandardMaterial color="#26262d" roughness={0.9} metalness={0} side={THREE.BackSide} />
+      </mesh>
+      {/* ceiling softboxes: long emissive strips, bright enough to bloom */}
+      {[-2.4, 0, 2.4].map((x) => (
+        <mesh key={x} position={[x * k, 6.2, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[0.7, 9 * k]} />
+          <meshBasicMaterial color={[2.6, 2.6, 2.75]} toneMapped={false} side={THREE.DoubleSide} />
+        </mesh>
+      ))}
+      {/* low accent strips on the cove, brand colours */}
+      <mesh position={[-7.6 * k, 0.5, -7.6 * k]} rotation={[0, Math.PI / 4, 0]}>
+        <planeGeometry args={[6, 0.1]} />
+        <meshBasicMaterial color={[3, 0.5, 1.8]} toneMapped={false} />
+      </mesh>
+      <mesh position={[7.6 * k, 0.5, -7.6 * k]} rotation={[0, -Math.PI / 4, 0]}>
+        <planeGeometry args={[6, 0.1]} />
+        <meshBasicMaterial color={[0.4, 2.4, 3]} toneMapped={false} />
+      </mesh>
+    </group>
   );
 }
 
@@ -270,22 +329,25 @@ export default function CarViewer(props: SceneProps) {
         gl={{ antialias: false, powerPreference: "high-performance", toneMapping: THREE.NoToneMapping, stencil: false }}
         className="!absolute !inset-0"
       >
-        <color attach="background" args={["#060608"]} />
-        <fog attach="fog" args={["#060608", 16 * k, 36 * k]} />
+        <color attach="background" args={["#0a0a0d"]} />
+        <fog attach="fog" args={["#0a0a0d", 24 * k, 60 * k]} />
         <Suspense fallback={null}>
           <Car key={props.modelUrl} modelUrl={props.modelUrl} body={props.body} config={props.config} color={props.color} livery={props.livery} coverage={props.coverage} finish={props.finish} />
           <Floor />
+          <Showroom k={k} />
           <ContactShadows position={[0, 0.001, 0]} opacity={0.9} scale={16 * k} blur={2.4} far={3} resolution={1024} />
           {/* dark showroom: bright softboxes on black, so gloss shows crisp light bands and matte shows none */}
           <Environment resolution={1024} environmentIntensity={1}>
-            <color attach="background" args={["#020203"]} />
-            <Lightformer form="rect" intensity={5} position={[0, 8, -3]} rotation-x={Math.PI / 2} scale={[1.6, 16, 1]} />
-            <Lightformer form="rect" intensity={5} position={[0, 8, 3]} rotation-x={Math.PI / 2} scale={[1.6, 16, 1]} />
-            <Lightformer form="rect" intensity={3} position={[-9, 3.5, 0]} rotation-y={Math.PI / 2} scale={[16, 0.9, 1]} />
-            <Lightformer form="rect" intensity={3} position={[9, 3.5, 0]} rotation-y={-Math.PI / 2} scale={[16, 0.9, 1]} />
-            <Lightformer form="rect" intensity={1.2} position={[0, 1.2, -12]} scale={[18, 0.5, 1]} />
-            <Lightformer form="ring" intensity={3} position={[-7, 4, -7]} scale={2.5} color="#ff2fa0" />
-            <Lightformer form="ring" intensity={2.5} position={[7, 4, 7]} scale={2.5} color="#1ee3ff" />
+            <color attach="background" args={["#0b0b0e"]} />
+            {/* same three ceiling strips as the visible set, so the reflections match */}
+            <Lightformer form="rect" intensity={6} position={[-2.4, 6.2, 0]} rotation-x={Math.PI / 2} scale={[0.7, 9, 1]} />
+            <Lightformer form="rect" intensity={6} position={[0, 6.2, 0]} rotation-x={Math.PI / 2} scale={[0.7, 9, 1]} />
+            <Lightformer form="rect" intensity={6} position={[2.4, 6.2, 0]} rotation-x={Math.PI / 2} scale={[0.7, 9, 1]} />
+            <Lightformer form="rect" intensity={2.2} position={[-10, 2.6, 0]} rotation-y={Math.PI / 2} scale={[18, 1.4, 1]} />
+            <Lightformer form="rect" intensity={2.2} position={[10, 2.6, 0]} rotation-y={-Math.PI / 2} scale={[18, 1.4, 1]} />
+            <Lightformer form="rect" intensity={0.8} position={[0, 0.8, -14]} scale={[24, 1.2, 1]} />
+            <Lightformer form="rect" intensity={2.4} position={[-14, 0.6, -10]} rotation-y={Math.PI / 4} scale={[10, 0.4, 1]} color="#ff2fa0" />
+            <Lightformer form="rect" intensity={2.4} position={[14, 0.6, -10]} rotation-y={-Math.PI / 4} scale={[10, 0.4, 1]} color="#1ee3ff" />
           </Environment>
           <ambientLight intensity={0.08} />
           <directionalLight position={[5, 10, 4]} intensity={0.9} castShadow shadow-mapSize={[2048, 2048]} shadow-bias={-0.0003} shadow-camera-left={-6} shadow-camera-right={6} shadow-camera-top={6} shadow-camera-bottom={-6} />
@@ -295,9 +357,9 @@ export default function CarViewer(props: SceneProps) {
         <CameraRig view={props.view} controls={controls} body={props.body} />
         <EffectComposer multisampling={0} enableNormalPass={false}>
           <N8AO halfRes aoRadius={1} intensity={1.6} distanceFalloff={0.6} />
-          <Bloom mipmapBlur luminanceThreshold={1.1} luminanceSmoothing={0.2} intensity={0.45} />
+          <Bloom mipmapBlur luminanceThreshold={1} luminanceSmoothing={0.25} intensity={0.7} />
           <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
-          <Vignette eskil={false} offset={0.25} darkness={0.6} />
+          <Vignette eskil={false} offset={0.3} darkness={0.55} />
           <SMAA />
         </EffectComposer>
       </Canvas>
