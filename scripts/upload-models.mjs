@@ -28,7 +28,15 @@ const MANIFEST = path.join(ROOT, "src/data/carModels.json");
 const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
 const DIR = path.join(ROOT, "public/models/cars");
 let up = 0;
-for (const [uid, m] of Object.entries(manifest.models)) {
+// only models that passed analysis, popular makes first
+const POPULAR = ["Toyota", "Honda", "Ford", "Chevrolet", "Nissan", "Tesla", "Jeep", "Hyundai", "Kia", "Dodge", "Subaru", "Mazda", "BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Lexus", "GMC", "Ram"];
+const makeOf = (uid) => Object.values(manifest.groups).find((g) => g.uid === uid)?.make ?? "";
+const rank = (uid) => { const i = POPULAR.indexOf(makeOf(uid)); return i < 0 ? 99 : i; };
+const queue = Object.entries(manifest.models).filter(([, m]) => m.file && m.config?.usable).sort(([a], [b]) => rank(a) - rank(b));
+let bytes = 0;
+const LIMIT = process.argv.includes("--limit") ? +process.argv[process.argv.indexOf("--limit") + 1] : Infinity;
+for (const [uid, m] of queue) {
+  if (up >= LIMIT) break;
   if (!m.file) continue;
   if (m.file.startsWith("http")) continue; // already hosted
   const local = path.join(DIR, `${uid}.glb`);
@@ -36,7 +44,7 @@ for (const [uid, m] of Object.entries(manifest.models)) {
   const { error } = await sb.storage.from(BUCKET).upload(`${uid}.glb`, fs.readFileSync(local), { contentType: "model/gltf-binary", upsert: true, cacheControl: "31536000" });
   if (error) { console.log(`✗ ${uid} ${error.message}`); continue; }
   m.file = sb.storage.from(BUCKET).getPublicUrl(`${uid}.glb`).data.publicUrl;
-  up++;
+  up++; bytes += fs.statSync(local).size;
   console.log(`↑ ${m.name}`);
   fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1));
 }

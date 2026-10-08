@@ -2,9 +2,10 @@ import manifest from "@/data/carModels.json";
 import { FALLBACK_MODEL, type BodyKind } from "@/components/home/studioData";
 
 type ModelInfo = { file?: string; name: string; author: string; authorUrl?: string; url: string; license: string; error?: string; config?: { paint: string[]; frontSign: number; longAxis: string; usable?: boolean; upsideDown?: boolean } };
-// In production only models already uploaded to Supabase Storage (http URLs) are used; local
-// /models/cars files are git-ignored and exist only on the dev machine.
-const hosted = (f?: string) => !!f && (process.env.NODE_ENV !== "production" || /^https?:\/\//.test(f));
+// In production only models that are actually deployed are used: files committed under
+// /models/v/ (served by the site itself) or hosted elsewhere (http URLs). /models/cars is
+// git-ignored and exists only on the dev machine.
+const hosted = (f?: string) => !!f && (process.env.NODE_ENV !== "production" || /^https?:\/\//.test(f) || f.startsWith("/models/v/"));
 const ok = (m?: ModelInfo) => hosted(m?.file) && m!.config?.usable !== false;
 type Group = { make: string; base: string; body: BodyKind; models: string[]; uid: string };
 const M = manifest as unknown as { models: Record<string, ModelInfo>; groups: Record<string, Group> };
