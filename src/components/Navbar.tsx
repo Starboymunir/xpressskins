@@ -38,16 +38,16 @@ export function Navbar() {
         initial={{ y: -80 }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.2, ease: EASE }}
         className={`fixed inset-x-0 top-0 z-[80] transition-colors duration-500 ${scrolled && !open ? "bg-[#050507]/70 backdrop-blur-xl" : ""}`}
       >
-        <div className={`mx-auto flex h-[72px] max-w-[1600px] items-center justify-between px-5 transition-all lg:px-10 ${scrolled && !open ? "" : ""}`}>
+        <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-4 md:h-[72px] md:px-5 lg:px-10">
           <Link href="/" className="relative z-[90] flex items-center gap-3" aria-label="Xpress Skins home">
-            <Image src="/New Xpressskins Logo cut only2 Large.png" alt="Xpress Skins" width={150} height={36} className="h-7 w-auto brightness-0 invert" priority />
+            <Image src="/New Xpressskins Logo cut only2 Large.png" alt="Xpress Skins" width={150} height={36} className="h-6 w-auto brightness-0 invert md:h-7" priority />
           </Link>
 
           <div className="relative z-[90] flex items-center gap-3">
-            <Link href="/#build" className="btn-pill btn-pill-light hidden !py-2.5 !text-[11px] md:inline-flex"><span className="btn-pill-txt">Price my wrap</span></Link>
+            <span className="hidden md:block"><Link href="/#build" className="btn-pill btn-pill-light !py-2.5 !text-[11px]"><span className="btn-pill-txt">Price my wrap</span></Link></span>
             <button
               onClick={() => setOpen(!open)}
-              className="group flex h-11 items-center gap-3 rounded-full border border-white/15 px-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:border-white/40"
+              className="group flex h-10 items-center gap-3 rounded-full border border-white/15 bg-black/30 px-3.5 backdrop-blur md:h-11 md:px-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:border-white/40"
               aria-expanded={open}
             >
               <span className="hidden sm:inline">{open ? "Close" : "Menu"}</span>
