@@ -1,4 +1,11 @@
 @import "tailwindcss";
+/* keep Tailwind's class scanner out of 3D models and bulk data (they OOM the build) */
+@source not "../../public/models";
+@source not "../../public/videos";
+@source not "../../public/portfolio";
+@source not "../../data";
+@source not "../data/carModels.json";
+@source not "../data/vehicles.ts";
 
 /* ════════════════════════════════════════════════════
    XPRESS SKINS — Design System
