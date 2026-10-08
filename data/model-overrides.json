@@ -14,5 +14,105 @@
  "uid:f550638bb82b4493af0dfc9f082f8433": {
   "usable": false,
   "note": "Sequoia: file stored with a broken orientation; use nearest SUV"
+ },
+ "uid:04925f2cea0c4090a58d13d88e3f16d9": {
+  "usable": false,
+  "note": "review: broken render (Audi A6)"
+ },
+ "uid:c30b4a6ec479473a814d030da10e97a8": {
+  "usable": false,
+  "note": "review: broken render (Audi Q8)"
+ },
+ "uid:622928b520c94fb2a4c70d0ddfffa128": {
+  "usable": false,
+  "note": "review: broken render (Audi S6)"
+ },
+ "uid:44f95a01a6774b07b3a7fb7fa5bafc7b": {
+  "usable": false,
+  "note": "review: broken render (Audi S8)"
+ },
+ "uid:d2b715563f1e474099b8eef1f262c8a6": {
+  "usable": false,
+  "note": "review: broken render (BMW 3-Series 328i)"
+ },
+ "uid:529620651df548939aff2618763ddfea": {
+  "usable": false,
+  "note": "review: broken render (Dodge Neon)"
+ },
+ "uid:5b3898052ca64641ab1857a638551039": {
+  "usable": false,
+  "note": "review: broken render (Dodge Ram 1500 Mega Cab Short Bed)"
+ },
+ "uid:20dfe0fc6a684c539e11bfe5e6a43fee": {
+  "usable": false,
+  "note": "review: broken render (Dodge Ram 2500 MegaCab Short Bed)"
+ },
+ "uid:40604d4eb4f3454685e66a77e447f23e": {
+  "usable": false,
+  "note": "review: broken render (Dodge Ram 3500 Mega Cab Short Bed Dually)"
+ },
+ "uid:61d2800a3a9548db81f21eebc1f257fb": {
+  "usable": false,
+  "note": "review: broken render (Ford Excursion)"
+ },
+ "uid:edea9d0701044ba3965dfb8cbdd20141": {
+  "usable": false,
+  "note": "review: broken render (Ford Explorer)"
+ },
+ "uid:d26a53de3f194989aaa7b062be6e1e9a": {
+  "usable": false,
+  "note": "review: broken render (Ford Taurus)"
+ },
+ "uid:0fb040c349a24defadaa9ab9f0cb5f22": {
+  "usable": false,
+  "note": "review: broken render (GMC Sierra 2500 Crew Cab Standard Bed)"
+ },
+ "uid:aad70ad7eae3467e99c71ef0c7150138": {
+  "usable": false,
+  "note": "review: broken render (Honda Accord)"
+ },
+ "uid:a4827c4d86224ab586218654559f4627": {
+  "usable": false,
+  "note": "review: broken render (Honda Odyssey)"
+ },
+ "uid:61f267e6f4e844bcb36c6f3ac580849f": {
+  "usable": false,
+  "note": "review: broken render (Honda Pilot)"
+ },
+ "uid:dc023a0dd83b4a7a8dc902f860794ae1": {
+  "usable": false,
+  "note": "review: broken render (Jeep Wrangler (JL) 2 Door)"
+ },
+ "uid:605997db34c445898e4e92c8f4524378": {
+  "usable": false,
+  "note": "review: broken render (Lexus LX 570)"
+ },
+ "uid:e229a4e696e1400bb06fedb3dbbc44a3": {
+  "usable": false,
+  "note": "review: broken render (Mercedes-Benz GLS-Class GLS 580)"
+ },
+ "uid:bcefb9288f824519aea4d6ad48d756ce": {
+  "usable": false,
+  "note": "review: broken render (Nissan Murano)"
+ },
+ "uid:6f9760ab25704d3794a1e259b4d12643": {
+  "usable": false,
+  "note": "review: broken render (Ram 2500.0)"
+ },
+ "uid:c8ce56a9cb0343b9b578d43b985d8a9f": {
+  "usable": false,
+  "note": "review: broken render (Subaru Crosstrek)"
+ },
+ "uid:c0ffde08f5e04cca9dffb449a5eef759": {
+  "usable": false,
+  "note": "review: broken render (Subaru Legacy)"
+ },
+ "uid:8950fc178e254c9198b2a8555ef1590a": {
+  "usable": false,
+  "note": "review: broken render (Tesla Cybertruck)"
+ },
+ "uid:cc503d26ea694dce85e7d0f1491b0e30": {
+  "usable": false,
+  "note": "review: broken render (Toyota Corolla Cross)"
  }
 }

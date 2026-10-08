@@ -148,7 +148,7 @@
    }
   },
   "cc503d26ea694dce85e7d0f1491b0e30": {
-   "file": "/models/v/cc503d26ea694dce85e7d0f1491b0e30.glb",
+   "file": "/models/cars/cc503d26ea694dce85e7d0f1491b0e30.glb",
    "name": "Toyota Corolla Cross",
    "author": "Nieve5677",
    "authorUrl": "https://sketchfab.com/niev",
@@ -165,7 +165,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 25,
-    "usable": true
+    "usable": false
    }
   },
   "a0feb719f9c34f42ac79932331277a07": {
@@ -442,7 +442,7 @@
    }
   },
   "aad70ad7eae3467e99c71ef0c7150138": {
-   "file": "/models/v/aad70ad7eae3467e99c71ef0c7150138.glb",
+   "file": "/models/cars/aad70ad7eae3467e99c71ef0c7150138.glb",
    "name": "2019 Honda Accord",
    "author": "David_Holiday",
    "authorUrl": "https://sketchfab.com/David_Holiday",
@@ -459,7 +459,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 74,
-    "usable": true
+    "usable": false
    }
   },
   "91c6673859444597bf006a0ef8570005": {
@@ -590,7 +590,7 @@
    }
   },
   "a4827c4d86224ab586218654559f4627": {
-   "file": "/models/v/a4827c4d86224ab586218654559f4627.glb",
+   "file": "/models/cars/a4827c4d86224ab586218654559f4627.glb",
    "name": "Honda Odyssey",
    "author": "ZapupaNekra",
    "authorUrl": "https://sketchfab.com/ZapupaNekra",
@@ -607,11 +607,11 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 35,
-    "usable": true
+    "usable": false
    }
   },
   "61f267e6f4e844bcb36c6f3ac580849f": {
-   "file": "/models/v/61f267e6f4e844bcb36c6f3ac580849f.glb",
+   "file": "/models/cars/61f267e6f4e844bcb36c6f3ac580849f.glb",
    "name": "2018 Honda Pilot EX",
    "author": "FUNNY797",
    "authorUrl": "https://sketchfab.com/FUNNY797",
@@ -628,7 +628,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 48,
-    "usable": true
+    "usable": false
    }
   },
   "76c8c4d7d49949e8ba9d6b6d3a94c473": {
@@ -800,7 +800,7 @@
    }
   },
   "61d2800a3a9548db81f21eebc1f257fb": {
-   "file": "/models/v/61d2800a3a9548db81f21eebc1f257fb.glb",
+   "file": "/models/cars/61d2800a3a9548db81f21eebc1f257fb.glb",
    "name": "Ford Excursion",
    "author": "blueman6543",
    "authorUrl": "https://sketchfab.com/blueman6543",
@@ -819,7 +819,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 24,
-    "usable": true
+    "usable": false
    }
   },
   "b4034a12c61641429a172a8cbb873ddc": {
@@ -865,7 +865,7 @@
    }
   },
   "edea9d0701044ba3965dfb8cbdd20141": {
-   "file": "/models/v/edea9d0701044ba3965dfb8cbdd20141.glb",
+   "file": "/models/cars/edea9d0701044ba3965dfb8cbdd20141.glb",
    "name": "Arctic Explorer Male Character",
    "author": "ChloeRobynSmith",
    "authorUrl": "https://sketchfab.com/chloerobyn",
@@ -882,7 +882,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 21,
-    "usable": true
+    "usable": false
    }
   },
   "eff90788c3b44d398bcf5e63ccabbb52": {
@@ -1118,7 +1118,7 @@
    }
   },
   "d26a53de3f194989aaa7b062be6e1e9a": {
-   "file": "/models/v/d26a53de3f194989aaa7b062be6e1e9a.glb",
+   "file": "/models/cars/d26a53de3f194989aaa7b062be6e1e9a.glb",
    "name": "2004 Ford Taurus",
    "author": "5spokehubcap",
    "authorUrl": "https://sketchfab.com/5spokehubcap",
@@ -1135,7 +1135,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 36,
-    "usable": true
+    "usable": false
    }
   },
   "ef441fcc51fa425aaa393d589a156ba6": {
@@ -1368,7 +1368,7 @@
    }
   },
   "bcefb9288f824519aea4d6ad48d756ce": {
-   "file": "/models/v/bcefb9288f824519aea4d6ad48d756ce.glb",
+   "file": "/models/cars/bcefb9288f824519aea4d6ad48d756ce.glb",
    "name": "Nissan Murano (Z51) 2008-2014",
    "author": "Merc_TV",
    "authorUrl": "https://sketchfab.com/szymonpasterczyk",
@@ -1386,7 +1386,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 54,
-    "usable": true
+    "usable": false
    }
   },
   "1cd12df9e6824aba943ca7932c15d6a2": {
@@ -1573,7 +1573,7 @@
    }
   },
   "c8ce56a9cb0343b9b578d43b985d8a9f": {
-   "file": "/models/v/c8ce56a9cb0343b9b578d43b985d8a9f.glb",
+   "file": "/models/cars/c8ce56a9cb0343b9b578d43b985d8a9f.glb",
    "name": "Subaru Baja Crosstrek",
    "author": "Gabethejet",
    "authorUrl": "https://sketchfab.com/Gabethejet",
@@ -1590,7 +1590,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 40,
-    "usable": true
+    "usable": false
    }
   },
   "611ae23685c14134b5a4f3decde248e9": {
@@ -1636,7 +1636,7 @@
    }
   },
   "c0ffde08f5e04cca9dffb449a5eef759": {
-   "file": "/models/v/c0ffde08f5e04cca9dffb449a5eef759.glb",
+   "file": "/models/cars/c0ffde08f5e04cca9dffb449a5eef759.glb",
    "name": "Subaru Legacy Wagon",
    "author": "BHP3D",
    "authorUrl": "https://sketchfab.com/BHP3D",
@@ -1653,7 +1653,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 26,
-    "usable": true
+    "usable": false
    }
   },
   "a44abee6689e429881209fc6299f505c": {
@@ -1699,7 +1699,7 @@
    }
   },
   "8950fc178e254c9198b2a8555ef1590a": {
-   "file": "/models/v/8950fc178e254c9198b2a8555ef1590a.glb",
+   "file": "/models/cars/8950fc178e254c9198b2a8555ef1590a.glb",
    "name": "Tesla Cybertruck",
    "author": "TAIGA-ZOE",
    "authorUrl": "https://sketchfab.com/TAIGA-ZOE",
@@ -1716,7 +1716,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 122,
-    "usable": true
+    "usable": false
    }
   },
   "5ef9b845aaf44203b6d04e2c677e444f": {
@@ -1867,7 +1867,7 @@
    }
   },
   "dc023a0dd83b4a7a8dc902f860794ae1": {
-   "file": "/models/v/dc023a0dd83b4a7a8dc902f860794ae1.glb",
+   "file": "/models/cars/dc023a0dd83b4a7a8dc902f860794ae1.glb",
    "name": "Jeep_wrangler_for_car_game",
    "author": "som73529",
    "authorUrl": "https://sketchfab.com/som73529",
@@ -1884,7 +1884,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 76,
-    "usable": true
+    "usable": false
    }
   },
   "9eb49e4fea464c0f9d4258c2a6d8cfad": {
@@ -2054,7 +2054,7 @@
    }
   },
   "529620651df548939aff2618763ddfea": {
-   "file": "/models/v/529620651df548939aff2618763ddfea.glb",
+   "file": "/models/cars/529620651df548939aff2618763ddfea.glb",
    "name": "Dodge Neon 2004",
    "author": "Doz3",
    "authorUrl": "https://sketchfab.com/Doz3",
@@ -2071,11 +2071,11 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 49,
-    "usable": true
+    "usable": false
    }
   },
   "5b3898052ca64641ab1857a638551039": {
-   "file": "/models/v/5b3898052ca64641ab1857a638551039.glb",
+   "file": "/models/cars/5b3898052ca64641ab1857a638551039.glb",
    "name": "Dodge Ram 1500",
    "author": "David_Holiday",
    "authorUrl": "https://sketchfab.com/David_Holiday",
@@ -2092,11 +2092,11 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 44,
-    "usable": true
+    "usable": false
    }
   },
   "20dfe0fc6a684c539e11bfe5e6a43fee": {
-   "file": "/models/v/20dfe0fc6a684c539e11bfe5e6a43fee.glb",
+   "file": "/models/cars/20dfe0fc6a684c539e11bfe5e6a43fee.glb",
    "name": "2020 Dodge Ram 2500 Long Bed",
    "author": "watsonmalik459",
    "authorUrl": "https://sketchfab.com/watsonmalik459",
@@ -2113,11 +2113,11 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 83,
-    "usable": true
+    "usable": false
    }
   },
   "40604d4eb4f3454685e66a77e447f23e": {
-   "file": "/models/v/40604d4eb4f3454685e66a77e447f23e.glb",
+   "file": "/models/cars/40604d4eb4f3454685e66a77e447f23e.glb",
    "name": "2013 Dodge Ram 3500 Single Cab",
    "author": "David_Holiday",
    "authorUrl": "https://sketchfab.com/David_Holiday",
@@ -2134,7 +2134,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 121,
-    "usable": true
+    "usable": false
    }
   },
   "de045bf2f3b141a48a4248885d3fee1c": {
@@ -2201,7 +2201,7 @@
    }
   },
   "6f9760ab25704d3794a1e259b4d12643": {
-   "file": "/models/v/6f9760ab25704d3794a1e259b4d12643.glb",
+   "file": "/models/cars/6f9760ab25704d3794a1e259b4d12643.glb",
    "name": "Ram 2020 2500",
    "author": "David_Holiday",
    "authorUrl": "https://sketchfab.com/David_Holiday",
@@ -2218,7 +2218,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 83,
-    "usable": true
+    "usable": false
    }
   },
   "cec6b04b06724f1088129c1054ccb1ec": {
@@ -2954,7 +2954,7 @@
    }
   },
   "d2b715563f1e474099b8eef1f262c8a6": {
-   "file": "/models/v/d2b715563f1e474099b8eef1f262c8a6.glb",
+   "file": "/models/cars/d2b715563f1e474099b8eef1f262c8a6.glb",
    "name": "BMW 3 Series Coupe (E92) 2006-2013",
    "author": "Merc_TV",
    "authorUrl": "https://sketchfab.com/szymonpasterczyk",
@@ -2972,7 +2972,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 23,
-    "usable": true
+    "usable": false
    }
   },
   "13d0a12ecda04317b96ce1e618300412": {
@@ -3606,7 +3606,7 @@
    }
   },
   "e229a4e696e1400bb06fedb3dbbc44a3": {
-   "file": "/models/v/e229a4e696e1400bb06fedb3dbbc44a3.glb",
+   "file": "/models/cars/e229a4e696e1400bb06fedb3dbbc44a3.glb",
    "name": "Mercedes Benz GLS Class 580 Car",
    "author": "sanjay20949",
    "authorUrl": "https://sketchfab.com/sanjay20949",
@@ -3624,7 +3624,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 25,
-    "usable": true
+    "usable": false
    }
   },
   "a2e03aaa1c654dcd8352cd7e80c654f1": {
@@ -3694,7 +3694,7 @@
    "error": "terminated"
   },
   "04925f2cea0c4090a58d13d88e3f16d9": {
-   "file": "/models/v/04925f2cea0c4090a58d13d88e3f16d9.glb",
+   "file": "/models/cars/04925f2cea0c4090a58d13d88e3f16d9.glb",
    "name": "Audi A6 55 TFSI Quattro (C8)",
    "author": "Mona x Supercars",
    "authorUrl": "https://sketchfab.com/Car2022",
@@ -3711,7 +3711,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 46,
-    "usable": true
+    "usable": false
    }
   },
   "a0159b9bee094c2d8f9b9d5694c94f45": {
@@ -3797,7 +3797,7 @@
    }
   },
   "c30b4a6ec479473a814d030da10e97a8": {
-   "file": "/models/v/c30b4a6ec479473a814d030da10e97a8.glb",
+   "file": "/models/cars/c30b4a6ec479473a814d030da10e97a8.glb",
    "name": "2023 Audi RS Q8",
    "author": "DisneyCars",
    "authorUrl": "https://sketchfab.com/supercarmodels",
@@ -3814,7 +3814,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 26,
-    "usable": true
+    "usable": false
    }
   },
   "e17e438f076f4427a58d93aa779edaed": {
@@ -3943,7 +3943,7 @@
    }
   },
   "622928b520c94fb2a4c70d0ddfffa128": {
-   "file": "/models/v/622928b520c94fb2a4c70d0ddfffa128.glb",
+   "file": "/models/cars/622928b520c94fb2a4c70d0ddfffa128.glb",
    "name": "2010 Audi S6 5.2 FSI Quattro (C6)",
    "author": "DisneyCars",
    "authorUrl": "https://sketchfab.com/supercarmodels",
@@ -3960,11 +3960,11 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 48,
-    "usable": true
+    "usable": false
    }
   },
   "44f95a01a6774b07b3a7fb7fa5bafc7b": {
-   "file": "/models/v/44f95a01a6774b07b3a7fb7fa5bafc7b.glb",
+   "file": "/models/cars/44f95a01a6774b07b3a7fb7fa5bafc7b.glb",
    "name": "Audi A8/S8 III (D4) 2009-2017",
    "author": "Merc_TV",
    "authorUrl": "https://sketchfab.com/szymonpasterczyk",
@@ -3981,7 +3981,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 64,
-    "usable": true
+    "usable": false
    }
   },
   "1c71c71d66394be89500171d067e8c82": {
@@ -4048,7 +4048,7 @@
    }
   },
   "605997db34c445898e4e92c8f4524378": {
-   "file": "/models/v/605997db34c445898e4e92c8f4524378.glb",
+   "file": "/models/cars/605997db34c445898e4e92c8f4524378.glb",
    "name": "Lexus LX 570",
    "author": "VladGolik",
    "authorUrl": "https://sketchfab.com/vladgolik13",
@@ -4065,7 +4065,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 61,
-    "usable": true
+    "usable": false
    }
   },
   "5fd55243ce26447fa5a1fb8c15efbd1a": {
@@ -4423,7 +4423,7 @@
    }
   },
   "0fb040c349a24defadaa9ab9f0cb5f22": {
-   "file": "/models/v/0fb040c349a24defadaa9ab9f0cb5f22.glb",
+   "file": "/models/cars/0fb040c349a24defadaa9ab9f0cb5f22.glb",
    "name": "gmc sierra 2500 hd double cab standard box",
    "author": "amogusstrikesback2",
    "authorUrl": "https://sketchfab.com/amogusstrikesback2",
@@ -4440,7 +4440,7 @@
     "scene": false,
     "upsideDown": false,
     "confidence": 20,
-    "usable": true
+    "usable": false
    }
   },
   "47acfe6a6bde48f1ad986fbdcc82e8fd": {
