@@ -9,7 +9,7 @@ import { ArrowRight, Check, RotateCw, Pause } from "lucide-react";
 import { vehicleDatabase, panelDefinitions, designTiers, finishOptions, installOptions, calculatePrice } from "@/data/vehicles";
 import { Rise, SplitLines } from "@/components/fx/Motion";
 import { LIVERIES, PAINTS, type Coverage, type FinishId, type ViewId } from "./studioData";
-import { resolveCar } from "@/lib/carIndex";
+import { resolveCar, has3D, count3D } from "@/lib/carIndex";
 
 const BODY_LABEL: Record<string, string> = { sedan: "Sedan", coupe: "Coupe", sports: "Sports car", hatchback: "Hatchback", wagon: "Wagon", suv: "SUV", truck: "Pickup truck", van: "Van" };
 const FINISH_NOTE: Record<string, string> = {
@@ -47,8 +47,15 @@ export function Builder() {
   const [view, setView] = useState<ViewId>("front");
   const [spin, setSpin] = useState(true);
 
-  const makes = useMemo(() => Array.from(new Set(vehicleDatabase.map((v) => v.make))).sort(), []);
-  const models = useMemo(() => Array.from(new Set(vehicleDatabase.filter((v) => v.make === make).map((v) => v.model))).sort(), [make]);
+  // vehicles with their own 3D model are listed first
+  const makes = useMemo(() => {
+    const all = Array.from(new Set(vehicleDatabase.map((v) => v.make))).sort();
+    return [...all.filter((m) => count3D(m) > 0), ...all.filter((m) => count3D(m) === 0)];
+  }, []);
+  const models = useMemo(() => {
+    const all = Array.from(new Set(vehicleDatabase.filter((v) => v.make === make).map((v) => v.model))).sort();
+    return [...all.filter((m) => has3D(make, m)), ...all.filter((m) => !has3D(make, m))];
+  }, [make]);
   const vehicle = useMemo(() => latest(make, model), [make, model]);
   const sqft = vehicle?.totalSqft ?? 245;
   const quote = useMemo(() => calculatePrice(sqft, cov.panels, tier.pricePerSqft, finish.priceAdd, install.price), [sqft, cov, tier, finish, install]);
@@ -127,11 +134,13 @@ export function Builder() {
           <div className="space-y-10">
             <Step n="01" title="Your vehicle" hint={vehicle ? `${vehicle.year} ${vehicle.trim} · ${sqft} sq ft` : ""}>
               <div className="grid grid-cols-2 gap-3">
-                <select className="sel" value={make} onChange={(e) => { const m = e.target.value; setMake(m); setModel(vehicleDatabase.find((v) => v.make === m)?.model ?? ""); }}>
-                  {makes.map((m) => <option key={m}>{m}</option>)}
+                <select className="sel" value={make} onChange={(e) => { const m = e.target.value; setMake(m); const ms = Array.from(new Set(vehicleDatabase.filter((v) => v.make === m).map((v) => v.model))).sort(); setModel(ms.find((x) => has3D(m, x)) ?? ms[0] ?? ""); }}>
+                  {makes.map((m) => (
+                    <option key={m} value={m}>{count3D(m) ? `${m} · 3D` : m}</option>
+                  ))}
                 </select>
                 <select className="sel" value={model} onChange={(e) => setModel(e.target.value)}>
-                  {models.map((m) => <option key={m}>{m}</option>)}
+                  {models.map((m) => <option key={m} value={m}>{has3D(make, m) ? `${m} · 3D` : m}</option>)}
                 </select>
               </div>
             </Step>

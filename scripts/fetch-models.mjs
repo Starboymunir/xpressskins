@@ -18,6 +18,8 @@ if (!TOKEN) { console.error("Missing SKETCHFAB_TOKEN in .env.local"); process.ex
 
 const limitArg = process.argv.indexOf("--limit");
 const LIMIT = limitArg > 0 ? +process.argv[limitArg + 1] : Infinity;
+const RETRY_FAILED = process.argv.includes("--retry-failed");
+let skipped = 0;
 const MATCHES = JSON.parse(fs.readFileSync(path.join(ROOT, "data/model-matches.json"), "utf8")).queries;
 const OUTDIR = path.join(ROOT, "public/models/cars");
 const OV_FILE = path.join(ROOT, "data/model-overrides.json");
@@ -35,14 +37,15 @@ const order = Object.entries(MATCHES)
 const GT_CLI = path.join(ROOT, "node_modules/@gltf-transform/cli/bin/cli.js");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Sketchfab sometimes drops connections from busy IPs; wait it out instead of failing.
-async function retryFetch(url, opts = {}, label = "") {
-  for (let attempt = 0; attempt < 12; attempt++) {
+async function retryFetch(url, opts = {}, label = "", tries = 12) {
+  for (let attempt = 0; attempt < tries; attempt++) {
     try {
       const res = await fetch(url, { ...opts, signal: AbortSignal.timeout(120000) });
       if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
       return res;
     } catch (e) {
-      const wait = Math.min(300000, 15000 * 2 ** Math.min(attempt, 4));
+      if (attempt === tries - 1) break;
+      const wait = tries <= 2 ? 10000 : Math.min(300000, 15000 * 2 ** Math.min(attempt, 4));
       console.log(`  … ${label} ${e.message || e}; retrying in ${Math.round(wait / 1000)}s`);
       await sleep(wait);
     }
@@ -62,6 +65,7 @@ for (const [key, q] of order) {
   if (!pick) continue;
   manifest.groups[key] = { make: q.make, base: q.base, body: q.body, models: q.models, uid: pick.uid };
   if (manifest.models[pick.uid]?.file) { done++; continue; }
+  if (manifest.models[pick.uid]?.error && !RETRY_FAILED) { skipped++; continue; } // failed earlier: run with --retry-failed
   try {
     const res = await retryFetch(`https://api.sketchfab.com/v3/models/${pick.uid}/download`, { headers: { Authorization: `Token ${TOKEN}` } }, key);
     if (res.status === 401 || res.status === 403) throw new Error(`auth ${res.status} (check token)`);
@@ -70,11 +74,11 @@ for (const [key, q] of order) {
     const glb = info.glb?.url;
     if (!glb) throw new Error("no GLB archive offered");
     const tmp = path.join(os.tmpdir(), `${pick.uid}.glb`);
-    fs.writeFileSync(tmp, Buffer.from(await (await retryFetch(glb, {}, key)).arrayBuffer()));
+    fs.writeFileSync(tmp, Buffer.from(await (await retryFetch(glb, {}, key, 2)).arrayBuffer())); // file download: give up fast, retry later
     const out = path.join(OUTDIR, `${pick.uid}.glb`);
     execFileSync(process.execPath, [GT_CLI, "optimize", tmp, out, "--compress", "draco", "--texture-compress", "webp", "--texture-size", "2048", "--simplify", "false", "--palette", "false", "--join", "false", "--flatten", "false"], { stdio: "ignore" });
     fs.rmSync(tmp, { force: true });
-    manifest.models[pick.uid] = { file: `/models/cars/${pick.uid}.glb`, name: pick.name, author: pick.author, authorUrl: pick.authorUrl, url: pick.url, license: pick.license, bytes: fs.statSync(out).size };
+    manifest.models[pick.uid] = { error: undefined, file: `/models/cars/${pick.uid}.glb`, name: pick.name, author: pick.author, authorUrl: pick.authorUrl, url: pick.url, license: pick.license, bytes: fs.statSync(out).size };
     console.log(`✓ ${key.padEnd(36)} ${(fs.statSync(out).size / 1e6).toFixed(1)} MB  "${pick.name}" by ${pick.author}`);
   } catch (e) {
     manifest.models[pick.uid] = { ...manifest.models[pick.uid], error: String(e.message || e) };
@@ -86,4 +90,5 @@ for (const [key, q] of order) {
 }
 fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1));
 const ok = Object.values(manifest.models).filter((m) => m.file).length;
-console.log(`\n${ok} models ready in public/models/cars`);
+const failed = Object.values(manifest.models).filter((m) => m.error && !m.file).length;
+console.log(`\n${ok} models ready · ${failed} failed (retry with --retry-failed) · ${skipped} skipped this run`);

@@ -32,7 +32,19 @@ const NEAR: Record<BodyKind, BodyKind[]> = {
   hatchback: ["hatchback", "sedan", "wagon"], wagon: ["wagon", "sedan", "suv"], suv: ["suv", "wagon", "truck"], truck: ["truck", "suv", "van"], van: ["van", "suv", "truck"],
 };
 
-export type Resolved = { url: string; body: BodyKind; exact: boolean; model?: ModelInfo };
+/** true when this exact make + model has its own usable 3D model */
+export function has3D(make: string, model: string) {
+  return byVehicle.has(`${make}|${model}`);
+}
+
+/** how many models of this make have their own 3D model */
+export function count3D(make: string) {
+  let n = 0;
+  for (const k of byVehicle.keys()) if (k.startsWith(`${make}|`)) n++;
+  return n;
+}
+
+export type Resolved ={ url: string; body: BodyKind; exact: boolean; model?: ModelInfo };
 
 export function resolveCar(make: string, model: string, trim = ""): Resolved {
   const body = bodyType(model, trim);
